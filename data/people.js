@@ -1,0 +1,13 @@
+// data/people.js
+const peopleData = [
+    { lastName: 'Liu', firstName: 'Shinan', role: 'Faculty', education: 'Ph.D. in Computer Science from UChicago', status: 'Director', photo: 'images/people/shinan-liu.jpg', website: 'https://www.shinan.info/' },
+    { lastName: 'Dan', firstName: 'Zihao', role: 'Ph.D. Student', education: 'M.S. from ZJU', status: '2025 Fall - ', photo: 'images/people/zihao-dan.jpg', website: '#' },
+    { lastName: 'Ding', firstName: 'Junhui', role: 'Intern', education: 'Undergrad from THU', status: '2025 Summer - ', photo: 'images/people/junhui-ding.jpg' },
+    { lastName: 'Guo', firstName: 'Zhaochen', role: 'Intern', education: 'Undergrad from UESTC', status: '2025 Summer - ', photo: 'images/people/zhaochen-guo.jpg' },
+    { lastName: 'Wang', firstName: 'Yining', role: 'Intern', education: 'M.S. from UToronto', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=YW' },
+    { lastName: 'Zhang', firstName: 'Jialin', role: 'Intern', education: 'Undergrad from Tongji U', status: '2025 Summer - ', photo: 'images/people/jialin-zhang.jpg' },
+    { lastName: 'Zhang', firstName: 'Jinyu', role: 'Intern', education: 'Undergrad from HKU', status: '2025 Summer - ', photo: 'images/people/jinyu-zhang.jpg' },
+    { lastName: 'Zhang', firstName: 'Xinchen', role: 'Postdoc Scholar', education: 'Ph.D. from HKU', status: '2025 Fall - ', photo: 'images/people/xinchen-zhang.jpg', website: '#' },
+    { lastName: 'Zhao', firstName: 'Yunpeng', role: 'Ph.D. Student', education: 'M.S. from NUS', status: '2025 Fall - ', photo: 'images/people/yunpeng-zhao.jpg' },
+    { lastName: 'Zhou', firstName: 'Tianyufei', role: 'MPhil Student', education: 'B.S. from SYSU', status: '2026 Spring - ', photo: 'images/people/tianyufei-zhou.jpg' }
+].sort((a, b) => a.lastName.localeCompare(b.lastName));
