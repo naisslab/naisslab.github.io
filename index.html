@@ -133,7 +133,7 @@
                 <div class="text-center">
                     <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Our Mission</h2>
                     <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-                        The NAISS (pronounced as "nice") Lab in the department of DASE at The University of Hong Kong operates at the critical intersection of Machine Learning Systems, Computer Networking, and Security. Our research follows a virtuous cycle: we build foundational ML systems and techniques, apply them to secure our critical network infrastructure, and extend them to improve interactions and well-beings with the cyber-physical world. You can contact us at shinan6@hku.hk.
+                        The NAISS (pronounced as "nice") Lab in the department of DASE at The University of Hong Kong operates at the critical intersection of Machine Learning Systems, Computer Networking, and Security. Our research follows a virtuous cycle: we build foundational ML systems and techniques, apply them to secure our critical network infrastructure, and extend them to improve interactions and well-beings with the cyber-physical world. You can contact us at <a href="mailto:shinan6@hku.hk">shinan6@hku.hk</a>  .
                     </p>
                 </div>
             </div>
@@ -343,15 +343,24 @@
 
             function renderNews() {
                 const container = document.getElementById('news-container');
-                 if(!container) return;
-                container.innerHTML = newsData.map(item => `
-                    <div class="border-l-4 border-amber-300 pl-6">
-                        <p class="text-sm font-semibold text-amber-700">${item.date}</p>
-                        <h3 class="mt-1 text-xl font-bold">${item.title}</h3>
-                        <p class="mt-2 text-gray-600">${item.content}</p>
-                    </div>
-                `).join('');
+                if (!container) return;
+
+                container.innerHTML = newsData.map(item => {
+                    // This is the logic for creating the title element
+                    const titleHtml = item.url 
+                        ? `<a href="${item.url}" class="hover:underline">${item.title}</a>` 
+                        : item.title;
+
+                    return `
+                        <div class="border-l-4 border-amber-300 pl-6">
+                            <p class="text-sm font-semibold text-amber-700">${item.date}</p>
+                            <h3 class="mt-1 text-xl font-bold">${titleHtml}</h3>
+                            <p class="mt-2 text-gray-600">${item.content}</p>
+                        </div>
+                    `;
+                }).join('');
             }
+
 
             // Event Listeners
             document.getElementById('mobile-menu-button').addEventListener('click', function() {
