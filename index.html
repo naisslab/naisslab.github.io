@@ -1,1 +1,728 @@
 
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAISS Lab | Networked AI Systems and Security Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Application Structure Plan: A single-page application with a fixed top navigation bar for smooth scrolling. The structure guides the user logically: Home (identity/mission), About (deeper philosophy), Research (interactive exploration of core areas), People (showcasing the team with filtering), Publications (demonstrating scholarly output with filtering), and News (showing momentum). This flow is designed to inform potential collaborators and peers about the lab's work. -->
+    <!-- Visualization & Content Choices: Research directions are presented as interactive cards (HTML/JS) to encourage exploration. The team is shown in a filterable grid (HTML/JS) for easy navigation. Publications are in a filterable list (HTML/JS) to allow users to find relevant work. These choices prioritize user interaction and clarity over static lists, making the content more digestible and engaging. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F5F2;
+            color: #024638;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #024638;
+            border-bottom-color: #024638;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/334155/E2E8F0?text=ML+System,+Network,+Security');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            border-bottom: 3px solid #024638;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .research-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .tag {
+            background-color: #E8E2DD;
+            color: #024638;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .publication-link {
+            color: #024638;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .publication-link:hover {
+            opacity: 0.8;
+        }
+        .btn-primary {
+            background-color: #024638;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #EA634A;
+        }
+        .filter-btn {
+            border: 1px solid #E8E2DD;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #024638;
+            color: white;
+            border-color: #024638;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-gray-800">NAISS Lab</a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">About</a>
+                        <a href="#research" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Research</a>
+                        <a href="#people" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">People</a>
+                        <a href="#publications" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Publications</a>
+                        <a href="#news" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">News</a>
+                    </nav>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">About</a>
+                <a href="#research" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">Research</a>
+                <a href="#people" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">People</a>
+                <a href="#publications" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">Publications</a>
+                <a href="#news" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">News</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="hero-bg pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                    <span class="block">Networked AI Systems and Security Lab</span>
+                    <span class="block text-amber-300 text-3xl md:text-5xl mt-2">NAISS Lab</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">
+                    Developing the next generation of intelligent systems to ensure our networked world is accessible, reliable, and secure.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Our Mission</h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                        The NAISS (pronounced as nice) Lab in the department of DASE at The University of Hong Kong operates at the critical intersection of Machine Learning Systems, Computer Networking, and Security. Our research follows a virtuous cycle: we build foundational ML systems and techniques, apply them to secure our critical network infrastructure, and extend them to improve interactions with the cyber-physical world.
+                    </p>
+                </div>
+                <div class="mt-16">
+                    <div class="flex flex-col md:flex-row items-center bg-stone-50 rounded-2xl shadow-sm overflow-hidden">
+                        <div class="w-full md:w-1/3 flex-shrink-0">
+                            <img src="https://placehold.co/600x400/024638/FFFFFF?text=Shinan+Liu" alt="Shinan Liu" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-8 md:p-12">
+                            <h3 class="text-2xl font-bold text-gray-900">Shinan Liu, Director</h3>
+                            <p class="mt-4 text-gray-600">
+                                I am an Assistant Professor at The University of Hong Kong, directing the NAISS Lab. My research lies in Computer Networking and Security, with a focus on developing accessible, reliable, and performant machine learning systems for network data analysis, and employing network data analysis for critical issues in security and privacy.
+                            </p>
+                            <p class="mt-4 text-gray-600">
+                                I earned my Ph.D. and M.S. in Computer Science at The University of Chicago, advised by Prof. Nick Feamster and working closely with Prof. Vyas Sekar. I am a recipient of the 2025 ML and Systems Rising Stars, the Carnegie Bosch Fellowship, and other honors. My work has been published in top venues like USENIX Security, NSDI, UbiComp, SIGMETRICS, and CoNEXT, and featured in Forbes and The Wall Street Journal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Research Directions</h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                        Our work is organized into three synergistic research thrusts. Click on each area to explore further.
+                    </p>
+                </div>
+                <div id="research-container" class="mt-16 grid md:grid-cols-3 gap-8">
+                    <!-- Research cards will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- People Section -->
+        <section id="people" class="py-20 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                        Meet the researchers and students driving innovation at the NAISS Lab.
+                    </p>
+                </div>
+                <div class="mt-8 flex justify-center space-x-2" id="people-filter-controls">
+                    <!-- Filter buttons will be injected here by JS -->
+                </div>
+                <div id="people-container" class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- People cards will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Publications</h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                        A selection of our scholarly output. 
+                    </p>
+                </div>
+                <div class="mt-8 max-w-2xl mx-auto flex flex-col sm:flex-row gap-4">
+                    <select id="pub-year-filter" class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-md bg-white">
+                        <option value="all">All Years</option>
+                    </select>
+                    <select id="pub-area-filter" class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-md bg-white">
+                        <option value="all">All Research Areas</option>
+                    </select>
+                </div>
+                <div id="publications-container" class="mt-12 space-y-8 max-w-4xl mx-auto">
+                    <!-- Publications will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="py-20 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Latest News</h2>
+                </div>
+                <div id="news-container" class="mt-16 max-w-3xl mx-auto space-y-8">
+                    <!-- News items will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Networked AI Systems and Security (NAISS) Lab</p>
+            <p class="text-sm text-gray-400 mt-2">The University of Hong Kong</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data
+            const researchData = [
+                {
+                    id: 'ml-for-systems',
+                    title: 'ML for Systems, Systems for ML',
+                    icon: '🧠',
+                    description: 'Building foundational ML systems and techniques for the networked world.',
+                    subtopics: [
+                        'Synthetic Data for Networked Systems',
+                        'High-performance ML-based Network Traffic Analysis',
+                        'Compound Model/Agent Networks'
+                    ]
+                },
+                {
+                    id: 'security',
+                    title: 'Network Security and Privacy',
+                    icon: '🛡️',
+                    description: 'Applying our tools to solve critical security and privacy challenges.',
+                    subtopics: [
+                        'Privacy of Synthetic Data',
+                        'Security and Privacy in Smart Homes and Mobile Systems',
+                        'Wireless Attacks and Defenses in Driving Systems',
+                        'Security Problems in LLM Agent Networks'
+                    ]
+                },
+                {
+                    id: 'cps',
+                    title: 'Cyber-physical Intelligence',
+                    icon: '🤖',
+                    description: 'Improving interactions with the cyber-physical world.',
+                    subtopics: [
+                        'Augmentation and Management of Internet of Things',
+                        'Activity Recognition and Sensing for Human Well-being'
+                    ]
+                }
+            ];
+
+            const peopleData = [
+                { lastName: 'Liu', firstName: 'Shinan', role: 'Faculty', education: 'Ph.D. from UChicago', status: 'Director', photo: 'https://placehold.co/400x400/024638/FFFFFF?text=SL' },
+                { lastName: 'Dan', firstName: 'Zihao', role: 'Ph.D. Student', education: 'M.S. from ZJU', status: '2025 Fall - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=ZD' },
+                { lastName: 'Ding', firstName: 'Junhui', role: 'Intern', education: 'Undergrad from THU', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=JD' },
+                { lastName: 'Guo', firstName: 'Zhaochen', role: 'Intern', education: 'Undergrad from UESTC', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=ZG' },
+                { lastName: 'Wang', firstName: 'Yining', role: 'Intern', education: 'M.S. from UToronto', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=YW' },
+                { lastName: 'Zhang', firstName: 'Jialin', role: 'Intern', education: 'Undergrad from Tongji U', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=JZ' },
+                { lastName: 'Zhang', firstName: 'Jinyu', role: 'Intern', education: 'Undergrad from HKU', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=JZ' },
+                { lastName: 'Zhang', firstName: 'Xinchen', role: 'Postdoc', education: 'Ph.D. from HKU', status: '2025 Fall - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=XZ' },
+                { lastName: 'Zhao', firstName: 'Yunpeng', role: 'Ph.D. Student', education: 'M.S. from NUS', status: '2025 Fall - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=YZ' },
+                { lastName: 'Zhou', firstName: 'Tianyufei', role: 'MPhil', education: 'B.S. from SYSU', status: '2026 Spring - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=TZ' }
+            ].sort((a, b) => a.lastName.localeCompare(b.lastName));
+
+            const publicationsData = [
+                // =================================================================
+                // ========================== Preprints ============================
+                // =================================================================
+                {
+                    year: 2025,
+                    type: 'Preprint',
+                    area: 'ml-for-systems',
+                    title: 'ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis',
+                    authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, and Nick Feamster',
+                    venue: 'In Submission',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2025,
+                    type: 'Preprint',
+                    area: 'security',
+                    title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
+                    authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, and Stephen Xia',
+                    venue: 'In Submission',
+                    links: { pdf: '#' }
+                },
+                // =================================================================
+                // ========================= Conference ============================
+                // =================================================================
+                {
+                    year: 2025,
+                    type: 'Conference',
+                    area: 'security',
+                    title: 'Distributed Multi-Antenna GPS Spoofing Attack using Off-the-shelf Devices',
+                    authors: 'Xiang Cheng, Hanchao Yang, Shinan Liu, and Yaling Yang',
+                    venue: 'ACM WiSec 2025',
+                    award: 'Best Full Paper Award',
+                    links: { pdf: '#', award: '#' }
+                },
+                {
+                    year: 2025,
+                    type: 'Conference',
+                    area: 'ml-for-systems',
+                    title: 'CATO: End-to-End Optimization of ML-based Traffic Analysis Pipelines',
+                    authors: 'Gerry Wan, Shinan Liu, Francesco Bronzino, Nick Feamster, and Zakir Durumeric',
+                    venue: 'USENIX NSDI 2025',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2024,
+                    type: 'Conference',
+                    area: 'ml-for-systems',
+                    title: 'NetDiffusion: Network Data Augmentation Through Protocol-Constrained Traffic Generation',
+                    authors: 'Xi Jiang, Shinan Liu, Aaron Gember-Jacobson, Arjun Nitin Bhagoji, Paul Schmitt, Francesco Bronzino, and Nick Feamster',
+                    venue: 'ACM SIGMETRICS 2024',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2023,
+                    type: 'Conference',
+                    area: 'ml-for-systems',
+                    title: 'LEAF: Navigating Concept Drift in Cellular Networks',
+                    authors: 'Shinan Liu, Francesco Bronzino, Paul Schmitt, Arjun Nitin Bhagoji, Nick Feamster, Hector Garcia Crespo, Timothy Coyle, and Brian Ward',
+                    venue: 'ACM CoNEXT 2023',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2023,
+                    type: 'Conference',
+                    area: 'cps',
+                    title: 'AMIR: Active Multimodal Interaction Recognition from Video and Network Traffic in Connected Environments',
+                    authors: 'Shinan Liu, Tarun Mangla, Ted Shaowang, Jinjin Zhao, John Paparrizos, Sanjay Krishnan, and Nick Feamster',
+                    venue: 'ACM IMWUT/UbiComp 2023',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2023,
+                    type: 'Conference',
+                    area: 'cps',
+                    title: 'Toward Identifying Home Privacy Leaks using Augmented Reality',
+                    authors: 'Stefany Cruz, Logan Danek, Shinan Liu, Christopher Kraemer, Zixin Wang, Nick Feamster, Danny Yuxing Huang, Yaxing Yao, and Josiah Hester',
+                    venue: 'NDSS USEC 2023',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2021,
+                    type: 'Conference',
+                    area: 'security',
+                    title: 'Stars Can Tell: A Robust Method to Defend Against GPS Spoofing Attacks using Off-the-shelf Chipset',
+                    authors: 'Shinan Liu*, Xiang Cheng*, Hanchao Yang, Yuanchao Shu, Xiaoran Weng, Ping Guo, Kexiong Curtis Zeng, Gang Wang, and Yaling Yang',
+                    venue: 'USENIX Security 2021',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2021,
+                    type: 'Conference',
+                    area: 'cps',
+                    title: 'Characterizing Service Provider Response to the COVID-19 Pandemic in the United States',
+                    authors: 'Shinan Liu, Paul Schmitt, Francesco Bronzino, and Nick Feamster',
+                    venue: 'PAM 2021',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2021,
+                    type: 'Conference',
+                    area: 'cps',
+                    title: 'Mapping the Digital Divide: Before, During, and After COVID-19',
+                    authors: 'Francesco Bronzino, Nick Feamster, Shinan Liu, James Saxon, and Paul Schmitt',
+                    venue: 'TPRC 2021',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2018,
+                    type: 'Conference',
+                    area: 'security',
+                    title: 'All Your GPS Are Belong to Us: Towards Stealthy Manipulation of Road Navigation Systems',
+                    authors: 'Kexiong Curtis Zeng, Shinan Liu, Yuanchao Shu, Dong Wang, Haoyu Li, Yanzhi Dou, Gang Wang, and Yaling Yang',
+                    venue: 'USENIX Security 2018',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2025,
+                    type: 'Preprint',
+                    area: 'ml-for-systems',
+                    title: 'Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams',
+                    authors: 'Ted Shaowang, Shinan Liu, Jonatas Marques, Nick Feamster, and Sanjay Krishnan',
+                    venue: 'In Submission',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2025,
+                    type: 'Preprint',
+                    area: 'ml-for-systems',
+                    title: 'NetSSM: Multi-Flow and State-Aware Network Trace Generation using State-Space Models',
+                    authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
+                    venue: 'In Submission',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2025,
+                    type: 'Preprint',
+                    area: 'ml-for-systems',
+                    title: 'Generative Active Adaptation for Drifting and Imbalanced Network Intrusion Detection',
+                    authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, and Klara Nahrstedt',
+                    venue: 'In Submission',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2025,
+                    type: 'Preprint',
+                    area: 'ml-for-systems',
+                    title: 'AC-DC: Adaptive Ensemble Classification for Network Traffic Identification',
+                    authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
+                    venue: 'In Submission',
+                    links: { pdf: '#' }
+                },
+                // =================================================================
+                // =========================== Workshop ============================
+                // =================================================================
+                {
+                    year: 2025,
+                    type: 'Workshop',
+                    area: 'ml-for-systems',
+                    title: 'Tackling Long-Term Network Trace Retention Challenges Using Deep Generative Compression',
+                    authors: 'Fenghao Dong, Yucheng Yin, Shinan Liu, Giulia Fanti, and Vyas Sekar',
+                    venue: 'NDSS WOSOC 2025',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2024,
+                    type: 'Workshop',
+                    area: 'ml-for-systems',
+                    title: 'Feasibility of State Space Models for Network Traffic Generation',
+                    authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
+                    venue: 'SIGCOMM NAIC 2024',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2023,
+                    type: 'Workshop',
+                    area: 'ml-for-systems',
+                    title: 'Generative, High-Fidelity Network Traces',
+                    authors: 'Xi Jiang*, Shinan Liu*, Aaron Gember-Jacobson, Paul Schmitt, Francesco Bronzino, and Nick Feamster',
+                    venue: 'ACM HotNets 2023',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2022,
+                    type: 'Workshop',
+                    area: 'ml-for-systems',
+                    title: 'Understanding Model Drift in a Large Cellular Network',
+                    authors: 'Shinan Liu, Francesco Bronzino, Paul Schmitt, Nick Feamster, Ricardo Borges, Hector Garcia Crespo, and Brian Ward',
+                    venue: 'MLSys PACMI 2022',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2022,
+                    type: 'Workshop',
+                    area: 'ml-for-systems',
+                    title: 'Towards Designing Robust and Efficient Classifiers for Encrypted Traffic in the Modern Internet',
+                    authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
+                    venue: 'M-TEN 2022',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2021,
+                    type: 'Workshop',
+                    area: 'measurement',
+                    title: 'Interconnection Changes in the United States',
+                    authors: 'Francesco Bronzino, Elizabeth Cully, Nick Feamster, Shinan Liu, Jason Livingood, and Paul Schmitt',
+                    venue: 'IAB COVID-19 Workshop 2021',
+                    links: { pdf: '#' }
+                },
+                {
+                    year: 2017,
+                    type: 'Workshop',
+                    area: 'security',
+                    title: 'A Practical GPS Location Spoofing Attack in Road Navigation Scenario',
+                    authors: 'Kexiong Curtis Zeng, Yuanchao Shu, Shinan Liu, Yanzhi Dou, and Yaling Yang',
+                    venue: 'ACM HotMobile 2017',
+                    links: { pdf: '#' }
+                },
+
+                // =================================================================
+                // ============================ Poster =============================
+                // =================================================================
+                {
+                    year: 2019,
+                    type: 'Poster',
+                    area: 'security',
+                    title: 'Poster: Security Analysis of Multi-Sensor Fusion Based Localization in Autonomous Vehicles',
+                    authors: 'Junjie Shen, Jun Yeon Won, Shinan Liu, Qi Alfred Chen, and Alexander Veidenbaum',
+                    venue: 'NDSS 2019',
+                    award: 'Best Poster Presentation Award',
+                    links: { pdf: '#', award: '#' }
+                }
+            ];
+
+            const newsData = [
+                { date: 'Aug 2025', title: 'Prof. Liu onboards in the Department of DASE at HKU!', content: 'NAISS Lab officially kicks off, we are thrilled to welcome everyone on board.' },
+                { date: 'Jul 2025', title: 'Paper on GPS Spoofing Attack wins Best Paper Award at ACM WiSec!', content: 'Our work was recognized for its novel approach to spoof GPS systems using multiple antennas.' },
+                { date: 'May 2025', title: 'Dr. Liu named 2025 ML and Systems Rising Star.', content: 'Congratulations to our director for this prestigious recognition.' }
+            ];
+
+            // Render Functions
+            function renderResearch() {
+                const container = document.getElementById('research-container');
+                container.innerHTML = researchData.map(item => `
+                    <div class="research-card bg-white p-8 rounded-lg shadow-md cursor-pointer" data-id="${item.id}">
+                        <div class="text-4xl">${item.icon}</div>
+                        <h3 class="mt-4 text-xl font-bold">${item.title}</h3>
+                        <p class="mt-2 text-gray-600">${item.description}</p>
+                        <div id="subtopics-${item.id}" class="hidden mt-4 pl-4 border-l-2 border-amber-200">
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                ${item.subtopics.map(sub => `<li>${sub}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function renderPeople(filter = 'all') {
+                const container = document.getElementById('people-container');
+                const director = peopleData.find(p => p.role === 'Faculty');
+                const others = peopleData.filter(p => p.role !== 'Faculty');
+                
+                let filteredPeople = others;
+                if (filter !== 'all') {
+                    filteredPeople = others.filter(p => p.role.toLowerCase().replace(/\./g, '') === filter.toLowerCase().replace(/\./g, ''));
+                }
+
+                const directorHtml = `
+                    <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 mb-8">
+                        <div class="flex flex-col sm:flex-row items-center bg-stone-50 rounded-lg shadow-sm p-6">
+                            <img src="${director.photo}" alt="${director.firstName} ${director.lastName}" class="w-32 h-32 rounded-full object-cover flex-shrink-0">
+                            <div class="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
+                                <h3 class="text-xl font-bold">${director.firstName} ${director.lastName}</h3>
+                                <p class="text-amber-700 font-semibold">${director.status}</p>
+                                <p class="text-gray-600">${director.education}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.innerHTML = directorHtml + filteredPeople.map(person => `
+                    <div class="person-card text-center bg-stone-50 p-6 rounded-lg shadow-sm" data-role="${person.role}">
+                        <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <h3 class="mt-4 font-bold text-lg">${person.firstName} ${person.lastName}</h3>
+                        <p class="text-amber-700 font-semibold">${person.role}</p>
+                        <p class="text-gray-500 text-sm">${person.status}</p>
+                        <p class="text-gray-500 text-sm">${person.education}</p>
+                    </div>
+                `).join('');
+            }
+
+            function renderPeopleFilters() {
+                const controlsContainer = document.getElementById('people-filter-controls');
+                const roles = ['All', 'Postdoc', 'Ph.D. Student', 'MPhil', 'Intern'];
+                controlsContainer.innerHTML = roles.map((role, index) => `
+                    <button class="filter-btn px-4 py-1 rounded-full text-sm ${index === 0 ? 'active' : ''}" data-filter="${role}">${role}</button>
+                `).join('');
+            }
+
+            function renderPublications(yearFilter = 'all', areaFilter = 'all') {
+                const container = document.getElementById('publications-container');
+                const filteredPubs = publicationsData.filter(pub => 
+                    (yearFilter === 'all' || pub.year == yearFilter) &&
+                    (areaFilter === 'all' || pub.area === areaFilter)
+                );
+
+                if (filteredPubs.length === 0) {
+                    container.innerHTML = `<p class="text-center text-gray-500">No publications match the selected filters.</p>`;
+                    return;
+                }
+
+                container.innerHTML = filteredPubs.map(pub => `
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        ${pub.award ? `<p class="text-amber-600 font-bold mb-2">🏆 ${pub.award}</p>` : ''}
+                        <h3 class="font-bold text-lg">${pub.title}</h3>
+                        <p class="text-gray-600 mt-1">${pub.authors}</p>
+                        <p class="text-gray-500 italic mt-1">${pub.venue}</p>
+                        <div class="mt-3 space-x-4">
+                            ${pub.links.pdf ? `<a href="${pub.links.pdf}" class="publication-link">[PDF]</a>` : ''}
+                            ${pub.links.code ? `<a href="${pub.links.code}" class="publication-link">[Code]</a>` : ''}
+                            ${pub.links.data ? `<a href="${pub.links.data}" class="publication-link">[Data]</a>` : ''}
+                            ${pub.links.slides ? `<a href="${pub.links.slides}" class="publication-link">[Slides]</a>` : ''}
+                            ${pub.links.video ? `<a href="${pub.links.video}" class="publication-link">[Video]</a>` : ''}
+                            ${pub.links.media ? `<a href="${pub.links.media}" class="publication-link">[Media]</a>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            function populatePubFilters() {
+                const yearSelect = document.getElementById('pub-year-filter');
+                const areaSelect = document.getElementById('pub-area-filter');
+                const years = [...new Set(publicationsData.map(p => p.year))].sort((a,b) => b-a);
+                years.forEach(year => {
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    yearSelect.appendChild(option);
+                });
+
+                researchData.forEach(area => {
+                    const option = document.createElement('option');
+                    option.value = area.id;
+                    option.textContent = area.title;
+                    areaSelect.appendChild(option);
+                });
+            }
+
+            function renderNews() {
+                const container = document.getElementById('news-container');
+                container.innerHTML = newsData.map(item => `
+                    <div class="border-l-4 border-amber-300 pl-6">
+                        <p class="text-sm font-semibold text-amber-700">${item.date}</p>
+                        <h3 class="mt-1 text-xl font-bold">${item.title}</h3>
+                        <p class="mt-2 text-gray-600">${item.content}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Event Listeners
+            document.getElementById('mobile-menu-button').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                const button = this;
+                const icons = button.querySelectorAll('svg');
+                menu.classList.toggle('hidden');
+                icons[0].classList.toggle('hidden');
+                icons[1].classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                    const icons = document.getElementById('mobile-menu-button').querySelectorAll('svg');
+                    icons[0].classList.remove('hidden');
+                    icons[1].classList.add('hidden');
+                });
+            });
+
+            document.getElementById('research-container').addEventListener('click', function(e) {
+                const card = e.target.closest('.research-card');
+                if (card) {
+                    const subtopicsId = `subtopics-${card.dataset.id}`;
+                    const subtopicsEl = document.getElementById(subtopicsId);
+                    subtopicsEl.classList.toggle('hidden');
+                }
+            });
+
+            document.getElementById('people-filter-controls').addEventListener('click', function(e) {
+                if (e.target.tagName === 'BUTTON') {
+                    document.querySelectorAll('#people-filter-controls .filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderPeople(e.target.dataset.filter);
+                }
+            });
+            
+            document.getElementById('pub-year-filter').addEventListener('change', () => {
+                renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
+            });
+            
+            document.getElementById('pub-area-filter').addEventListener('change', () => {
+                renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
+            });
+
+            // Active nav link on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('header nav a.nav-link');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Initial Render
+            renderResearch();
+            renderPeopleFilters();
+            renderPeople();
+            populatePubFilters();
+            renderPublications();
+            renderNews();
+        });
+    </script>
+</body>
+</html>
