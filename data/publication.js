@@ -24,6 +24,15 @@ const publicationsData = [
     // ========================= Conference ============================
     // =================================================================
     {
+        year: 2026,
+        type: 'Conference',
+        area: ['ml-for-systems', 'security', 'cps'],
+        title: 'Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams',
+        authors: 'Ted Shaowang, Shinan Liu, Jonatas Marques, Nick Feamster, and Sanjay Krishnan',
+        venue: 'VLDB 2026',
+        links: { pdf: 'https://arxiv.org/pdf/2503.05675?' }
+    },
+    {
         year: 2025,
         type: 'Conference',
         area: ['security', 'cps'],
@@ -141,15 +150,6 @@ const publicationsData = [
             slides: 'https://www.usenix.org/sites/default/files/conference/protected-files/security18_slides_zeng.pdf',
             video: 'https://www.youtube.com/watch?v=IduM2rtlbj8',
             media: 'https://www.forbes.com/sites/thomasbrewster/2018/07/12/google-maps-gps-hack-takes-victims-to-ghost-locations/' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems', 'cps'],
-        title: 'Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams',
-        authors: 'Ted Shaowang, Shinan Liu, Jonatas Marques, Nick Feamster, and Sanjay Krishnan',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2503.05675?' }
     },
     {
         year: 2025,

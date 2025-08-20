@@ -2,6 +2,12 @@
 const newsData = [
     { 
         date: 'Aug 2025', 
+        title: 'Our paper on "Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams" is accepted at VLDB 2026!', 
+        content: 'This paper discussed the effective data minimization for more privacy in the context of IoT.',
+        url: 'https://arxiv.org/pdf/2503.05675' 
+    },
+    { 
+        date: 'Aug 2025', 
         title: 'Dr. Liu officially onboards the Department of DASE at HKU!', 
         content: 'NAISS Lab officially kicks off, we are thrilled to welcome everyone on board.',
         url: 'https://www.dase.hku.hk/people/s-n-liu' 
