@@ -8,6 +8,5 @@ const peopleData = [
     { lastName: 'Zhang', firstName: 'Jialin', role: 'Intern', education: 'Undergrad from Tongji U', status: '2025 Summer - ', photo: 'images/people/jialin-zhang.jpg' },
     { lastName: 'Zhang', firstName: 'Jinyu', role: 'Intern', education: 'Undergrad from HKU', status: '2025 Summer - ', photo: 'images/people/jinyu-zhang.jpg' },
     { lastName: 'Zhang', firstName: 'Xinchen', role: 'Postdoc Scholar', education: 'Ph.D. from HKU', status: '2025 Fall - ', photo: 'images/people/xinchen-zhang.jpg', website: '#' },
-    { lastName: 'Zhao', firstName: 'Yunpeng', role: 'Ph.D. Student', education: 'M.S. from NUS', status: '2025 Fall - ', photo: 'images/people/yunpeng-zhao.jpg' },
     { lastName: 'Zhou', firstName: 'Tianyufei', role: 'MPhil Student', education: 'B.S. from SYSU', status: '2026 Spring - ', photo: 'images/people/tianyufei-zhou.jpg' }
 ].sort((a, b) => a.lastName.localeCompare(b.lastName));
