@@ -1,8 +1,14 @@
 // data/news.js
 const newsData = [
     { 
+        date: 'Sept 2025', 
+        title: 'Our paper "JITI: Dynamic Model Serving for Just-in-Time Traffic Inference" is accepted at CoNEXT 2025!', 
+        content: 'A multi-year effort to adaptively serve ML models for network traffic classifications.',
+        url: 'https://arxiv.org/pdf/2302.11718' 
+    },
+    { 
         date: 'Aug 2025', 
-        title: 'Our paper on "Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams" is accepted at VLDB 2026!', 
+        title: 'Our paper "Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams" is accepted at VLDB 2026!', 
         content: 'This paper discussed the effective data minimization for more privacy in the context of IoT.',
         url: 'https://arxiv.org/pdf/2503.05675' 
     },

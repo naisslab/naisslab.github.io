@@ -35,6 +35,15 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Conference',
+        area: ['ml-for-systems'],
+        title: 'JITI: Dynamic Model Serving for Just-in-Time Traffic Inference',
+        authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
+        venue: 'CoNEXT 2025',
+        links: { pdf: 'https://arxiv.org/pdf/2302.11718' }
+    },
+    {
+        year: 2025,
+        type: 'Conference',
         area: ['security', 'cps'],
         title: 'Distributed Multi-Antenna GPS Spoofing Attack using Off-the-shelf Devices',
         authors: 'Xiang Cheng, Hanchao Yang, Shinan Liu, and Yaling Yang',
@@ -168,15 +177,6 @@ const publicationsData = [
         authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, and Klara Nahrstedt',
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems'],
-        title: 'AC-DC: Adaptive Ensemble Classification for Network Traffic Identification',
-        authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2302.11718' }
     },
     {
         year: 2025,
