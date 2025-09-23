@@ -14,11 +14,11 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
-        area: ['security', 'cps'],
-        title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
-        authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, and Stephen Xia',
+        area: ['ml-for-systems'],
+        title: 'NetSSM: Multi-Flow and State-Aware Network Trace Generation using State-Space Models',
+        authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
         venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/abs/2502.03682' }
+        links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
     },
     // =================================================================
     // ========================= Conference ============================
@@ -163,20 +163,20 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
-        area: ['ml-for-systems'],
-        title: 'NetSSM: Multi-Flow and State-Aware Network Trace Generation using State-Space Models',
-        authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, and Nick Feamster',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
         area: ['ml-for-systems', 'security'],
         title: 'Generative Active Adaptation for Drifting and Imbalanced Network Intrusion Detection',
         authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, and Klara Nahrstedt',
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
+        area: ['security', 'cps'],
+        title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
+        authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, and Stephen Xia',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/abs/2502.03682' }
     },
     {
         year: 2025,
