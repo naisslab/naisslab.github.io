@@ -181,6 +181,15 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
+        area: ['ml-for-systems', 'cps'],
+        title: 'Digital Phenotyping via Passive Network Traffic Monitoring: Feasibility and Acceptability in University Students',
+        authors: 'Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang',
+        venue: 'In Submission',
+        links: { pdf: 'https://preprints.jmir.org/preprint/84618' }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
         area: ['security', 'cps'],
         title: 'WiFinger: Fingerprinting Noisy IoT Event Traffic Using Packet-level Sequence Matching',
         authors: 'Ronghua Li, Shinan Liu, Haibo Hu, Qingqing Ye, Nick Feamster',
