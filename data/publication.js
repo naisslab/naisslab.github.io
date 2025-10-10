@@ -163,6 +163,15 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
+        area: ['ml-for-systems'],
+        title: 'λ-GRPO: Unifying the GRPO Frameworks with Learnable Token Preferences',
+        authors: 'Yining Wang*, Jinman Zhao*, Chuangxin Zhao, Shuhao Guan, Gerald Penn, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2510.06870' }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
         area: ['ml-for-systems', 'security'],
         title: 'Generative Active Adaptation for Drifting and Imbalanced Network Intrusion Detection',
         authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, and Klara Nahrstedt',
