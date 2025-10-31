@@ -8,6 +8,7 @@ const peopleData = [
     { lastName: 'Gan', firstName: 'Minghao', role: 'Intern', education: 'Undergrad from SYSU', status: '2026 Spring - ', photo: 'images/people/minghao-gan.jpg' },
     { lastName: 'Guo', firstName: 'Zhaochen', role: 'Intern', education: 'Undergrad from UESTC', status: '2025 Summer - ', photo: 'images/people/zhaochen-guo.jpg' },
     { lastName: 'Qiu', firstName: 'Mingxi', role: 'Intern', education: 'M.S. from THU', status: '2025 Fall - ', photo: 'images/people/mingxi-qiu.jpg' },
+    { lastName: 'Sun', firstName: 'He', role: 'Postdoc Scholar', education: 'Ph.D. from USTC', status: '2026 Fall - ', photo: 'images/people/he-sun.jpg', website: 'https://ustc-sunny.github.io/' },
     { lastName: 'Wang', firstName: 'Doris', role: 'Intern', education: 'M.S. from UToronto', status: '2025 Summer - ', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=DW' },
     { lastName: 'Zhang', firstName: 'Jialin', role: 'Intern', education: 'Undergrad from Tongji U', status: '2025 Summer - ', photo: 'images/people/jialin-zhang.jpg' },
     { lastName: 'Zhang', firstName: 'Jinyu', role: 'Intern', education: 'Undergrad from HKU', status: '2025 Summer - ', photo: 'images/people/jinyu-zhang.jpg' },
