@@ -20,26 +20,6 @@ const publicationsData = [
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
     },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems', 'security', 'cps'],
-        title: 'SafeCoop: Unravelling Full Stack Safety in Agentic Collaborative Driving',
-        authors: 'Xiangbo Gao, Tzu-Hsiang Lin, Ruojing Song, Yuheng Wu, Kuan-Ru Huang, Zicheng Jin, Fangzhou Lin, Shinan Liu, Zhengzhong Tu',
-        venue: 'In Submission',
-        links: { pdf: 'https://www.arxiv.org/pdf/2510.18123',
-            code: 'https://github.com/taco-group/SafeCoop',
-            website: 'https://xiangbogaobarry.github.io/SafeCoop/' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems'],
-        title: 'λ-GRPO: Unifying the GRPO Frameworks with Learnable Token Preferences',
-        authors: 'Yining Wang*, Jinman Zhao*, Chuangxin Zhao, Shuhao Guan, Gerald Penn, Shinan Liu',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2510.06870' }
-    },
     // =================================================================
     // ========================= Conference ============================
     // =================================================================
@@ -78,10 +58,11 @@ const publicationsData = [
         title: 'CATO: End-to-End Optimization of ML-based Traffic Analysis Pipelines',
         authors: 'Gerry Wan, Shinan Liu, Francesco Bronzino, Nick Feamster, and Zakir Durumeric',
         venue: 'USENIX NSDI 2025',
-        links: { 
-            pdf: 'https://www.usenix.org/system/files/nsdi25-wan-gerry.pdf', 
+        links: {
+            pdf: 'https://www.usenix.org/system/files/nsdi25-wan-gerry.pdf',
             slides: 'https://www.usenix.org/system/files/nsdi25_slides-wan-gerry.pdf',
-            video: 'https://www.youtube.com/watch?v=k5y62PEV-S8'}
+            video: 'https://www.youtube.com/watch?v=k5y62PEV-S8'
+        }
     },
     {
         year: 2024,
@@ -90,12 +71,12 @@ const publicationsData = [
         title: 'NetDiffusion: Network Data Augmentation Through Protocol-Constrained Traffic Generation',
         authors: 'Xi Jiang, Shinan Liu, Aaron Gember-Jacobson, Arjun Nitin Bhagoji, Paul Schmitt, Francesco Bronzino, and Nick Feamster',
         venue: 'ACM SIGMETRICS 2024',
-        links: { 
+        links: {
             pdf: 'https://dl.acm.org/doi/pdf/10.1145/3639037',
             website: 'https://netml.io/blog/2024/netdiffusion/',
             code: 'https://github.com/noise-lab/NetDiffusion_Generator',
             media: 'https://cs.uchicago.edu/news/university-of-chicago-researchers-revolutionize-network-traffic-generation-with-ai-breakthrough/'
-         }
+        }
     },
     {
         year: 2023,
@@ -104,10 +85,10 @@ const publicationsData = [
         title: 'LEAF: Navigating Concept Drift in Cellular Networks',
         authors: 'Shinan Liu, Francesco Bronzino, Paul Schmitt, Arjun Nitin Bhagoji, Nick Feamster, Hector Garcia Crespo, Timothy Coyle, and Brian Ward',
         venue: 'ACM CoNEXT 2023',
-        links: { 
+        links: {
             pdf: 'https://www.shinan.info/wp-content/uploads/2023/09/liu-conext23.pdf',
             data: 'https://forms.gle/g5pbB5qRHeBsEmZJ6'
-         }
+        }
     },
     {
         year: 2023,
@@ -116,11 +97,11 @@ const publicationsData = [
         title: 'AMIR: Active Multimodal Interaction Recognition from Video and Network Traffic in Connected Environments',
         authors: 'Shinan Liu, Tarun Mangla, Ted Shaowang, Jinjin Zhao, John Paparrizos, Sanjay Krishnan, and Nick Feamster',
         venue: 'ACM IMWUT/UbiComp 2023',
-        links: { 
+        links: {
             pdf: 'https://www.shinan.info/wp-content/uploads/2023/03/liu-imwut23.pdf',
             website: 'http://amir-vidnet.github.io/',
             data: 'https://drive.google.com/drive/folders/1RGZQHSV3SbmfYFF6rQzN_9sI_rRtETpM'
-         }
+        }
     },
     {
         year: 2023,
@@ -138,10 +119,10 @@ const publicationsData = [
         title: 'Stars Can Tell: A Robust Method to Defend Against GPS Spoofing Attacks using Off-the-shelf Chipset',
         authors: 'Shinan Liu*, Xiang Cheng*, Hanchao Yang, Yuanchao Shu, Xiaoran Weng, Ping Guo, Kexiong Curtis Zeng, Gang Wang, and Yaling Yang',
         venue: 'USENIX Security 2021',
-        links: { 
-            pdf: 'https://www.usenix.org/system/files/sec21-liu-shinan.pdf', 
-            website: 'https://sites.google.com/uchicago.edu/starscantell', 
-            code: 'https://drive.google.com/file/d/1RhmQq9n_O9Hz-jSJGpsEcN_ix-6T7ycJ/view?usp=sharing', 
+        links: {
+            pdf: 'https://www.usenix.org/system/files/sec21-liu-shinan.pdf',
+            website: 'https://sites.google.com/uchicago.edu/starscantell',
+            code: 'https://drive.google.com/file/d/1RhmQq9n_O9Hz-jSJGpsEcN_ix-6T7ycJ/view?usp=sharing',
             slides: 'https://www.usenix.org/system/files/sec21_slides_liu-shinan.pdf',
             video: 'https://www.youtube.com/watch?v=FIhlBOD01pk',
             data: 'https://drive.google.com/drive/folders/1LlvrtDNnt_MIO7oNHhA9LEjyiPK8U2oT?usp=sharing'
@@ -154,9 +135,10 @@ const publicationsData = [
         title: 'Characterizing Service Provider Response to the COVID-19 Pandemic in the United States',
         authors: 'Shinan Liu, Paul Schmitt, Francesco Bronzino, and Nick Feamster',
         venue: 'PAM 2021',
-        links: { 
+        links: {
             pdf: 'https://arxiv.org/pdf/2011.00419.pdf',
-            video: 'https://www.youtube.com/watch?v=7CVRgFoHINA' }
+            video: 'https://www.youtube.com/watch?v=7CVRgFoHINA'
+        }
     },
     {
         year: 2021,
@@ -174,11 +156,12 @@ const publicationsData = [
         title: 'All Your GPS Are Belong to Us: Towards Stealthy Manipulation of Road Navigation Systems',
         authors: 'Kexiong Curtis Zeng, Shinan Liu, Yuanchao Shu, Dong Wang, Haoyu Li, Yanzhi Dou, Gang Wang, and Yaling Yang',
         venue: 'USENIX Security 2018',
-        links: { 
+        links: {
             pdf: 'https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-zeng.pdf',
             slides: 'https://www.usenix.org/sites/default/files/conference/protected-files/security18_slides_zeng.pdf',
             video: 'https://www.youtube.com/watch?v=IduM2rtlbj8',
-            media: 'https://www.forbes.com/sites/thomasbrewster/2018/07/12/google-maps-gps-hack-takes-victims-to-ghost-locations/' }
+            media: 'https://www.forbes.com/sites/thomasbrewster/2018/07/12/google-maps-gps-hack-takes-victims-to-ghost-locations/'
+        }
     },
     {
         year: 2025,
@@ -217,6 +200,28 @@ const publicationsData = [
         links: {
             pdf: 'https://arxiv.org/pdf/2508.03151'
         }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
+        area: ['ml-for-systems', 'security', 'cps'],
+        title: 'SafeCoop: Unravelling Full Stack Safety in Agentic Collaborative Driving',
+        authors: 'Xiangbo Gao, Tzu-Hsiang Lin, Ruojing Song, Yuheng Wu, Kuan-Ru Huang, Zicheng Jin, Fangzhou Lin, Shinan Liu, Zhengzhong Tu',
+        venue: 'In Submission',
+        links: {
+            pdf: 'https://www.arxiv.org/pdf/2510.18123',
+            code: 'https://github.com/taco-group/SafeCoop',
+            website: 'https://xiangbogaobarry.github.io/SafeCoop/'
+        }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
+        area: ['ml-for-systems'],
+        title: 'λ-GRPO: Unifying the GRPO Frameworks with Learnable Token Preferences',
+        authors: 'Yining Wang*, Jinman Zhao*, Chuangxin Zhao, Shuhao Guan, Gerald Penn, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2510.06870' }
     },
     // =================================================================
     // =========================== Workshop ============================
@@ -282,9 +287,10 @@ const publicationsData = [
         title: 'A Practical GPS Location Spoofing Attack in Road Navigation Scenario',
         authors: 'Kexiong Curtis Zeng, Yuanchao Shu, Shinan Liu, Yanzhi Dou, and Yaling Yang',
         venue: 'ACM HotMobile 2017',
-        links: { 
+        links: {
             pdf: 'https://www.shinan.info/wp-content/uploads/2018/05/HotMobile-17.pdf',
-            video: 'https://www.youtube.com/watch?v=6UhT3gjTXp8' }
+            video: 'https://www.youtube.com/watch?v=6UhT3gjTXp8'
+        }
     },
     // =================================================================
     // ============================ Poster =============================
