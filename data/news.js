@@ -1,6 +1,12 @@
 // data/news.js
 const newsData = [
     { 
+        date: 'Dec 2025', 
+        title: 'Our paper "WiFinger: Fingerprinting Noisy IoT Event Traffic Using Packet-level Sequence Matching" is accepted at NDSS 2026!', 
+        content: 'A Non-ML technique for wireless fingerprinting of IoT event traffic under high noise, designed from first principles.',
+        url: 'https://arxiv.org/pdf/2508.03151' 
+    },
+    { 
         date: 'Sept 2025', 
         title: 'Our paper "JITI: Dynamic Model Serving for Just-in-Time Traffic Inference" is accepted at CoNEXT 2025!', 
         content: 'A multi-year effort to adaptively serve ML models for network traffic classifications.',
