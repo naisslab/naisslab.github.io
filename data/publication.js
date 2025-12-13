@@ -14,24 +14,33 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
-        area: ['ml-for-systems'],
-        title: 'NetSSM: Multi-Flow State-Aware Network Trace Generation using State-Space Models',
-        authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
         area: ['ml-for-systems','security'],
         title: 'Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic',
         authors: 'Van Tran, Shinan Liu, Tian Li, Nick Feamster',
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2511.20497' }
     },
+    {
+        year: 2025,
+        type: 'Preprint',
+        area: ['security', 'cps'],
+        title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
+        authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/abs/2502.03682' }
+    },
     // =================================================================
     // ========================= Conference ============================
     // =================================================================
+    {
+        year: 2026,
+        type: 'Conference',
+        area: ['ml-for-systems'],
+        title: 'NetSSM: Multi-Flow State-Aware Network Trace Generation using State-Space Models',
+        authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
+        venue: 'CoNEXT 2026',
+        links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
+    },
     {
         year: 2026,
         type: 'Conference',
@@ -202,15 +211,6 @@ const publicationsData = [
         authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, Klara Nahrstedt',
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['security', 'cps'],
-        title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
-        authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/abs/2502.03682' }
     },
     {
         year: 2025,
