@@ -60,7 +60,9 @@ const publicationsData = [
         authors: 'Jiao Xu, Junwei Liu, Jiangwei Lao, Qi Zhu, Yunpeng Zhao, Xin Chen, Congyun Jin, Shinan Liu, Zhihong Lu, Jian Wang, Lihe Zhang, Ping Wang',
         venue: 'AAAI 2026 (Oral)',
         links: {
-            pdf: ''
+            pdf: 'https://arxiv.org/pdf/2601.07344',
+            code: 'https://github.com/AQ-MedAI/PulseMind',
+            model: 'https://huggingface.co/AQ-MedAI/PulseMind-72B'
         }
     },
     {
