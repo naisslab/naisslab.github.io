@@ -99,15 +99,17 @@
         .hero-title-wrap {
             position: relative;
             display: inline-block;
+            width: fit-content;
+            padding-inline: 0.35rem;
         }
 
         .hero-main-title {
             font-family: 'Noto Serif', serif;
             font-weight: 700;
             letter-spacing: 0.01em;
-            line-height: 1.06;
+            line-height: 1.02;
             color: #f7fafc;
-            max-width: 18ch;
+            max-width: none;
             margin-inline: auto;
             text-wrap: balance;
             position: relative;
@@ -117,7 +119,7 @@
         .hero-ghost {
             position: absolute;
             left: 50%;
-            top: 54%;
+            top: 56%;
             transform: translate(-50%, -50%);
             width: max-content;
             max-width: 92vw;
@@ -126,7 +128,7 @@
             letter-spacing: 0.02em;
             line-height: 1.1;
             font-weight: 600;
-            color: rgba(220, 228, 239, 0.42);
+            color: rgba(220, 228, 239, 0.45);
             white-space: nowrap;
             pointer-events: none;
             user-select: none;
@@ -140,7 +142,8 @@
             letter-spacing: 0.01em;
             color: #f4d56a;
             text-shadow: 0 2px 18px rgba(240, 207, 89, 0.2);
-            display: inline-block;
+            display: block;
+            line-height: 1;
         }
 
         @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -450,11 +453,11 @@
                 <div class="hero-title-wrap mx-auto">
                     <p class="hero-ghost">ML Systems, Networking, and Security</p>
                     <h1 class="hero-main-title text-4xl sm:text-5xl lg:text-7xl">
-                        Networked AI Systems and
-                        <span class="block">Security Lab</span>
+                        Networked AI Systems and Security Lab
+                        <!-- <span class="block">Security Lab</span> -->
                     </h1>
                 </div>
-                <p class="hero-lab-name mt-3 sm:mt-4">NAISS<br>Lab</p>
+                <p class="hero-lab-name mt-2 sm:mt-3">NAISS Lab</p>
                 <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-100/90 leading-relaxed">
                     Developing the next generation of intelligent systems to ensure our networked world is accessible,
                     reliable, and secure.
