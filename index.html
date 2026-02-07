@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -30,7 +30,7 @@
         }
 
         body {
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             background:
                 radial-gradient(1250px 440px at 8% -12%, rgba(2, 70, 56, 0.16), transparent 62%),
                 radial-gradient(960px 360px at 90% 2%, rgba(24, 46, 85, 0.14), transparent 64%),
@@ -43,7 +43,7 @@
         h2,
         h3,
         .lab-brand {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Noto Serif', serif;
             color: var(--ink-primary);
             letter-spacing: 0.01em;
         }
@@ -102,7 +102,7 @@
         }
 
         .hero-main-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Noto Serif', serif;
             font-weight: 700;
             letter-spacing: 0.01em;
             line-height: 1.06;
@@ -121,7 +121,7 @@
             transform: translate(-50%, -50%);
             width: max-content;
             max-width: 92vw;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Noto Serif', serif;
             font-size: clamp(1.45rem, 4.1vw, 3rem);
             letter-spacing: 0.02em;
             line-height: 1.1;
@@ -133,13 +133,14 @@
         }
 
         .hero-lab-name {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Noto Serif', serif;
             font-size: clamp(2.2rem, 5.3vw, 4.1rem);
-            line-height: 1;
+            line-height: 0.88;
             font-weight: 700;
             letter-spacing: 0.01em;
             color: #f4d56a;
             text-shadow: 0 2px 18px rgba(240, 207, 89, 0.2);
+            display: inline-block;
         }
 
         @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -155,16 +156,7 @@
         .section-title {
             border-bottom: 1px solid var(--line);
             padding-bottom: 0.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 2rem;
-            height: 2px;
-            background: var(--accent);
+            display: inline-block;
         }
 
         .nav-link {
@@ -291,6 +283,28 @@
             flex-wrap: wrap;
         }
 
+        .publication-body {
+            min-width: 0;
+        }
+
+        .publication-actions {
+            margin-top: 0.45rem;
+        }
+
+        .pdf-action-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(2, 70, 56, 0.35);
+            border-radius: 9999px;
+            padding: 0.18rem 0.72rem;
+            font-size: 0.82rem;
+            line-height: 1.25;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
         .pub-badge {
             display: inline-flex;
             align-items: center;
@@ -355,7 +369,7 @@
         @media (min-width: 768px) {
             .publication-item {
                 display: grid;
-                grid-template-columns: 9.5rem minmax(0, 1fr);
+                grid-template-columns: 8.7rem minmax(0, 1fr) minmax(4.5rem, auto);
                 gap: 0.8rem;
                 padding: 0.95rem 1.1rem;
             }
@@ -364,6 +378,13 @@
                 align-items: flex-start;
                 flex-direction: column;
                 gap: 0.45rem;
+            }
+
+            .publication-actions {
+                margin-top: 0;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
             }
 
             .news-item {
@@ -433,7 +454,7 @@
                         <span class="block">Security Lab</span>
                     </h1>
                 </div>
-                <p class="hero-lab-name mt-3 sm:mt-4">NAISS Lab</p>
+                <p class="hero-lab-name mt-3 sm:mt-4">NAISS<br>Lab</p>
                 <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-100/90 leading-relaxed">
                     Developing the next generation of intelligent systems to ensure our networked world is accessible,
                     reliable, and secure.
@@ -630,30 +651,44 @@
                     return;
                 }
 
-                container.innerHTML = filteredPubs.map(pub => `
+                container.innerHTML = filteredPubs.map(pub => {
+                    const extraLinks = [
+                        pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : '',
+                        pub.links.code ? `<a href="${pub.links.code}" class="publication-link" target="_blank" rel="noopener noreferrer">Code</a>` : '',
+                        pub.links.media ? `<a href="${pub.links.media}" class="publication-link" target="_blank" rel="noopener noreferrer">Media</a>` : '',
+                        pub.links.slides ? `<a href="${pub.links.slides}" class="publication-link" target="_blank" rel="noopener noreferrer">Slides</a>` : '',
+                        pub.links.video ? `<a href="${pub.links.video}" class="publication-link" target="_blank" rel="noopener noreferrer">Video</a>` : '',
+                        pub.links.data ? `<a href="${pub.links.data}" class="publication-link" target="_blank" rel="noopener noreferrer">Data</a>` : '',
+                        pub.links.model ? `<a href="${pub.links.model}" class="publication-link" target="_blank" rel="noopener noreferrer">Model</a>` : ''
+                    ].filter(Boolean);
+
+                    const extraLinksHtml = extraLinks.length > 0
+                        ? `<div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">${extraLinks.join('')}</div>`
+                        : '';
+
+                    const pdfActionHtml = pub.links.pdf
+                        ? `<a href="${pub.links.pdf}" class="publication-link pdf-action-link" target="_blank" rel="noopener noreferrer">PDF</a>`
+                        : '';
+
+                    return `
                     <article class="publication-item ${pub.type === 'Preprint' ? 'preprint' : ''}">
                         <div class="publication-meta">
                             <span class="pub-badge">${pub.year}</span>
                             <span class="pub-badge type">${pub.type}</span>
                         </div>
-                        <div>
+                        <div class="publication-body">
                             ${pub.award ? `<p class="publication-award">${pub.award}</p>` : ''}
                             <h3 class="font-semibold text-xl leading-tight">${pub.title}</h3>
                             <p class="text-slate-600 mt-1 text-sm">${pub.authors}</p>
                             <p class="text-slate-500 italic mt-1 text-sm">${pub.venue}</p>
-                            <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
-                                ${pub.links.pdf ? `<a href="${pub.links.pdf}" class="publication-link" target="_blank" rel="noopener noreferrer">PDF</a>` : ''}
-                                ${pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
-                                ${pub.links.code ? `<a href="${pub.links.code}" class="publication-link" target="_blank" rel="noopener noreferrer">Code</a>` : ''}
-                                ${pub.links.media ? `<a href="${pub.links.media}" class="publication-link" target="_blank" rel="noopener noreferrer">Media</a>` : ''}
-                                ${pub.links.slides ? `<a href="${pub.links.slides}" class="publication-link" target="_blank" rel="noopener noreferrer">Slides</a>` : ''}
-                                ${pub.links.video ? `<a href="${pub.links.video}" class="publication-link" target="_blank" rel="noopener noreferrer">Video</a>` : ''}
-                                ${pub.links.data ? `<a href="${pub.links.data}" class="publication-link" target="_blank" rel="noopener noreferrer">Data</a>` : ''}
-                                ${pub.links.model ? `<a href="${pub.links.model}" class="publication-link" target="_blank" rel="noopener noreferrer">Model</a>` : ''}
-                            </div>
+                            ${extraLinksHtml}
+                        </div>
+                        <div class="publication-actions">
+                            ${pdfActionHtml}
                         </div>
                     </article>
-                `).join('');
+                    `;
+                }).join('');
             }
 
             function populatePubFilters() {
