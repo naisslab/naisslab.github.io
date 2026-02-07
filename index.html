@@ -102,9 +102,9 @@
         }
 
         .hero-main-title {
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.01em;
             line-height: 1.06;
             color: #f7fafc;
             max-width: 18ch;
@@ -121,9 +121,9 @@
             transform: translate(-50%, -50%);
             width: max-content;
             max-width: 92vw;
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.45rem, 4.1vw, 3rem);
-            letter-spacing: 0.01em;
+            letter-spacing: 0.02em;
             line-height: 1.1;
             font-weight: 600;
             color: rgba(220, 228, 239, 0.42);
@@ -133,12 +133,23 @@
         }
 
         .hero-lab-name {
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.2rem, 5.3vw, 4.1rem);
             line-height: 1;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--warm);
+            letter-spacing: 0.01em;
+            color: #f4d56a;
+            text-shadow: 0 2px 18px rgba(240, 207, 89, 0.2);
+        }
+
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .hero-lab-name {
+                background: linear-gradient(180deg, #ffe58a 0%, #f5d25f 52%, #e0ba46 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
         }
 
         .section-title {
@@ -435,7 +446,7 @@
                 <div class="text-center">
                     <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Our Mission</h2>
                     <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg leading-relaxed text-slate-600">
-                        The NAISS (pronounced as "nice") Lab in the Department of DASE at The University of Hong Kong
+                        The NAISS (pronounced as "nice") Lab in the Department of Data and Systems Engineering at The University of Hong Kong
                         operates at the critical intersection of machine learning systems, computer networking, and
                         security. Our research follows a virtuous cycle: we build foundational ML systems and
                         techniques, apply them to secure critical network infrastructure, and extend them to improve
@@ -704,14 +715,52 @@
                 icons[1].classList.toggle('hidden');
             });
 
+            const sections = Array.from(document.querySelectorAll('section'));
+            const navLinks = Array.from(document.querySelectorAll('header a.nav-link'));
+
+            function setActiveNavLink(sectionId) {
+                navLinks.forEach(link => {
+                    const target = link.getAttribute('href');
+                    link.classList.toggle('active', Boolean(sectionId) && target === `#${sectionId}`);
+                });
+            }
+
+            function getCurrentSectionId() {
+                if (sections.length === 0) return '';
+                const probeY = Math.max(90, window.innerHeight * 0.24);
+
+                for (const section of sections) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= probeY && rect.bottom > probeY) {
+                        return section.id;
+                    }
+                }
+
+                if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) {
+                    return sections[sections.length - 1].id;
+                }
+
+                return sections[0].id;
+            }
+
+            function syncActiveNavToViewport() {
+                setActiveNavLink(getCurrentSectionId());
+            }
+
             document.querySelectorAll('#mobile-menu a, header nav a').forEach(link => {
-                link.addEventListener('click', (e) => {
+                link.addEventListener('click', () => {
+                    const sectionId = link.getAttribute('href').replace('#', '');
+                    setActiveNavLink(sectionId);
+
                     if (link.closest('#mobile-menu')) {
                         document.getElementById('mobile-menu').classList.add('hidden');
                         const icons = document.getElementById('mobile-menu-button').querySelectorAll('svg');
                         icons[0].classList.remove('hidden');
                         icons[1].classList.add('hidden');
                     }
+
+                    // Smooth scroll updates hash/position asynchronously; reconcile shortly after.
+                    window.setTimeout(syncActiveNavToViewport, 220);
                 });
             });
 
@@ -740,25 +789,14 @@
                 renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
             });
 
-            // Active nav link on scroll
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('header nav a.nav-link');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 80) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
+            window.addEventListener('scroll', syncActiveNavToViewport, { passive: true });
+            window.addEventListener('resize', syncActiveNavToViewport);
+            window.addEventListener('hashchange', () => {
+                const hashSectionId = window.location.hash.replace('#', '');
+                if (hashSectionId) {
+                    setActiveNavLink(hashSectionId);
+                    window.setTimeout(syncActiveNavToViewport, 120);
+                }
             });
 
             // Initial Render
@@ -768,6 +806,7 @@
             populatePubFilters();
             renderPublications();
             renderNews();
+            syncActiveNavToViewport();
         });
     </script>
 </body>
