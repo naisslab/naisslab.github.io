@@ -8,49 +8,188 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
     <style>
+        :root {
+            --bg-main: #f2f6f5;
+            --bg-surface: #ffffff;
+            --bg-soft: #f6fbfa;
+            --ink-primary: #13263b;
+            --ink-secondary: #3e5366;
+            --line: #d4e1df;
+            --accent: #024638;
+            --accent-soft: #d7ebe5;
+            --warm: #f0cf59;
+            --shadow-soft: 0 16px 34px rgba(10, 34, 58, 0.09);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F5F2;
-            color: #024638;
+            font-family: 'Noto Sans', sans-serif;
+            background:
+                radial-gradient(1250px 440px at 8% -12%, rgba(2, 70, 56, 0.16), transparent 62%),
+                radial-gradient(960px 360px at 90% 2%, rgba(24, 46, 85, 0.14), transparent 64%),
+                var(--bg-main);
+            color: var(--ink-secondary);
+            min-height: 100vh;
         }
 
-        .nav-link {
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-            border-bottom: 2px solid transparent;
+        h1,
+        h2,
+        h3,
+        .lab-brand {
+            font-family: 'Noto Serif', serif;
+            color: var(--ink-primary);
+            letter-spacing: 0.01em;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: #024638;
-            border-bottom-color: #024638;
+        section {
+            scroll-margin-top: 84px;
+        }
+
+        .site-header {
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid rgba(2, 70, 56, 0.14);
+            backdrop-filter: blur(12px);
+        }
+
+        .section-shell {
+            position: relative;
+        }
+
+        .section-shell.soft {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 251, 250, 0.76));
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/334155/E2E8F0?text=ML+Systems,+Networking,+Security');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(102deg, #111a2c 0%, #162847 54%, #1a2e4d 100%);
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 65%, rgba(2, 70, 56, 0.3), transparent 35%),
+                radial-gradient(circle at 86% -5%, rgba(64, 91, 132, 0.45), transparent 35%);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 1;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(7, 14, 26, 0.2), rgba(8, 15, 28, 0.52));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title-wrap {
+            position: relative;
+            display: inline-block;
+            width: fit-content;
+            padding-inline: 0.35rem;
+        }
+
+        .hero-main-title {
+            font-family: 'Noto Serif', serif;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            line-height: 1.02;
+            color: #f7fafc;
+            max-width: none;
+            margin-inline: auto;
+            text-wrap: balance;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-ghost {
+            position: absolute;
+            left: 50%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+            width: max-content;
+            max-width: 92vw;
+            font-family: 'Noto Serif', serif;
+            font-size: clamp(1.45rem, 4.1vw, 3rem);
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            font-weight: 600;
+            color: rgba(220, 228, 239, 0.45);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-lab-name {
+            font-family: 'Noto Serif', serif;
+            font-size: clamp(2.2rem, 5.3vw, 4.1rem);
+            line-height: 0.88;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            color: #f4d56a;
+            text-shadow: 0 2px 18px rgba(240, 207, 89, 0.2);
+            display: block;
+            line-height: 1;
+        }
+
+        @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+            .hero-lab-name {
+                background: linear-gradient(180deg, #ffe58a 0%, #f5d25f 52%, #e0ba46 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
         }
 
         .section-title {
-            border-bottom: 3px solid #024638;
+            border-bottom: 1px solid var(--line);
             padding-bottom: 0.5rem;
             display: inline-block;
         }
 
+        .nav-link {
+            color: var(--ink-secondary);
+            transition: color 0.25s ease, border-bottom-color 0.25s ease;
+            border-bottom: 2px solid transparent;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--ink-primary);
+            border-bottom-color: var(--accent);
+        }
+
         .research-card {
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-soft);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(17, 36, 63, 0.14);
         }
 
         .tag {
-            background-color: #E8E2DD;
-            color: #024638;
+            background-color: var(--accent-soft);
+            color: var(--accent);
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.875rem;
@@ -58,63 +197,229 @@
         }
 
         .publication-link {
-            color: #024638;
+            color: var(--accent);
             font-weight: 600;
-            transition: opacity 0.2s;
+            transition: color 0.2s ease;
+            border-bottom: 1px solid transparent;
         }
 
         .publication-link:hover {
-            opacity: 0.8;
+            color: var(--ink-primary);
+            border-bottom-color: currentColor;
         }
 
         .btn-primary {
-            background-color: #024638;
+            background-color: var(--accent);
             color: white;
-            transition: background-color 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
 
         .btn-primary:hover {
-            background-color: #EA634A;
+            background-color: #035a48;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(2, 70, 56, 0.25);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.14);
+            color: #f8fbff;
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.7);
         }
 
         .filter-btn {
-            border: 1px solid #E8E2DD;
-            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid var(--line);
+            color: var(--ink-secondary);
+            background: var(--bg-surface);
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
 
         .filter-btn.active,
         .filter-btn:hover {
-            background-color: #024638;
+            background-color: var(--accent);
             color: white;
-            border-color: #024638;
+            border-color: var(--accent);
+        }
+
+        .select-control {
+            border: 1px solid var(--line);
+            background: var(--bg-surface);
+            color: var(--ink-secondary);
+        }
+
+        .select-control:focus {
+            outline: 2px solid transparent;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(2, 70, 56, 0.18);
+        }
+
+        .publication-item,
+        .news-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--line);
+            border-radius: 0.85rem;
+            box-shadow: 0 6px 20px rgba(17, 36, 63, 0.06);
+            padding: 0.85rem 0.95rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .publication-item:hover,
+        .news-item:hover {
+            border-color: #b3cfc9;
+            transform: translateY(-1px);
+        }
+
+        .publication-item.preprint {
+            border-left: 4px solid var(--accent);
+            padding-left: 0.8rem;
+        }
+
+        .publication-meta {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .publication-body {
+            min-width: 0;
+        }
+
+        .publication-actions {
+            margin-top: 0.45rem;
+        }
+
+        .pdf-action-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(2, 70, 56, 0.35);
+            border-radius: 9999px;
+            padding: 0.18rem 0.72rem;
+            font-size: 0.82rem;
+            line-height: 1.25;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .pub-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 9999px;
+            background: #e6eef0;
+            color: #2f4b5f;
+        }
+
+        .pub-badge.type {
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        .publication-award {
+            color: #9a7230;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .news-date {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .news-link {
+            color: var(--ink-primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .news-link:hover {
+            border-bottom-color: currentColor;
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        @media (max-width: 767px) {
+            .hero-ghost {
+                opacity: 0.32;
+                top: 60%;
+                font-size: clamp(1.1rem, 7vw, 1.7rem);
+            }
+
+            .hero-main-title {
+                max-width: 14.5ch;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .publication-item {
+                display: grid;
+                grid-template-columns: 8.7rem minmax(0, 1fr) minmax(4.5rem, auto);
+                gap: 0.8rem;
+                padding: 0.95rem 1.1rem;
+            }
+
+            .publication-meta {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.45rem;
+            }
+
+            .publication-actions {
+                margin-top: 0;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+            }
+
+            .news-item {
+                display: grid;
+                grid-template-columns: 7.2rem minmax(0, 1fr);
+                gap: 0.75rem;
+                align-items: start;
+            }
         }
     </style>
 </head>
 
 <body class="antialiased">
 
-    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+    <header id="header" class="site-header fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-[4.35rem]">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="text-xl font-bold text-gray-800">NAISS Lab</a>
+                    <a href="#home" class="lab-brand text-3xl leading-none font-semibold">NAISS Lab</a>
                 </div>
                 <div class="hidden md:block">
-                    <nav class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about"
-                            class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">About</a>
-                        <a href="#research"
-                            class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Research</a>
-                        <a href="#people"
-                            class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">People</a>
-                        <a href="#publications"
-                            class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Publications</a>
-                        <a href="#news" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">News</a>
+                    <nav class="ml-8 flex items-baseline gap-1 lg:gap-3">
+                        <a href="#about" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">About</a>
+                        <a href="#research" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Research</a>
+                        <a href="#people" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">People</a>
+                        <a href="#publications" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Publications</a>
+                        <a href="#news" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">News</a>
                     </nav>
                 </div>
-                <div class="-mr-2 flex md:hidden">
+                <div class="-mr-1 flex md:hidden">
                     <button id="mobile-menu-button" type="button"
-                        class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500"
+                        class="inline-flex items-center justify-center p-2 rounded-md border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-900/20"
                         aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -131,117 +436,117 @@
                 </div>
             </div>
         </div>
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about"
-                    class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">About</a>
-                <a href="#research"
-                    class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">Research</a>
-                <a href="#people"
-                    class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">People</a>
-                <a href="#publications"
-                    class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">Publications</a>
-                <a href="#news" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-700">News</a>
+        <div class="md:hidden hidden border-t border-slate-200 bg-white/95 shadow-lg" id="mobile-menu">
+            <div class="px-3 py-3 space-y-1">
+                <a href="#about" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">About</a>
+                <a href="#research" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Research</a>
+                <a href="#people" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">People</a>
+                <a href="#publications" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Publications</a>
+                <a href="#news" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">News</a>
             </div>
         </div>
     </header>
 
     <main>
         <section id="home" class="hero-bg pt-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
-                    <span class="block">Networked AI Systems and Security Lab</span>
-                    <span class="block text-amber-300 text-3xl md:text-5xl mt-2">NAISS Lab</span>
-                </h1>
-                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">
+            <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-36 text-white text-center">
+                <div class="hero-title-wrap mx-auto">
+                    <p class="hero-ghost">ML Systems, Networking, and Security</p>
+                    <h1 class="hero-main-title text-4xl sm:text-5xl lg:text-7xl">
+                        Networked AI Systems and Security Lab
+                        <!-- <span class="block">Security Lab</span> -->
+                    </h1>
+                </div>
+                <p class="hero-lab-name mt-2 sm:mt-3">NAISS Lab</p>
+                <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-100/90 leading-relaxed">
                     Developing the next generation of intelligent systems to ensure our networked world is accessible,
                     reliable, and secure.
                 </p>
             </div>
         </section>
 
-        <section id="about" class="py-20 sm:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" class="section-shell soft py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Our Mission</h2>
-                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-                        The NAISS (pronounced as "nice") Lab in the department of DASE at The University of Hong Kong
-                        operates at the critical intersection of Machine Learning Systems, Computer Networking, and
-                        Security. Our research follows a virtuous cycle: we build foundational ML systems and
-                        techniques, apply them to secure our critical network infrastructure, and extend them to improve
-                        interactions and well-beings with the cyber-physical world. You can contact us at <a
-                            href="mailto:shinan6@hku.hk">shinan6@hku.hk</a> .
+                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Our Mission</h2>
+                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg leading-relaxed text-slate-600">
+                        The NAISS (pronounced as "nice") Lab in the Department of Data and Systems Engineering at The University of Hong Kong
+                        operates at the critical intersection of machine learning systems, computer networking, and
+                        security. Our research follows a virtuous cycle: we build foundational ML systems and
+                        techniques, apply them to secure critical network infrastructure, and extend them to improve
+                        interactions and well-beings with the cyber-physical world. Contact us at
+                        <a href="mailto:shinan6@hku.hk" class="publication-link">shinan6@hku.hk</a>.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="py-20 sm:py-24">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="research" class="section-shell py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Research Directions</h2>
-                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Research Directions</h2>
+                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg text-slate-600">
                         Our work is organized into three synergistic research thrusts. Click on each area to explore
                         further.
                     </p>
                 </div>
-                <div id="research-container" class="mt-16 grid md:grid-cols-3 gap-8">
+                <div id="research-container" class="mt-12 grid gap-6 md:grid-cols-3">
                 </div>
             </div>
         </section>
 
-        <section id="people" class="py-20 sm:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="people" class="section-shell soft py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
-                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Our Team</h2>
+                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg text-slate-600">
                         Meet the researchers and students driving innovation at the NAISS Lab.
                     </p>
                 </div>
                 <div class="mt-8 flex justify-center flex-wrap gap-2" id="people-filter-controls">
                 </div>
-                <div id="people-container" class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div id="people-container" class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 </div>
             </div>
         </section>
 
-        <section id="publications" class="py-20 sm:py-24">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="publications" class="section-shell py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Publications</h2>
-                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Publications</h2>
+                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg text-slate-600">
                         A selection of our scholarly output.
                     </p>
                 </div>
-                <div class="mt-8 max-w-2xl mx-auto flex flex-col sm:flex-row gap-4">
-                    <select id="pub-year-filter" class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-md bg-white">
+                <div class="mt-8 max-w-4xl mx-auto flex flex-col sm:flex-row gap-3">
+                    <select id="pub-year-filter" class="select-control w-full sm:w-1/2 p-2.5 rounded-md">
                         <option value="all">All Years</option>
                     </select>
-                    <select id="pub-area-filter" class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-md bg-white">
+                    <select id="pub-area-filter" class="select-control w-full sm:w-1/2 p-2.5 rounded-md">
                         <option value="all">All Research Areas</option>
                     </select>
                 </div>
-                <div id="publications-container" class="mt-8 space-y-4 max-w-4xl mx-auto">
+                <div id="publications-container" class="mt-6 grid gap-2.5 max-w-6xl mx-auto">
                 </div>
             </div>
         </section>
 
-        <section id="news" class="py-20 sm:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="news" class="section-shell soft py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="section-title text-3xl font-bold tracking-tight sm:text-4xl">Latest News</h2>
+                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Latest News</h2>
                 </div>
-                <div id="news-container" class="mt-8 max-w-3xl mx-auto space-y-4">
+                <div id="news-container" class="mt-6 max-w-6xl mx-auto grid gap-2.5">
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Networked AI Systems and Security (NAISS) Lab</p>
-            <p class="text-sm text-gray-400 mt-2">The University of Hong Kong</p>
+    <footer class="bg-slate-900 text-slate-100">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm sm:text-base">&copy; 2026 Networked AI Systems and Security (NAISS) Lab</p>
+            <p class="text-sm text-slate-400 mt-2">The University of Hong Kong</p>
         </div>
     </footer>
 
@@ -260,16 +565,16 @@
                 const container = document.getElementById('research-container');
                 if (!container) return;
                 container.innerHTML = researchData.map(item => `
-                    <div class="research-card bg-white p-8 rounded-lg shadow-md cursor-pointer" data-id="${item.id}">
-                        <div class="text-4xl">${item.icon}</div>
-                        <h3 class="mt-4 text-xl font-bold">${item.title}</h3>
-                        <p class="mt-2 text-gray-600">${item.description}</p>
-                        <div id="subtopics-${item.id}" class="hidden mt-4 pl-4 border-l-2 border-amber-200">
-                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    <article class="research-card bg-white/95 p-6 rounded-xl cursor-pointer" data-id="${item.id}">
+                        <div class="text-3xl">${item.icon}</div>
+                        <h3 class="mt-3 text-2xl font-semibold">${item.title}</h3>
+                        <p class="mt-2 text-slate-600 leading-relaxed">${item.description}</p>
+                        <div id="subtopics-${item.id}" class="hidden mt-4 pl-4 border-l-2 border-teal-700/30">
+                            <ul class="list-disc list-inside text-slate-600 space-y-1.5 text-sm sm:text-base">
                                 ${item.subtopics.map(sub => `<li>${sub}</li>`).join('')}
                             </ul>
                         </div>
-                    </div>
+                    </article>
                 `).join('');
             }
 
@@ -285,17 +590,17 @@
                 }
 
                 const directorNameHtml = director.website
-                    ? `<a href="${director.website}" target="_blank" rel="noopener noreferrer" class="hover:underline">${director.firstName} ${director.lastName}</a>`
+                    ? `<a href="${director.website}" target="_blank" rel="noopener noreferrer" class="news-link">${director.firstName} ${director.lastName}</a>`
                     : `${director.firstName} ${director.lastName}`;
 
                 const directorHtml = `
-                    <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 mb-8">
-                        <div class="flex flex-col sm:flex-row items-center bg-stone-50 rounded-lg shadow-sm p-6">
+                    <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 mb-3">
+                        <div class="flex flex-col sm:flex-row items-center bg-white/95 border border-slate-200 rounded-xl shadow-sm p-5 sm:p-6">
                             <img src="${director.photo}" alt="${director.firstName} ${director.lastName}" class="w-32 h-32 rounded-full object-cover flex-shrink-0">
                             <div class="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
-                                <h3 class="text-xl font-bold">${directorNameHtml}</h3>
-                                <p class="text-amber-700 font-semibold">${director.status}</p>
-                                <p class="text-gray-600">${director.education}</p>
+                                <h3 class="text-2xl font-semibold">${directorNameHtml}</h3>
+                                <p class="text-accent font-semibold">${director.status}</p>
+                                <p class="text-slate-600">${director.education}</p>
                             </div>
                         </div>
                     </div>
@@ -303,16 +608,16 @@
 
                 container.innerHTML = directorHtml + filteredPeople.map(person => {
                     const personNameHtml = person.website
-                        ? `<a href="${person.website}" target="_blank" rel="noopener noreferrer" class="hover:underline">${person.firstName} ${person.lastName}</a>`
+                        ? `<a href="${person.website}" target="_blank" rel="noopener noreferrer" class="news-link">${person.firstName} ${person.lastName}</a>`
                         : `${person.firstName} ${person.lastName}`;
 
                     return `
-                    <div class="person-card text-center bg-stone-50 p-6 rounded-lg shadow-sm" data-role="${person.role}">
+                    <div class="person-card text-center bg-white/90 border border-slate-200 p-5 rounded-xl shadow-sm" data-role="${person.role}">
                         <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" class="w-24 h-24 rounded-full mx-auto object-cover">
-                        <h3 class="mt-4 font-bold text-lg">${personNameHtml}</h3>
-                        <p class="text-amber-700 font-semibold">${person.role}</p>
-                        <p class="text-gray-500 text-sm">${person.status}</p>
-                        <p class="text-gray-500 text-sm">${person.education}</p>
+                        <h3 class="mt-3 font-semibold text-xl">${personNameHtml}</h3>
+                        <p class="text-accent font-semibold text-sm">${person.role}</p>
+                        <p class="text-slate-500 text-sm">${person.status}</p>
+                        <p class="text-slate-500 text-sm">${person.education}</p>
                     </div>
                     `
                 }).join('');
@@ -323,7 +628,7 @@
                 if (!controlsContainer) return;
                 const roles = ['All', 'Postdoc Scholar', 'Ph.D. Student', 'MPhil Student', 'Intern'];
                 controlsContainer.innerHTML = roles.map((role, index) => `
-                    <button class="filter-btn px-4 py-1 rounded-full text-sm ${index === 0 ? 'active' : ''}" data-filter="${role.toLowerCase().replace(/\./g, '')}">${role}</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full text-sm ${index === 0 ? 'active' : ''}" data-filter="${role.toLowerCase().replace(/\./g, '')}">${role}</button>
                 `).join('');
             }
 
@@ -345,27 +650,48 @@
                 }
 
                 if (filteredPubs.length === 0) {
-                    container.innerHTML = `<p class="text-center text-gray-500">No publications match the selected filters.</p>`;
+                    container.innerHTML = `<p class="text-center text-slate-500">No publications match the selected filters.</p>`;
                     return;
                 }
 
-                container.innerHTML = filteredPubs.map(pub => `
-                    <div class="bg-white p-4 rounded-lg shadow-sm ${pub.type === 'Preprint' ? 'border-l-4 border-amber-200' : ''}">
-                        ${pub.award ? `<p class="text-amber-600 font-bold mb-1 text-sm">🏆 ${pub.award}</p>` : ''}
-                        <h3 class="font-bold text-lg">${pub.title}</h3>
-                        <p class="text-gray-600 mt-1 text-sm">${pub.authors}</p>
-                        <p class="text-gray-500 italic mt-1 text-sm">${pub.venue}</p>
-                        <div class="mt-2 space-x-3 text-sm">
-                            ${pub.links.pdf ? `<a href="${pub.links.pdf}" class="publication-link" target="_blank" rel="noopener noreferrer">[PDF]</a>` : ''}
-                            ${pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">[Website]</a>` : ''}
-                            ${pub.links.code ? `<a href="${pub.links.code}" class="publication-link" target="_blank" rel="noopener noreferrer">[Code]</a>` : ''}
-                            ${pub.links.media ? `<a href="${pub.links.media}" class="publication-link" target="_blank" rel="noopener noreferrer">[Media]</a>` : ''}
-                            ${pub.links.slides ? `<a href="${pub.links.slides}" class="publication-link" target="_blank" rel="noopener noreferrer">[Slides]</a>` : ''}
-                            ${pub.links.video ? `<a href="${pub.links.video}" class="publication-link" target="_blank" rel="noopener noreferrer">[Video]</a>` : ''}
-                            ${pub.links.data ? `<a href="${pub.links.data}" class="publication-link" target="_blank" rel="noopener noreferrer">[Data]</a>` : ''}
+                container.innerHTML = filteredPubs.map(pub => {
+                    const extraLinks = [
+                        pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : '',
+                        pub.links.code ? `<a href="${pub.links.code}" class="publication-link" target="_blank" rel="noopener noreferrer">Code</a>` : '',
+                        pub.links.media ? `<a href="${pub.links.media}" class="publication-link" target="_blank" rel="noopener noreferrer">Media</a>` : '',
+                        pub.links.slides ? `<a href="${pub.links.slides}" class="publication-link" target="_blank" rel="noopener noreferrer">Slides</a>` : '',
+                        pub.links.video ? `<a href="${pub.links.video}" class="publication-link" target="_blank" rel="noopener noreferrer">Video</a>` : '',
+                        pub.links.data ? `<a href="${pub.links.data}" class="publication-link" target="_blank" rel="noopener noreferrer">Data</a>` : '',
+                        pub.links.model ? `<a href="${pub.links.model}" class="publication-link" target="_blank" rel="noopener noreferrer">Model</a>` : ''
+                    ].filter(Boolean);
+
+                    const extraLinksHtml = extraLinks.length > 0
+                        ? `<div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">${extraLinks.join('')}</div>`
+                        : '';
+
+                    const pdfActionHtml = pub.links.pdf
+                        ? `<a href="${pub.links.pdf}" class="publication-link pdf-action-link" target="_blank" rel="noopener noreferrer">PDF</a>`
+                        : '';
+
+                    return `
+                    <article class="publication-item ${pub.type === 'Preprint' ? 'preprint' : ''}">
+                        <div class="publication-meta">
+                            <span class="pub-badge">${pub.year}</span>
+                            <span class="pub-badge type">${pub.type}</span>
                         </div>
-                    </div>
-                `).join('');
+                        <div class="publication-body">
+                            ${pub.award ? `<p class="publication-award">${pub.award}</p>` : ''}
+                            <h3 class="font-semibold text-xl leading-tight">${pub.title}</h3>
+                            <p class="text-slate-600 mt-1 text-sm">${pub.authors}</p>
+                            <p class="text-slate-500 italic mt-1 text-sm">${pub.venue}</p>
+                            ${extraLinksHtml}
+                        </div>
+                        <div class="publication-actions">
+                            ${pdfActionHtml}
+                        </div>
+                    </article>
+                    `;
+                }).join('');
             }
 
             function populatePubFilters() {
@@ -400,17 +726,18 @@
                 if (!container) return;
 
                 container.innerHTML = newsData.map(item => {
-                    // This is the logic for creating the title element
                     const titleHtml = item.url
-                        ? `<a href="${item.url}" class="hover:underline">${item.title}</a>`
+                        ? `<a href="${item.url}" class="news-link" target="_blank" rel="noopener noreferrer">${item.title}</a>`
                         : item.title;
 
                     return `
-                        <div class="border-l-4 border-amber-300 pl-4">
-                            <p class="text-sm font-semibold text-amber-700">${item.date}</p>
-                            <h3 class="mt-0.5 text-lg font-bold">${titleHtml}</h3>
-                            <p class="mt-1 text-gray-600 text-sm">${item.content}</p>
-                        </div>
+                        <article class="news-item">
+                            <p class="news-date">${item.date}</p>
+                            <div>
+                                <h3 class="text-xl font-semibold leading-tight">${titleHtml}</h3>
+                                <p class="mt-1 text-slate-600 text-sm">${item.content}</p>
+                            </div>
+                        </article>
                     `;
                 }).join('');
             }
@@ -426,14 +753,52 @@
                 icons[1].classList.toggle('hidden');
             });
 
+            const sections = Array.from(document.querySelectorAll('section'));
+            const navLinks = Array.from(document.querySelectorAll('header a.nav-link'));
+
+            function setActiveNavLink(sectionId) {
+                navLinks.forEach(link => {
+                    const target = link.getAttribute('href');
+                    link.classList.toggle('active', Boolean(sectionId) && target === `#${sectionId}`);
+                });
+            }
+
+            function getCurrentSectionId() {
+                if (sections.length === 0) return '';
+                const probeY = Math.max(90, window.innerHeight * 0.24);
+
+                for (const section of sections) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= probeY && rect.bottom > probeY) {
+                        return section.id;
+                    }
+                }
+
+                if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) {
+                    return sections[sections.length - 1].id;
+                }
+
+                return sections[0].id;
+            }
+
+            function syncActiveNavToViewport() {
+                setActiveNavLink(getCurrentSectionId());
+            }
+
             document.querySelectorAll('#mobile-menu a, header nav a').forEach(link => {
-                link.addEventListener('click', (e) => {
+                link.addEventListener('click', () => {
+                    const sectionId = link.getAttribute('href').replace('#', '');
+                    setActiveNavLink(sectionId);
+
                     if (link.closest('#mobile-menu')) {
                         document.getElementById('mobile-menu').classList.add('hidden');
                         const icons = document.getElementById('mobile-menu-button').querySelectorAll('svg');
                         icons[0].classList.remove('hidden');
                         icons[1].classList.add('hidden');
                     }
+
+                    // Smooth scroll updates hash/position asynchronously; reconcile shortly after.
+                    window.setTimeout(syncActiveNavToViewport, 220);
                 });
             });
 
@@ -462,25 +827,14 @@
                 renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
             });
 
-            // Active nav link on scroll
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('header nav a.nav-link');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 80) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
+            window.addEventListener('scroll', syncActiveNavToViewport, { passive: true });
+            window.addEventListener('resize', syncActiveNavToViewport);
+            window.addEventListener('hashchange', () => {
+                const hashSectionId = window.location.hash.replace('#', '');
+                if (hashSectionId) {
+                    setActiveNavLink(hashSectionId);
+                    window.setTimeout(syncActiveNavToViewport, 120);
+                }
             });
 
             // Initial Render
@@ -490,6 +844,7 @@
             populatePubFilters();
             renderPublications();
             renderNews();
+            syncActiveNavToViewport();
         });
     </script>
 </body>
