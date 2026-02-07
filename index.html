@@ -13,16 +13,16 @@
         rel="stylesheet">
     <style>
         :root {
-            --bg-main: #eef2f7;
+            --bg-main: #f2f6f5;
             --bg-surface: #ffffff;
-            --bg-soft: #f8fafc;
-            --ink-primary: #14253f;
-            --ink-secondary: #41526a;
-            --line: #d6deea;
-            --accent: #175f50;
-            --accent-soft: #dcebe6;
-            --warm: #915f2d;
-            --shadow-soft: 0 16px 34px rgba(17, 36, 63, 0.08);
+            --bg-soft: #f6fbfa;
+            --ink-primary: #13263b;
+            --ink-secondary: #3e5366;
+            --line: #d4e1df;
+            --accent: #024638;
+            --accent-soft: #d7ebe5;
+            --warm: #f0cf59;
+            --shadow-soft: 0 16px 34px rgba(10, 34, 58, 0.09);
         }
 
         * {
@@ -32,8 +32,8 @@
         body {
             font-family: 'IBM Plex Sans', sans-serif;
             background:
-                radial-gradient(1250px 420px at 12% -8%, rgba(184, 201, 230, 0.55), transparent 62%),
-                radial-gradient(900px 300px at 88% 2%, rgba(197, 225, 212, 0.52), transparent 65%),
+                radial-gradient(1250px 440px at 8% -12%, rgba(2, 70, 56, 0.16), transparent 62%),
+                radial-gradient(960px 360px at 90% 2%, rgba(24, 46, 85, 0.14), transparent 64%),
                 var(--bg-main);
             color: var(--ink-secondary);
             min-height: 100vh;
@@ -54,7 +54,7 @@
 
         .site-header {
             background: rgba(255, 255, 255, 0.94);
-            border-bottom: 1px solid rgba(214, 222, 234, 0.92);
+            border-bottom: 1px solid rgba(2, 70, 56, 0.14);
             backdrop-filter: blur(12px);
         }
 
@@ -63,25 +63,32 @@
         }
 
         .section-shell.soft {
-            background: rgba(255, 255, 255, 0.76);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 251, 250, 0.76));
         }
 
         .hero-bg {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(118deg, #11213a 0%, #1a3a5f 48%, #1d6961 100%);
+            background: linear-gradient(102deg, #111a2c 0%, #162847 54%, #1a2e4d 100%);
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 65%, rgba(2, 70, 56, 0.3), transparent 35%),
+                radial-gradient(circle at 86% -5%, rgba(64, 91, 132, 0.45), transparent 35%);
         }
 
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
-            opacity: 0.25;
+            opacity: 1;
             pointer-events: none;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
-            background-size: 44px 44px;
+            background: linear-gradient(180deg, rgba(7, 14, 26, 0.2), rgba(8, 15, 28, 0.52));
         }
 
         .hero-content {
@@ -89,12 +96,49 @@
             z-index: 1;
         }
 
-        .hero-kicker {
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            font-size: 0.72rem;
+        .hero-title-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-main-title {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.06;
+            color: #f7fafc;
+            max-width: 18ch;
+            margin-inline: auto;
+            text-wrap: balance;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-ghost {
+            position: absolute;
+            left: 50%;
+            top: 54%;
+            transform: translate(-50%, -50%);
+            width: max-content;
+            max-width: 92vw;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: clamp(1.45rem, 4.1vw, 3rem);
+            letter-spacing: 0.01em;
+            line-height: 1.1;
             font-weight: 600;
-            color: #d7e9ff;
+            color: rgba(220, 228, 239, 0.42);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-lab-name {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: clamp(2.2rem, 5.3vw, 4.1rem);
+            line-height: 1;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--warm);
         }
 
         .section-title {
@@ -165,9 +209,9 @@
         }
 
         .btn-primary:hover {
-            background-color: #1b745f;
+            background-color: #035a48;
             transform: translateY(-1px);
-            box-shadow: 0 10px 24px rgba(23, 95, 80, 0.25);
+            box-shadow: 0 10px 24px rgba(2, 70, 56, 0.25);
         }
 
         .btn-secondary {
@@ -205,7 +249,7 @@
         .select-control:focus {
             outline: 2px solid transparent;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(23, 95, 80, 0.18);
+            box-shadow: 0 0 0 3px rgba(2, 70, 56, 0.18);
         }
 
         .publication-item,
@@ -220,7 +264,7 @@
 
         .publication-item:hover,
         .news-item:hover {
-            border-color: #b6c7dc;
+            border-color: #b3cfc9;
             transform: translateY(-1px);
         }
 
@@ -246,8 +290,8 @@
             text-transform: uppercase;
             padding: 0.2rem 0.5rem;
             border-radius: 9999px;
-            background: #e7edf6;
-            color: #2e4769;
+            background: #e6eef0;
+            color: #2f4b5f;
         }
 
         .pub-badge.type {
@@ -256,14 +300,14 @@
         }
 
         .publication-award {
-            color: var(--warm);
+            color: #9a7230;
             font-weight: 700;
             font-size: 0.8rem;
             margin-bottom: 0.2rem;
         }
 
         .news-date {
-            color: var(--warm);
+            color: var(--accent);
             font-weight: 700;
             font-size: 0.8rem;
             letter-spacing: 0.04em;
@@ -279,6 +323,22 @@
 
         .news-link:hover {
             border-bottom-color: currentColor;
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        @media (max-width: 767px) {
+            .hero-ghost {
+                opacity: 0.32;
+                top: 60%;
+                font-size: clamp(1.1rem, 7vw, 1.7rem);
+            }
+
+            .hero-main-title {
+                max-width: 14.5ch;
+            }
         }
 
         @media (min-width: 768px) {
@@ -324,7 +384,7 @@
                 </div>
                 <div class="-mr-1 flex md:hidden">
                     <button id="mobile-menu-button" type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-700/30"
+                        class="inline-flex items-center justify-center p-2 rounded-md border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-900/20"
                         aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -354,19 +414,19 @@
 
     <main>
         <section id="home" class="hero-bg pt-16">
-            <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 md:py-32 text-white">
-                <p class="hero-kicker">The University of Hong Kong · Department of DASE</p>
-                <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white max-w-5xl">
-                    Networked AI Systems and Security Lab
-                </h1>
-                <p class="mt-5 max-w-3xl text-base sm:text-lg md:text-xl text-slate-100/90 leading-relaxed">
+            <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-36 text-white text-center">
+                <div class="hero-title-wrap mx-auto">
+                    <p class="hero-ghost">ML Systems, Networking, and Security</p>
+                    <h1 class="hero-main-title text-4xl sm:text-5xl lg:text-7xl">
+                        Networked AI Systems and
+                        <span class="block">Security Lab</span>
+                    </h1>
+                </div>
+                <p class="hero-lab-name mt-3 sm:mt-4">NAISS Lab</p>
+                <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-100/90 leading-relaxed">
                     Developing the next generation of intelligent systems to ensure our networked world is accessible,
                     reliable, and secure.
                 </p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#research" class="btn-primary px-5 py-2.5 rounded-md font-semibold text-sm sm:text-base">Explore Research</a>
-                    <a href="#publications" class="btn-secondary px-5 py-2.5 rounded-md font-semibold text-sm sm:text-base">Browse Publications</a>
-                </div>
             </div>
         </section>
 
@@ -474,7 +534,7 @@
                         <div class="text-3xl">${item.icon}</div>
                         <h3 class="mt-3 text-2xl font-semibold">${item.title}</h3>
                         <p class="mt-2 text-slate-600 leading-relaxed">${item.description}</p>
-                        <div id="subtopics-${item.id}" class="hidden mt-4 pl-4 border-l-2 border-emerald-300">
+                        <div id="subtopics-${item.id}" class="hidden mt-4 pl-4 border-l-2 border-teal-700/30">
                             <ul class="list-disc list-inside text-slate-600 space-y-1.5 text-sm sm:text-base">
                                 ${item.subtopics.map(sub => `<li>${sub}</li>`).join('')}
                             </ul>
@@ -504,7 +564,7 @@
                             <img src="${director.photo}" alt="${director.firstName} ${director.lastName}" class="w-32 h-32 rounded-full object-cover flex-shrink-0">
                             <div class="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
                                 <h3 class="text-2xl font-semibold">${directorNameHtml}</h3>
-                                <p class="text-emerald-800 font-semibold">${director.status}</p>
+                                <p class="text-accent font-semibold">${director.status}</p>
                                 <p class="text-slate-600">${director.education}</p>
                             </div>
                         </div>
@@ -520,7 +580,7 @@
                     <div class="person-card text-center bg-white/90 border border-slate-200 p-5 rounded-xl shadow-sm" data-role="${person.role}">
                         <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" class="w-24 h-24 rounded-full mx-auto object-cover">
                         <h3 class="mt-3 font-semibold text-xl">${personNameHtml}</h3>
-                        <p class="text-emerald-800 font-semibold text-sm">${person.role}</p>
+                        <p class="text-accent font-semibold text-sm">${person.role}</p>
                         <p class="text-slate-500 text-sm">${person.status}</p>
                         <p class="text-slate-500 text-sm">${person.education}</p>
                     </div>
