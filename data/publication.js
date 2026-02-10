@@ -3,13 +3,22 @@ const publicationsData = [
     // ========================== Preprints ============================
     // =================================================================
     {
+        year: 2026,
+        type: 'Preprint',
+        area: ['ml-for-systems','security','cps'],
+        title: 'PACC: Protocol-Aware Cross-Layer Compression for Compact Network Traffic Representation',
+        authors: 'Zhaochen Guo, Tianyufei Zhou, Honghao Wang, Ronghua Li, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2602.08331' }
+    },
+    {
         year: 2025,
         type: 'Preprint',
         area: ['ml-for-systems'],
         title: 'ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis',
         authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
         venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/abs/2402.03694' }
+        links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
     },
     {
         year: 2025,
@@ -27,7 +36,7 @@ const publicationsData = [
         title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
         authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
         venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/abs/2502.03682' }
+        links: { pdf: 'https://arxiv.org/pdf/2502.03682' }
     },
     // =================================================================
     // ========================= Conference ============================
@@ -264,7 +273,7 @@ const publicationsData = [
         title: 'Feasibility of State Space Models for Network Traffic Generation',
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
         venue: 'SIGCOMM NAIC 2024',
-        links: { pdf: 'https://arxiv.org/abs/2406.02784' }
+        links: { pdf: 'https://arxiv.org/pdf/2406.02784' }
     },
     {
         year: 2023,
