@@ -4,7 +4,7 @@ const peopleData = [
     { lastName: 'Chen', firstName: 'Zerui', role: 'Ph.D. Student', education: 'M.S. from HIT', status: '2026 Spring - ', photo: 'images/people/zerui-chen.jpg', website: '#' },
     { lastName: 'Dan', firstName: 'Zihao', role: 'Ph.D. Student', education: 'M.S. from ZJU', status: '2025 Fall - ', photo: 'images/people/zihao-dan.jpg', website: '#' },
     { lastName: 'Ding', firstName: 'Junhui', role: 'Intern', education: 'Undergrad from THU', status: '2025 Summer - ', photo: 'images/people/junhui-ding.jpg' },
-    { lastName: 'Gan', firstName: 'Minghao', role: 'Intern', education: 'Undergrad from SYSU', status: '2026 Spring - ', photo: 'images/people/minghao-gan.jpg' },
+    { lastName: 'Gan', firstName: 'Minghao', role: 'Intern', education: 'Undergrad from SYSU', status: '2026 Spring - ', photo: 'images/people/minghao-gan.jpg', website: 'https://ganminghao.github.io/'},
     { lastName: 'Guo', firstName: 'Zhaochen', role: 'Intern', education: 'Undergrad from UESTC', status: '2025 Summer - ', photo: 'images/people/zhaochen-guo.jpg' },
     { lastName: 'Qiu', firstName: 'Mingxi', role: 'Intern', education: 'M.S. from THU', status: '2025 Fall - ', photo: 'images/people/mingxi-qiu.jpg' },
     { lastName: 'Liu', firstName: 'Chengeng', role: 'Intern', education: 'M.S. from BU', status: '2026 Spring - ', photo: 'images/people/chengeng-liu.jpg' },
