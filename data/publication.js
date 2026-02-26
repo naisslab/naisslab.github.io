@@ -84,6 +84,15 @@ const publicationsData = [
         links: { pdf: 'https://arxiv.org/pdf/2503.05675?' }
     },
     {
+        year: 2026,
+        type: 'Journal',
+        area: ['ml-for-systems', 'cps'],
+        title: 'Digital Phenotyping via Passive Network Traffic Monitoring: Prospective Observational Study in University Students',
+        authors: 'Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang',
+        venue: 'JMIR Formative Research',
+        links: { pdf: 'https://preprints.jmir.org/preprint/84618/accepted' }
+    },
+    {
         year: 2025,
         type: 'Conference',
         area: ['ml-for-systems'],
@@ -222,15 +231,6 @@ const publicationsData = [
         authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, Klara Nahrstedt',
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems', 'cps'],
-        title: 'Digital Phenotyping via Passive Network Traffic Monitoring: Feasibility Acceptability in University Students',
-        authors: 'Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang',
-        venue: 'In Submission',
-        links: { pdf: 'https://preprints.jmir.org/preprint/84618' }
     },
     {
         year: 2025,
