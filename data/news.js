@@ -1,6 +1,12 @@
 // data/news.js
 const newsData = [
     { 
+        date: 'Feb 2026', 
+        title: 'Dr. Liu has been awarded as a PI for the Faculty Interdisciplinary Fund (HKD 400,000).', 
+        content: 'This support will help advance interdisciplinary research initiatives at NAISS Lab. Thanks to the Faculty and department for this generous support!',
+        url: '' 
+    },
+    { 
         date: 'Jan 2026', 
         title: 'Dr. Liu is invited to give a talk at the Harvard AI and Robotics Seminar!', 
         content: 'Excited to share on "The Promise of Generative Synthetic Data for Networked Intelligent Systems", which highlights our latest works on generative AI for networking and systems.',
