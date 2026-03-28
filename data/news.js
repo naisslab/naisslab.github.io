@@ -1,5 +1,11 @@
 // data/news.js
 const newsData = [
+    {
+        date: 'Mar 2026',
+        title: 'Dr. Liu serves on the program committee of the FMSys workshop and the ML and Systems Rising Stars selection committee.',
+        content: 'These service roles support the broader systems and machine learning research community.',
+        url: ''
+    },
     { 
         date: 'Feb 2026', 
         title: 'Dr. Liu has been awarded as a PI for the Faculty Interdisciplinary Fund (HKD 400,000).', 

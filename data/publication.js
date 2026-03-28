@@ -12,6 +12,15 @@ const publicationsData = [
         links: { pdf: 'https://arxiv.org/pdf/2602.08331' }
     },
     {
+        year: 2026,
+        type: 'Preprint',
+        area: ['ml-for-systems'],
+        title: 'HillInfer: Efficient Long-Context LLM Inference on the Edge with Hierarchical KV Eviction using SmartSSD',
+        authors: 'He Sun, Shinan Liu, Li Li, Mingjun Xiao',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2602.18750' }
+    },
+    {
         year: 2025,
         type: 'Preprint',
         area: ['ml-for-systems'],
@@ -91,6 +100,15 @@ const publicationsData = [
         authors: 'Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang',
         venue: 'JMIR Formative Research',
         links: { pdf: 'https://preprints.jmir.org/preprint/84618/accepted' }
+    },
+    {
+        year: 2026,
+        type: 'Conference',
+        area: ['ml-for-systems'],
+        title: 'LoFi: Low-Cost Early Application Filter Based on Cached ML Decisions',
+        authors: 'Johann Hugon, Shinan Liu, Paul Schmitt, Nick Feamster, Francesco Bronzino',
+        venue: 'NetSoft 2026',
+        links: {}
     },
     {
         year: 2025,
