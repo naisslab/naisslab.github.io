@@ -1,9 +1,9 @@
 // data/news.js
 const newsData = [
     {
-        date: 'Mar 2026',
-        title: 'Dr. Liu serves on the program committee of the FMSys workshop and the ML and Systems Rising Stars selection committee.',
-        content: 'These service roles support the broader systems and machine learning research community.',
+        date: 'Apr 2026',
+        title: 'Dr. Liu serves on the PETS 2027 program committee, the FMSys Workshop 2026 program committee, and the 2026 ML and Systems Rising Stars selection committee.',
+        content: 'These service roles support the broader privacy, systems, and machine learning research communities.',
         url: ''
     },
     { 
