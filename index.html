@@ -618,6 +618,7 @@
                         <p class="text-accent font-semibold text-sm">${person.role}</p>
                         <p class="text-slate-500 text-sm">${person.status}</p>
                         <p class="text-slate-500 text-sm">${person.education}</p>
+                        ${person.next ? `<p class="text-slate-500 text-sm">${person.next}</p>` : ''}
                     </div>
                     `
                 }).join('');
