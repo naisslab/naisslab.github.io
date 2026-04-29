@@ -23,15 +23,6 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
-        area: ['ml-for-systems'],
-        title: 'ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis',
-        authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
         area: ['ml-for-systems','security'],
         title: 'Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic',
         authors: 'Van Tran, Shinan Liu, Tian Li, Nick Feamster',
@@ -50,6 +41,15 @@ const publicationsData = [
     // =================================================================
     // ========================= Conference ============================
     // =================================================================
+    {
+        year: 2026,
+        type: 'Conference',
+        area: ['ml-for-systems'],
+        title: 'ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis',
+        authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
+        venue: 'ACM Symposium on Cloud Computing (SoCC\'26)',
+        links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
+    },
     {
         year: 2026,
         type: 'Conference',

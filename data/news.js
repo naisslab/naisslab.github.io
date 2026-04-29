@@ -2,6 +2,12 @@
 const newsData = [
     {
         date: 'Apr 2026',
+        title: 'Our paper "ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis" is accepted at SoCC\'26!',
+        content: 'ServeFlow will appear in the ACM Symposium on Cloud Computing program in Singapore, November 18-20, 2026.',
+        url: 'https://arxiv.org/pdf/2402.03694'
+    },
+    {
+        date: 'Apr 2026',
         title: 'Dr. Liu serves on the PETS 2027 program committee, the FMSys Workshop 2026 program committee, and the 2026 ML and Systems Rising Stars selection committee.',
         content: 'These service roles support the broader privacy, systems, and machine learning research communities.',
         url: ''
