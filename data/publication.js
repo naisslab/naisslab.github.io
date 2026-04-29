@@ -47,7 +47,7 @@ const publicationsData = [
         area: ['ml-for-systems'],
         title: 'ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis',
         authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
-        venue: 'ACM Symposium on Cloud Computing (SoCC\'26)',
+        venue: 'SoCC 2026',
         links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
     },
     {
@@ -98,7 +98,7 @@ const publicationsData = [
         area: ['ml-for-systems', 'cps'],
         title: 'Digital Phenotyping via Passive Network Traffic Monitoring: Prospective Observational Study in University Students',
         authors: 'Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang',
-        venue: 'JMIR Formative Research',
+        venue: 'JMIR Formative Research 2026',
         links: { pdf: 'https://preprints.jmir.org/preprint/84618/accepted' }
     },
     {
