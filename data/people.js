@@ -1,6 +1,7 @@
 // data/people.js
 const peopleData = [
     { lastName: 'Liu', firstName: 'Shinan', role: 'Faculty', education: 'Ph.D. from UChicago', status: 'Director', photo: 'images/people/shinan-liu.jpg', website: 'https://www.shinan.info/' },
+    { lastName: 'Cao', firstName: 'Hangcheng', role: 'Postdoc Scholar', education: 'Postdoc from CityU, Ph.D. from Hunan/NTU', status: '2026 Summer - ', photo: 'images/people/hangcheng-cao.png' },
     { lastName: 'Chen', firstName: 'Zerui', role: 'Ph.D. Student', education: 'M.S. from HIT', status: '2026 Spring - ', photo: 'images/people/zerui-chen.jpg', website: '#' },
     { lastName: 'Dan', firstName: 'Zihao', role: 'Ph.D. Student', education: 'M.S. from ZJU', status: '2025 Fall - ', photo: 'images/people/zihao-dan.jpg', website: '#' },
     { lastName: 'Ding', firstName: 'Junhui', role: 'Intern', education: 'Undergrad from THU', status: '2025 Summer - ', photo: 'images/people/junhui-ding.jpg' },
