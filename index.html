@@ -578,15 +578,46 @@
                 `).join('');
             }
 
+            function renderPersonCards(people) {
+                return people.map(person => {
+                    const personNameHtml = person.website
+                        ? `<a href="${person.website}" target="_blank" rel="noopener noreferrer" class="news-link">${person.firstName} ${person.lastName}</a>`
+                        : `${person.firstName} ${person.lastName}`;
+
+                    return `
+                    <div class="person-card text-center bg-white/90 border border-slate-200 p-5 rounded-xl shadow-sm" data-role="${person.role}">
+                        <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <h3 class="mt-3 font-semibold text-xl">${personNameHtml}</h3>
+                        <p class="text-accent font-semibold text-sm">${person.role}</p>
+                        <p class="text-slate-500 text-sm">${person.status}</p>
+                        <p class="text-slate-500 text-sm">${person.education}</p>
+                        ${person.next ? `<p class="text-slate-500 text-sm">${person.next}</p>` : ''}
+                    </div>
+                    `;
+                }).join('');
+            }
+
+            function renderAlumniGroup() {
+                return `
+                    <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 pt-6 mt-3 border-t border-slate-200">
+                        <h3 class="text-2xl font-semibold text-center">Alumni</h3>
+                    </div>
+                    ${renderPersonCards(alumniData)}
+                `;
+            }
+
             function renderPeople(filter = 'all') {
                 const container = document.getElementById('people-container');
                 if (!container) return;
                 const director = peopleData.find(p => p.role === 'Faculty');
                 const others = peopleData.filter(p => p.role !== 'Faculty');
+                const normalizedFilter = filter.toLowerCase().replace(/\./g, '');
 
                 let filteredPeople = others;
-                if (filter !== 'all') {
-                    filteredPeople = others.filter(p => p.role.toLowerCase().replace(/\./g, '') === filter.toLowerCase().replace(/\./g, ''));
+                if (normalizedFilter === 'alumni') {
+                    filteredPeople = [];
+                } else if (normalizedFilter !== 'all') {
+                    filteredPeople = others.filter(p => p.role.toLowerCase().replace(/\./g, '') === normalizedFilter);
                 }
 
                 const directorNameHtml = director.website
@@ -606,28 +637,17 @@
                     </div>
                 `;
 
-                container.innerHTML = directorHtml + filteredPeople.map(person => {
-                    const personNameHtml = person.website
-                        ? `<a href="${person.website}" target="_blank" rel="noopener noreferrer" class="news-link">${person.firstName} ${person.lastName}</a>`
-                        : `${person.firstName} ${person.lastName}`;
+                const alumniHtml = (normalizedFilter === 'all' || normalizedFilter === 'alumni')
+                    ? renderAlumniGroup()
+                    : '';
 
-                    return `
-                    <div class="person-card text-center bg-white/90 border border-slate-200 p-5 rounded-xl shadow-sm" data-role="${person.role}">
-                        <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" class="w-24 h-24 rounded-full mx-auto object-cover">
-                        <h3 class="mt-3 font-semibold text-xl">${personNameHtml}</h3>
-                        <p class="text-accent font-semibold text-sm">${person.role}</p>
-                        <p class="text-slate-500 text-sm">${person.status}</p>
-                        <p class="text-slate-500 text-sm">${person.education}</p>
-                        ${person.next ? `<p class="text-slate-500 text-sm">${person.next}</p>` : ''}
-                    </div>
-                    `
-                }).join('');
+                container.innerHTML = directorHtml + renderPersonCards(filteredPeople) + alumniHtml;
             }
 
             function renderPeopleFilters() {
                 const controlsContainer = document.getElementById('people-filter-controls');
                 if (!controlsContainer) return;
-                const roles = ['All', 'Postdoc Scholar', 'Ph.D. Student', 'MPhil Student', 'Intern'];
+                const roles = ['All', 'Postdoc Scholar', 'Ph.D. Student', 'MPhil Student', 'Intern', 'Alumni'];
                 controlsContainer.innerHTML = roles.map((role, index) => `
                     <button class="filter-btn px-4 py-1.5 rounded-full text-sm ${index === 0 ? 'active' : ''}" data-filter="${role.toLowerCase().replace(/\./g, '')}">${role}</button>
                 `).join('');
