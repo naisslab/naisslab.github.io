@@ -5,6 +5,15 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
+        area: ['ml-for-systems'],
+        title: 'TraceCodec: A Compiler-Backed Neural Codec for Stateful Multi-Flow Network Traffic Traces',
+        authors: 'Junhui Ding, Xinchen Zhang, Xiaohui Xie, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2605.29941' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
         area: ['ml-for-systems','security','cps'],
         title: 'PACC: Protocol-Aware Cross-Layer Compression for Compact Network Traffic Representation',
         authors: 'Zhaochen Guo, Tianyufei Zhou, Honghao Wang, Ronghua Li, Shinan Liu',
