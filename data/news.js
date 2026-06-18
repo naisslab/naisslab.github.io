@@ -2,6 +2,18 @@
 const newsData = [
     {
         date: 'Jun 2026',
+        title: 'Dr. Liu is invited to serve on the USENIX Security 2027 program committee.',
+        content: 'This service role supports the broader systems security and privacy research community.',
+        url: ''
+    },
+    {
+        date: 'Jun 2026',
+        title: 'A Smart Traffic Fund project on recognising road works and temporary traffic arrangements has been approved.',
+        content: 'Dr. Liu serves as Co-I on the project.',
+        url: ''
+    },
+    {
+        date: 'Jun 2026',
         title: 'Dr. Liu is awarded RMB 500,000 in GPU Research Compute from Miracle Plus.',
         content: 'This support will provide GPU compute for multiple research projects across NAISS Lab.',
         url: ''
