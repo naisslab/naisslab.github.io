@@ -15,13 +15,13 @@ const newsData = [
     {
         date: 'Jun 2026',
         title: 'Dr. Liu is awarded RMB 500,000 in GPU Research Compute from Miracle Plus.',
-        content: 'This support will provide GPU compute for multiple research projects across NAISS Lab.',
+        content: 'This support, awarded with a 1.5% acceptance rate, will provide GPU compute for multiple research projects across NAISS Lab.',
         url: ''
     },
     {
         date: 'Apr 2026',
-        title: 'Our paper "ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis" is accepted at SoCC\'26!',
-        content: 'ServeFlow will appear in the ACM Symposium on Cloud Computing program in Singapore, November 18-20, 2026.',
+        title: 'Our paper "FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence" is accepted at SoCC\'26!',
+        content: 'FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence will appear in the ACM Symposium on Cloud Computing program in Singapore, November 18-20, 2026.',
         url: 'https://arxiv.org/pdf/2402.03694'
     },
     {

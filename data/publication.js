@@ -54,7 +54,7 @@ const publicationsData = [
         year: 2026,
         type: 'Conference',
         area: ['ml-for-systems'],
-        title: 'ServeFlow: A Fast-Slow Model Architecture for Network Traffic Analysis',
+        title: 'FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence',
         authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
         venue: 'SoCC 2026',
         links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
