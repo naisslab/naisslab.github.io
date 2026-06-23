@@ -2,6 +2,12 @@
 const newsData = [
     {
         date: 'Jun 2026',
+        title: 'Our paper "Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection" is accepted at CoNEXT 2026!',
+        content: 'The paper develops generative active adaptation methods for network intrusion detection under drift and class imbalance.',
+        url: 'https://arxiv.org/pdf/2503.03022'
+    },
+    {
+        date: 'Jun 2026',
         title: 'Dr. Liu is invited to serve on the USENIX Security 2027 program committee.',
         content: 'This service role supports the broader systems security and privacy research community.',
         url: ''

@@ -62,6 +62,15 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Conference',
+        area: ['ml-for-systems', 'security'],
+        title: 'Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection',
+        authors: 'Ragini Gupta, Shinan Liu, Xinchen Zhang, Ruixiao Zhang, Hadjer Benkraouda, Xinyue Hu, Phuong Cao, Nick Feamster, Klara Nahrstedt',
+        venue: 'CoNEXT 2026',
+        links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
+    },
+    {
+        year: 2026,
+        type: 'Conference',
         area: ['ml-for-systems'],
         title: 'NetSSM: Multi-Flow State-Aware Network Trace Generation using State-Space Models',
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
@@ -249,15 +258,6 @@ const publicationsData = [
             video: 'https://www.youtube.com/watch?v=IduM2rtlbj8',
             media: 'https://www.forbes.com/sites/thomasbrewster/2018/07/12/google-maps-gps-hack-takes-victims-to-ghost-locations/'
         }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems', 'security'],
-        title: 'Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection',
-        authors: 'Ragini Gupta, Shinan Liu, Ruixiao Zhang, Xinyue Hu, Pranav Kommaraju, Xiaoyang Wang, Hadjer Benkraouda, Nick Feamster, Klara Nahrstedt',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
     },
     {
         year: 2025,
