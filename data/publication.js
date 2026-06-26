@@ -23,6 +23,15 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
+        area: ['ml-for-systems', 'security'],
+        title: 'Agent-Assisted Side-Channel Attacks on Non-Prefix KV Cache in RAG',
+        authors: 'He Sun, Shinan Liu, Siyuan Ma, Junhao Li, Mingjun Xiao, Wenhao Jiang',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2606.21842' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
         area: ['ml-for-systems'],
         title: 'HillInfer: Efficient Long-Context LLM Inference on the Edge with Hierarchical KV Eviction using SmartSSD',
         authors: 'He Sun, Shinan Liu, Li Li, Mingjun Xiao',
@@ -46,6 +55,28 @@ const publicationsData = [
         authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
         venue: 'In Submission',
         links: { pdf: 'https://arxiv.org/pdf/2502.03682' }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
+        area: ['ml-for-systems', 'security', 'cps'],
+        title: 'SafeCoop: Unravelling Full Stack Safety in Agentic Collaborative Driving',
+        authors: 'Xiangbo Gao, Tzu-Hsiang Lin, Ruojing Song, Yuheng Wu, Kuan-Ru Huang, Zicheng Jin, Fangzhou Lin, Shinan Liu, Zhengzhong Tu',
+        venue: 'In Submission',
+        links: {
+            pdf: 'https://www.arxiv.org/pdf/2510.18123',
+            code: 'https://github.com/taco-group/SafeCoop',
+            website: 'https://xiangbogaobarry.github.io/SafeCoop/'
+        }
+    },
+    {
+        year: 2025,
+        type: 'Preprint',
+        area: ['ml-for-systems'],
+        title: 'λ-GRPO: Unifying the GRPO Frameworks with Learnable Token Preferences',
+        authors: 'Yining Wang*, Jinman Zhao*, Chuangxin Zhao, Shuhao Guan, Gerald Penn, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2510.06870' }
     },
     // =================================================================
     // ========================= Conference ============================
@@ -258,28 +289,6 @@ const publicationsData = [
             video: 'https://www.youtube.com/watch?v=IduM2rtlbj8',
             media: 'https://www.forbes.com/sites/thomasbrewster/2018/07/12/google-maps-gps-hack-takes-victims-to-ghost-locations/'
         }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems', 'security', 'cps'],
-        title: 'SafeCoop: Unravelling Full Stack Safety in Agentic Collaborative Driving',
-        authors: 'Xiangbo Gao, Tzu-Hsiang Lin, Ruojing Song, Yuheng Wu, Kuan-Ru Huang, Zicheng Jin, Fangzhou Lin, Shinan Liu, Zhengzhong Tu',
-        venue: 'In Submission',
-        links: {
-            pdf: 'https://www.arxiv.org/pdf/2510.18123',
-            code: 'https://github.com/taco-group/SafeCoop',
-            website: 'https://xiangbogaobarry.github.io/SafeCoop/'
-        }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
-        area: ['ml-for-systems'],
-        title: 'λ-GRPO: Unifying the GRPO Frameworks with Learnable Token Preferences',
-        authors: 'Yining Wang*, Jinman Zhao*, Chuangxin Zhao, Shuhao Guan, Gerald Penn, Shinan Liu',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2510.06870' }
     },
     // =================================================================
     // =========================== Workshop ============================
