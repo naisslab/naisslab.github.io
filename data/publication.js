@@ -50,15 +50,6 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
-        area: ['security', 'cps'],
-        title: 'Towards Scalable Defenses Against Intimate Partner Infiltrations',
-        authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2502.03682' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
         area: ['ml-for-systems', 'security', 'cps'],
         title: 'SafeCoop: Unravelling Full Stack Safety in Agentic Collaborative Driving',
         authors: 'Xiangbo Gao, Tzu-Hsiang Lin, Ruojing Song, Yuheng Wu, Kuan-Ru Huang, Zicheng Jin, Fangzhou Lin, Shinan Liu, Zhengzhong Tu',
@@ -81,6 +72,15 @@ const publicationsData = [
     // =================================================================
     // ========================= Conference ============================
     // =================================================================
+    {
+        year: 2026,
+        type: 'Conference',
+        area: ['security', 'cps'],
+        title: 'Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection',
+        authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
+        venue: 'IMWUT/UbiComp 2026',
+        links: { pdf: 'https://arxiv.org/pdf/2502.03682' }
+    },
     {
         year: 2026,
         type: 'Conference',

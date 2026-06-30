@@ -2,6 +2,12 @@
 const newsData = [
     {
         date: 'Jun 2026',
+        title: 'Our paper "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection" is accepted to UbiComp/IMWUT 2026!',
+        content: 'The paper explores whether low-privilege smartphone motion sensors can safely distinguish owners from intimate partners and detect risky actions in intimate partner infiltration scenarios.',
+        url: 'https://arxiv.org/pdf/2502.03682'
+    },
+    {
+        date: 'Jun 2026',
         title: 'Our paper "Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection" is accepted at CoNEXT 2026!',
         content: 'The paper develops generative active adaptation methods for network intrusion detection under drift and class imbalance.',
         url: 'https://arxiv.org/pdf/2503.03022'
