@@ -22,6 +22,6 @@ const peopleData = [
 
 const alumniData = [
     { lastName: 'Qiu', firstName: 'Mingxi', role: 'Intern', education: 'M.S. from THU', status: '2025 Fall - 2026 Spring', next: '-> Ph.D. Student at VT CS', photo: 'images/people/mingxi-qiu.jpg' },
-    { lastName: 'Wang', firstName: 'Doris', role: 'Intern', education: 'M.S. from UToronto', status: '2025 Summer - 2026 Spring', next: '-> Ph.D. Student at NYU CS', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=DW' },
+    { lastName: 'Wang', firstName: 'Doris', aliases: ['Yining Wang'], role: 'Intern', education: 'M.S. from UToronto', status: '2025 Summer - 2026 Spring', next: '-> Ph.D. Student at NYU CS', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=DW' },
     { lastName: 'Yuan', firstName: 'Ziwen', role: 'Intern', education: 'M.S. from CMU', status: '2025 Fall - 2026 Spring', next: '-> Ph.D. Student at PSU CS', photo: 'https://placehold.co/400x400/E8E2DD/4A4A4A?text=ZY' }
 ].sort((a, b) => a.lastName.localeCompare(b.lastName));

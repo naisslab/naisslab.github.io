@@ -334,6 +334,14 @@
             margin-bottom: 0.2rem;
         }
 
+        .publication-author-lab-member {
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: rgba(2, 70, 56, 0.32);
+            text-underline-offset: 0.16em;
+        }
+
         .news-date {
             color: var(--accent);
             font-weight: 700;
@@ -559,8 +567,39 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Data is now loaded from the external files above.
             // The large data arrays have been removed from this file.
+            const labMemberNames = new Set([...peopleData, ...alumniData].flatMap(person => [
+                `${person.firstName} ${person.lastName}`,
+                ...(person.aliases || [])
+            ]));
 
             // Render Functions
+            function escapeHtml(value) {
+                return String(value).replace(/[&<>"']/g, char => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                })[char]);
+            }
+
+            function normalizeAuthorName(name) {
+                return name.replace(/\*/g, '').replace(/\s+/g, ' ').trim();
+            }
+
+            function renderPublicationAuthors(authors) {
+                return authors.split(/,\s*/).map(author => {
+                    const authorName = author.trim();
+                    const escapedName = escapeHtml(authorName);
+
+                    if (labMemberNames.has(normalizeAuthorName(authorName))) {
+                        return `<strong class="publication-author-lab-member" title="NAISS Lab member">${escapedName}</strong>`;
+                    }
+
+                    return escapedName;
+                }).join(', ');
+            }
+
             function renderResearch() {
                 const container = document.getElementById('research-container');
                 if (!container) return;
@@ -703,7 +742,7 @@
                         <div class="publication-body">
                             ${pub.award ? `<p class="publication-award">${pub.award}</p>` : ''}
                             <h3 class="font-semibold text-xl leading-tight">${pub.title}</h3>
-                            <p class="text-slate-600 mt-1 text-sm">${pub.authors}</p>
+                            <p class="text-slate-600 mt-1 text-sm">${renderPublicationAuthors(pub.authors)}</p>
                             <p class="text-slate-500 italic mt-1 text-sm">${pub.venue}</p>
                             ${extraLinksHtml}
                         </div>

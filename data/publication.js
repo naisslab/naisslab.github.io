@@ -78,7 +78,7 @@ const publicationsData = [
         area: ['security', 'cps'],
         title: 'Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection',
         authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
-        venue: 'IMWUT/UbiComp 2026',
+        venue: 'ACM IMWUT/UbiComp 2026',
         links: { pdf: 'https://arxiv.org/pdf/2502.03682' }
     },
     {
@@ -87,7 +87,7 @@ const publicationsData = [
         area: ['ml-for-systems'],
         title: 'FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence',
         authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
-        venue: 'SoCC 2026',
+        venue: 'ACM SoCC 2026',
         links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
     },
     {
@@ -96,7 +96,7 @@ const publicationsData = [
         area: ['ml-for-systems', 'security'],
         title: 'Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection',
         authors: 'Ragini Gupta, Shinan Liu, Xinchen Zhang, Ruixiao Zhang, Hadjer Benkraouda, Xinyue Hu, Phuong Cao, Nick Feamster, Klara Nahrstedt',
-        venue: 'CoNEXT 2026',
+        venue: 'ACM CoNEXT 2026',
         links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
     },
     {
@@ -105,7 +105,7 @@ const publicationsData = [
         area: ['ml-for-systems'],
         title: 'NetSSM: Multi-Flow State-Aware Network Trace Generation using State-Space Models',
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
-        venue: 'CoNEXT 2026',
+        venue: 'ACM CoNEXT 2026',
         links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
     },
     {
@@ -138,7 +138,7 @@ const publicationsData = [
         area: ['ml-for-systems', 'security', 'cps'],
         title: 'Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams',
         authors: 'Ted Shaowang, Shinan Liu, Jonatas Marques, Nick Feamster, Sanjay Krishnan',
-        venue: 'VLDB 2026',
+        venue: 'ACM VLDB 2026',
         links: { pdf: 'https://arxiv.org/pdf/2503.05675?' }
     },
     {
@@ -165,7 +165,7 @@ const publicationsData = [
         area: ['ml-for-systems'],
         title: 'JITI: Dynamic Model Serving for Just-in-Time Traffic Inference',
         authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, Nick Feamster',
-        venue: 'CoNEXT 2025',
+        venue: 'ACM CoNEXT 2025',
         links: { pdf: 'https://arxiv.org/pdf/2302.11718' }
     },
     {
@@ -308,7 +308,7 @@ const publicationsData = [
         area: ['ml-for-systems'],
         title: 'Feasibility of State Space Models for Network Traffic Generation',
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
-        venue: 'SIGCOMM NAIC 2024',
+        venue: 'ACM SIGCOMM NAIC 2024',
         links: { pdf: 'https://arxiv.org/pdf/2406.02784' }
     },
     {
