@@ -75,6 +75,15 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Conference',
+        area: ['ml-for-systems', 'security'],
+        title: 'GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory',
+        authors: 'Zihao Dan, Shinan Liu, Shuwen Deng, Yanan Guo, Yinqian Zhang, Dongsheng Wang, Yun Chen',
+        venue: 'IEEE/ACM MICRO 2026',
+        links: {}
+    },
+    {
+        year: 2026,
+        type: 'Conference',
         area: ['security', 'cps'],
         title: 'Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection',
         authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',

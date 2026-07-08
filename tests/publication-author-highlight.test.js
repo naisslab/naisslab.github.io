@@ -122,6 +122,11 @@ assert.match(
 );
 assert.match(
     publicationsHtml,
+    /<strong class="publication-author-lab-member" title="NAISS Lab member">Zihao Dan<\/strong>/,
+    'Expected Zihao Dan to be highlighted as a NAISS Lab member'
+);
+assert.match(
+    publicationsHtml,
     /<strong class="publication-author-lab-member" title="NAISS Lab member">Xinchen Zhang<\/strong>/,
     'Expected Xinchen Zhang to be highlighted as a NAISS Lab member'
 );
@@ -135,7 +140,12 @@ assert.doesNotMatch(
     /publication-author-lab-member[^>]*>Nick Feamster/,
     'Expected non-lab collaborators to remain unhighlighted'
 );
+assert(
+    publicationsHtml.includes('GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory'),
+    'Expected rendered publications to include GhostAccess'
+);
 [
+    'IEEE/ACM MICRO 2026',
     'ACM IMWUT/UbiComp 2026',
     'ACM SoCC 2026',
     'ACM CoNEXT 2026',
