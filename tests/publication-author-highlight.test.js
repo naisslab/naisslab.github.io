@@ -115,6 +115,19 @@ vm.runInContext(inlineScript[1], context, { filename: 'index.html inline script'
 
 const publicationsHtml = elements.get('publications-container').innerHTML;
 
+assert(
+    publicationsHtml.includes('TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data'),
+    'Expected rendered publications to include TabQueryBench'
+);
+assert(
+    publicationsHtml.indexOf('TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data') <
+        publicationsHtml.indexOf('TraceCodec: A Compiler-Backed Neural Codec for Stateful Multi-Flow Network Traffic Traces'),
+    'Expected TabQueryBench to render before the other preprints'
+);
+assert(
+    publicationsHtml.includes('href="https://arxiv.org/pdf/2607.03926"'),
+    'Expected rendered publications to include the TabQueryBench arXiv PDF link'
+);
 assert.match(
     publicationsHtml,
     /<strong class="publication-author-lab-member" title="NAISS Lab member">Shinan Liu<\/strong>/,

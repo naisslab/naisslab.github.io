@@ -6,6 +6,15 @@ const publicationsData = [
         year: 2026,
         type: 'Preprint',
         area: ['ml-for-systems'],
+        title: 'TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data',
+        authors: 'Jialin Zhang, Fenghao Dong, Yajie Zhou, Vyas Sekar, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2607.03926' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
+        area: ['ml-for-systems'],
         title: 'TraceCodec: A Compiler-Backed Neural Codec for Stateful Multi-Flow Network Traffic Traces',
         authors: 'Junhui Ding, Xinchen Zhang, Xiaohui Xie, Shinan Liu',
         venue: 'In Submission',
