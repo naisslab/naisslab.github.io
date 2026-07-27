@@ -1,6 +1,12 @@
 // data/news.js
 const newsData = [
     {
+        date: 'Jul 2026',
+        title: 'Our paper "GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory" is accepted at IEEE/ACM MICRO 2026!',
+        content: 'Congratulations to Zihao Dan on this first-authored work! GhostAccess shows that GPU workloads can be inferred through a CPU last-level cache side channel under unified memory.',
+        url: ''
+    },
+    {
         date: 'Jun 2026',
         title: 'Our paper "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection" is accepted to UbiComp/IMWUT 2026!',
         content: 'The paper explores whether low-privilege smartphone motion sensors can safely distinguish owners from intimate partners and detect risky actions in intimate partner infiltration scenarios.',

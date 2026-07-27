@@ -114,6 +114,30 @@ assert(inlineScript, 'Expected to find the main inline script in index.html');
 vm.runInContext(inlineScript[1], context, { filename: 'index.html inline script' });
 
 const publicationsHtml = elements.get('publications-container').innerHTML;
+const newsHtml = elements.get('news-container').innerHTML;
+
+assert(
+    newsHtml.startsWith(`
+                        <article class="news-item">
+                            <p class="news-date">Jul 2026</p>`),
+    'Expected the GhostAccess acceptance to be the newest news item'
+);
+assert(
+    newsHtml.includes('Our paper "GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory" is accepted at IEEE/ACM MICRO 2026!'),
+    'Expected news to announce the GhostAccess MICRO 2026 acceptance'
+);
+assert(
+    newsHtml.includes('Congratulations to Zihao Dan on this first-authored work'),
+    'Expected news to congratulate Zihao for first-authoring GhostAccess'
+);
+assert(
+    newsHtml.includes('GPU workloads can be inferred through a CPU last-level cache side channel under unified memory'),
+    'Expected news to summarize the GhostAccess attack'
+);
+assert(
+    !newsHtml.includes('his first paper'),
+    'Expected news not to describe GhostAccess as Zihao\'s first paper'
+);
 
 assert(
     publicationsHtml.includes('TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data'),
