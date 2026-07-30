@@ -107,6 +107,29 @@ vm.createContext(context);
     });
 });
 
+const publicationsData = vm.runInContext('publicationsData', context);
+const privacyImplicationsPapers = publicationsData.filter(
+    publication => publication.title === 'Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic'
+);
+assert.strictEqual(
+    privacyImplicationsPapers.length,
+    1,
+    'Expected exactly one Quantifying the Privacy Implications publication'
+);
+assert.deepStrictEqual(
+    {
+        year: privacyImplicationsPapers[0].year,
+        type: privacyImplicationsPapers[0].type,
+        venue: privacyImplicationsPapers[0].venue
+    },
+    {
+        year: 2026,
+        type: 'Conference',
+        venue: 'ACM IMC 2026'
+    },
+    'Expected Quantifying the Privacy Implications to be published at ACM IMC 2026'
+);
+
 const indexHtml = fs.readFileSync(path.join(repoRoot, 'index.html'), 'utf8');
 const inlineScript = indexHtml.match(/<script>\s*([\s\S]*?)\s*<\/script>\s*<\/body>/);
 assert(inlineScript, 'Expected to find the main inline script in index.html');

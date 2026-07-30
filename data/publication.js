@@ -50,15 +50,6 @@ const publicationsData = [
     {
         year: 2025,
         type: 'Preprint',
-        area: ['ml-for-systems','security'],
-        title: 'Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic',
-        authors: 'Van Tran, Shinan Liu, Tian Li, Nick Feamster',
-        venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2511.20497' }
-    },
-    {
-        year: 2025,
-        type: 'Preprint',
         area: ['ml-for-systems', 'security', 'cps'],
         title: 'SafeCoop: Unravelling Full Stack Safety in Agentic Collaborative Driving',
         authors: 'Xiangbo Gao, Tzu-Hsiang Lin, Ruojing Song, Yuheng Wu, Kuan-Ru Huang, Zicheng Jin, Fangzhou Lin, Shinan Liu, Zhengzhong Tu',
@@ -81,6 +72,15 @@ const publicationsData = [
     // =================================================================
     // ========================= Conference ============================
     // =================================================================
+    {
+        year: 2026,
+        type: 'Conference',
+        area: ['ml-for-systems','security'],
+        title: 'Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic',
+        authors: 'Van Tran, Shinan Liu, Tian Li, Nick Feamster',
+        venue: 'ACM IMC 2026',
+        links: { pdf: 'https://arxiv.org/pdf/2511.20497' }
+    },
     {
         year: 2026,
         type: 'Conference',
