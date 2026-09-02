@@ -312,6 +312,15 @@ const publicationsData = [
     // =========================== Workshop ============================
     // =================================================================
     {
+        year: 2026,
+        type: 'Workshop',
+        area: ['ml-for-systems'],
+        title: 'SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases',
+        authors: 'Dong Liu, Yanxuan Yu, Shinan Liu',
+        venue: 'VLDB VecDB 2026',
+        links: { pdf: 'https://openreview.net/pdf?id=heBvuxO9vq' }
+    },
+    {
         year: 2025,
         type: 'Workshop',
         area: ['ml-for-systems'],

@@ -130,6 +130,32 @@ assert.deepStrictEqual(
     'Expected Quantifying the Privacy Implications to be published at ACM IMC 2026'
 );
 
+const spiPapers = publicationsData.filter(
+    publication => publication.title === 'SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases'
+);
+assert.strictEqual(spiPapers.length, 1, 'Expected exactly one SPI workshop publication');
+assert.deepStrictEqual(
+    {
+        year: spiPapers[0].year,
+        type: spiPapers[0].type,
+        authors: spiPapers[0].authors,
+        venue: spiPapers[0].venue,
+        pdf: spiPapers[0].links.pdf
+    },
+    {
+        year: 2026,
+        type: 'Workshop',
+        authors: 'Dong Liu, Yanxuan Yu, Shinan Liu',
+        venue: 'VLDB VecDB 2026',
+        pdf: 'https://openreview.net/pdf?id=heBvuxO9vq'
+    },
+    'Expected SPI to include the supplied VecDB venue and PDF'
+);
+assert(
+    spiPapers[0].area.includes('ml-for-systems'),
+    'Expected SPI to appear under ML for Systems'
+);
+
 const indexHtml = fs.readFileSync(path.join(repoRoot, 'index.html'), 'utf8');
 const inlineScript = indexHtml.match(/<script>\s*([\s\S]*?)\s*<\/script>\s*<\/body>/);
 assert(inlineScript, 'Expected to find the main inline script in index.html');
@@ -203,6 +229,18 @@ assert.doesNotMatch(
 assert(
     publicationsHtml.includes('GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory'),
     'Expected rendered publications to include GhostAccess'
+);
+assert(
+    publicationsHtml.includes('SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases'),
+    'Expected rendered publications to include SPI'
+);
+assert(
+    publicationsHtml.includes('VLDB VecDB 2026'),
+    'Expected rendered publications to include the shortened SPI venue'
+);
+assert(
+    publicationsHtml.includes('href="https://openreview.net/pdf?id=heBvuxO9vq"'),
+    'Expected rendered publications to link to the SPI PDF'
 );
 [
     'IEEE/ACM MICRO 2026',
