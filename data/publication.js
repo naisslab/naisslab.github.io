@@ -390,6 +390,15 @@ const publicationsData = [
     // ============================ Poster =============================
     // =================================================================
     {
+        year: 2026,
+        type: 'Poster',
+        area: ['ml-for-systems'],
+        title: 'Poster: DeePCAP: Enabling High-Fidelity and Cost-Efficient Archival Packet Trace Storage',
+        authors: 'Fenghao Dong, Yucheng Yin, Yajie Zhou, Peilin Xin, Shinan Liu, Vyas Sekar',
+        venue: 'ACM SIGCOMM 2026',
+        links: { pdf: 'https://dl.acm.org/doi/abs/10.1145/3789240.3830304' }
+    },
+    {
         year: 2019,
         type: 'Poster',
         area: ['security', 'cps'],
