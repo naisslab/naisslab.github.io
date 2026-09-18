@@ -1,6 +1,18 @@
 // data/news.js
 const newsData = [
     {
+        date: 'Sep 2026',
+        title: 'Our paper "Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic" is accepted at ACM IMC 2026!',
+        content: 'Congratulations to Van Tran and all coauthors! The paper examines privacy risks in high-fidelity synthetic network traffic.',
+        url: 'https://arxiv.org/pdf/2511.20497'
+    },
+    {
+        date: 'Sep 2026',
+        title: 'Congratulations to Dr. Xinchen Zhang on joining Northeastern University as a tenured associate professor!',
+        content: 'Thank you for your contributions to NAISS Lab during your postdoctoral research. We wish you every success in your new role!',
+        url: ''
+    },
+    {
         date: 'Jul 2026',
         title: 'Our paper "GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory" is accepted at IEEE/ACM MICRO 2026!',
         content: 'Congratulations to Zihao Dan on this first-authored work! GhostAccess shows that GPU workloads can be inferred through a CPU last-level cache side channel under unified memory.',

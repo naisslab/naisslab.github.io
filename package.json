@@ -1,0 +1,15 @@
+{
+  "name": "naiss-lab-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:css && npm run build:images",
+    "build:css": "tailwindcss -i ./styles/input.css -o ./assets/site.css --minify && node scripts/version-assets.cjs",
+    "build:images": "node scripts/build-images.cjs",
+    "test": "node tests/publication-author-highlight.test.js"
+  },
+  "devDependencies": {
+    "sharp": "0.35.4",
+    "tailwindcss": "3.4.19"
+  }
+}

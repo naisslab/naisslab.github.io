@@ -35,13 +35,16 @@ function createElement(id) {
         innerHTML: '',
         textContent: '',
         dataset: {},
+        listeners: {},
         classList: createClassList(),
         children: [],
         appendChild(child) {
             this.children.push(child);
             return child;
         },
-        addEventListener() {},
+        addEventListener(event, callback) {
+            this.listeners[event] = callback;
+        },
         querySelectorAll(selector) {
             if (selector === 'svg') {
                 return [{ classList: createClassList() }, { classList: createClassList() }];
@@ -168,8 +171,8 @@ const newsHtml = elements.get('news-container').innerHTML;
 assert(
     newsHtml.startsWith(`
                         <article class="news-item">
-                            <p class="news-date">Jul 2026</p>`),
-    'Expected the GhostAccess acceptance to be the newest news item'
+                            <p class="news-date">Sep 2026</p>`),
+    'Expected the September announcements to appear first'
 );
 assert(
     newsHtml.includes('Our paper "GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory" is accepted at IEEE/ACM MICRO 2026!'),
@@ -255,3 +258,58 @@ assert(
         `Expected rendered publications to include ${venue}`
     );
 });
+
+assert.strictEqual((publicationsHtml.match(/<article /g) || []).length, publicationsData.length,
+    'The homepage should retain the complete publication list');
+assert.strictEqual((newsHtml.match(/<article /g) || []).length, vm.runInContext('newsData.length', context),
+    'The homepage should retain the complete news list');
+assert.strictEqual((elements.get('people-container').innerHTML.match(/<img /g) || []).length,
+    vm.runInContext('peopleData.length + alumniData.length', context), 'The homepage should retain the complete team');
+
+for (const area of vm.runInContext('researchData', context)) {
+    assert(!area.featuredPublications, 'Selected work belongs to individual subtopics');
+    for (const subtopic of area.subtopics) {
+        assert(subtopic.title && subtopic.featuredPublications.length, 'Each subtopic needs a title and representative work');
+        for (const featured of subtopic.featuredPublications) {
+            const matches = publicationsData.filter(pub => pub.id === featured.id);
+            assert.strictEqual(matches.length, 1, `Featured publication must resolve uniquely: ${featured.id}`);
+            assert(matches[0].area.includes(area.id), `Featured publication must belong to ${area.id}`);
+            const url = matches[0].links.website || matches[0].links.pdf || `#publication-${featured.id}`;
+            assert(elements.get('research-container').innerHTML.includes(`href="${url}"`));
+            if (url.startsWith('#')) {
+                assert(publicationsHtml.includes(`id="publication-${featured.id}"`), 'Internal paper links need an existing target');
+            }
+        }
+    }
+    assert(elements.get('research-container').innerHTML.includes(`data-research-area="${area.id}"`));
+    elements.get('pub-year-filter').value = '2017';
+    const link = { dataset: { researchArea: area.id } };
+    elements.get('research-container').listeners.click({
+        target: { closest: selector => selector === '[data-research-area]' ? link : null }
+    });
+    assert.strictEqual(elements.get('pub-year-filter').value, 'all', 'Research links reset the year filter');
+    assert.strictEqual(elements.get('pub-area-filter').value, area.id);
+    const filteredHtml = elements.get('publications-container').innerHTML;
+    const expected = publicationsData.filter(pub => pub.area.includes(area.id));
+    assert.strictEqual((filteredHtml.match(/<article /g) || []).length, expected.length);
+    expected.forEach(pub => assert(filteredHtml.includes(pub.title), `Missing related paper: ${pub.title}`));
+}
+
+// A selected paper without a public URL must remain reachable from any filter state.
+elements.get('pub-year-filter').value = '2017';
+elements.get('pub-area-filter').value = 'cps';
+elements.get('research-container').listeners.click({
+    target: { closest: selector => selector === '[data-publication-id]'
+        ? { dataset: { publicationId: 'ghostaccess' } } : null }
+});
+assert.strictEqual(elements.get('pub-year-filter').value, 'all');
+assert.strictEqual(elements.get('pub-area-filter').value, 'all');
+assert(elements.get('publications-container').innerHTML.includes('id="publication-ghostaccess"'));
+assert.strictEqual((elements.get('publications-container').innerHTML.match(/<article /g) || []).length, publicationsData.length);
+
+for (const photo of vm.runInContext('[...peopleData, ...alumniData].map(person => person.photo)', context)) {
+    assert(fs.existsSync(path.join(repoRoot, photo)), `Missing optimized portrait: ${photo}`);
+}
+assert(!indexHtml.includes('cdn.tailwindcss.com'));
+assert(fs.existsSync(path.join(repoRoot, 'assets/site.css')));
+console.log('Complete homepage lists, research links, publication content, and local assets passed.');

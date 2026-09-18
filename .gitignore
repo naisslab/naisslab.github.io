@@ -1,2 +1,5 @@
 .DS_Store
 team-slide/
+node_modules/
+output/playwright/
+.playwright-cli/
