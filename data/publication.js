@@ -26,6 +26,7 @@ const publicationsData = [
         year: 2026,
         type: 'Preprint',
         area: ['ml-for-systems','security','cps'],
+        id: 'pacc',
         title: 'PACC: Protocol-Aware Cross-Layer Compression for Compact Network Traffic Representation',
         authors: 'Zhaochen Guo, Tianyufei Zhou, Honghao Wang, Ronghua Li, Shinan Liu',
         venue: 'In Submission',
@@ -44,7 +45,8 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
-        area: ['ml-for-systems'],
+        area: ['ml-for-systems', 'cps'],
+        id: 'hillinfer',
         title: 'HillInfer: Efficient Long-Context LLM Inference on the Edge with Hierarchical KV Eviction using SmartSSD',
         authors: 'He Sun, Shinan Liu, Li Li, Mingjun Xiao',
         venue: 'In Submission',
@@ -189,6 +191,16 @@ const publicationsData = [
         authors: 'Johann Hugon, Shinan Liu, Paul Schmitt, Nick Feamster, Francesco Bronzino',
         venue: 'NetSoft 2026',
         links: {}
+    },
+    {
+        year: 2025,
+        type: 'Dissertation',
+        area: ['ml-for-systems'],
+        id: 'operational-learning-systems',
+        title: 'Operational Learning Systems for Network Data Intelligence',
+        authors: 'Shinan Liu',
+        venue: 'Ph.D. Dissertation, University of Chicago, 2025',
+        links: { website: 'https://knowledge.uchicago.edu/records/5rd5z-fkc12' }
     },
     {
         year: 2025,

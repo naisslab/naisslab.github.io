@@ -11,6 +11,7 @@ const researchData = [
                 featuredPublications: [
                     { id: 'netdiffusion', label: "[SIGMETRICS'24] NetDiffusion" },
                     { id: 'netssm', label: "[CoNEXT'26] NetSSM" },
+                    { id: 'generative-active-adaptation', label: "[CoNEXT'26] Generative Active Adaptation" },
                     { id: 'tracecodec', label: "[Preprint'26] TraceCodec" },
                     { id: 'tabquerybench', label: "[Preprint'26] TabQueryBench" }
                 ]
@@ -19,7 +20,6 @@ const researchData = [
                 title: 'High-performance ML-based Network Traffic Analysis',
                 featuredPublications: [
                     { id: 'flowwise', label: "[SoCC'26] FlowWise" },
-                    { id: 'generative-active-adaptation', label: "[CoNEXT'26] Generative Active Adaptation" },
                     { id: 'jiti', label: "[CoNEXT'25] JITI" },
                     { id: 'cato', label: "[NSDI'25] CATO" },
                     { id: 'leaf', label: "[CoNEXT'23] LEAF" }
@@ -57,7 +57,7 @@ const researchData = [
             {
                 title: 'Wireless Attacks and Defenses in Driving Systems',
                 featuredPublications: [
-                    { id: 'gps-spoofing', label: "[WiSec'25] Multi-Antenna GPS Spoofing" },
+                    { id: 'gps-spoofing', label: "[WiSec'25] 🏆 Multi-Antenna GPS Spoofing" },
                     { id: 'stars-can-tell', label: "[USENIX Security'21] Stars Can Tell" },
                     { id: 'all-your-gps', label: "[USENIX Security'18] All Your GPS Are Belong to Us" }
                 ]
@@ -86,9 +86,15 @@ const researchData = [
             {
                 title: 'Activity Recognition and Sensing for Human Well-being',
                 featuredPublications: [
-                    { id: 'pulsemind', label: "[AAAI'26] PulseMind" },
                     { id: 'on-device-evidence', label: "[UbiComp'26] On-Device Evidence Gathering" },
                     { id: 'amir', label: "[UbiComp'23] AMIR" }
+                ]
+            },
+            {
+                title: 'Agentic Inference for Smarter Environments',
+                featuredPublications: [
+                    { id: 'hillinfer', label: "[Preprint'26] HillInfer" },
+                    { id: 'pacc', label: "[Preprint'26] PACC" }
                 ]
             }
         ]
