@@ -19,9 +19,8 @@ const researchData = [
             {
                 title: 'High-performance ML-based Network Traffic Analysis',
                 featuredPublications: [
-                    { id: 'flowwise', label: "[SoCC'26] FlowWise" },
-                    { id: 'jiti', label: "[CoNEXT'25] JITI" },
                     { id: 'cato', label: "[NSDI'25] CATO" },
+                    { id: 'jiti', label: "[CoNEXT'25] JITI" },
                     { id: 'leaf', label: "[CoNEXT'23] LEAF" }
                 ]
             },
