@@ -53,6 +53,16 @@ const publicationsData = [
         links: { pdf: 'https://arxiv.org/pdf/2602.18750' }
     },
     {
+        year: 2026,
+        type: 'Preprint',
+        area: ['ml-for-systems', 'security'],
+        id: 'sok-for-socs',
+        title: 'A SoK for SoCs: Reading the TI Leaves on AI for Cyber Threat Intelligence Generation and Sharing',
+        authors: 'Saastha Vasan, Hadjer Benkraouda, Jizhou Chen, Leyan Pan, Doguhan Yeke, Shinan Liu, Noah Spahn, Stefano Ortolani, David Evans, Christopher Kruegel, Giovanni Vigna',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2609.01174' }
+    },
+    {
         year: 2025,
         type: 'Preprint',
         area: ['ml-for-systems', 'security', 'cps'],
