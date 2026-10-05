@@ -96,7 +96,10 @@ const publicationsData = [
         title: 'Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic',
         authors: 'Van Tran, Shinan Liu, Tian Li, Nick Feamster',
         venue: 'ACM IMC 2026',
-        links: { pdf: 'https://arxiv.org/pdf/2511.20497' }
+        links: {
+            pdf: 'https://arxiv.org/pdf/2511.20497',
+            code: 'https://github.com/VanTranHong/IMC-26-privacy-traffic-generator'
+        }
     },
     {
         year: 2026,
@@ -104,7 +107,7 @@ const publicationsData = [
         area: ['ml-for-systems', 'security'],
         id: 'ghostaccess',
         title: 'GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory',
-        authors: 'Zihao Dan, Shinan Liu, Shuwen Deng, Yanan Guo, Yinqian Zhang, Dongsheng Wang, Yun Chen',
+        authors: 'Zihao Dan, Shinan Liu, Shuwen Deng, Yinqian Zhang, Dongsheng Wang, Yun Chen',
         venue: 'IEEE/ACM MICRO 2026',
         links: {}
     },

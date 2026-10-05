@@ -270,6 +270,37 @@ section,
     padding-left: 0.8rem;
 }
 
+.preprints-more > summary {
+    width: fit-content;
+    margin: 0.25rem auto 0.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 9999px;
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.preprints-more > summary:hover {
+    background: var(--bg-surface);
+    border-color: var(--accent);
+}
+
+.preprints-more > summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.preprints-more .preprints-hide,
+.preprints-more[open] .preprints-show {
+    display: none;
+}
+
+.preprints-more[open] .preprints-hide {
+    display: inline;
+}
+
 .publication-meta {
     display: flex;
     gap: 0.5rem;

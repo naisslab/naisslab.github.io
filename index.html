@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAISS Lab | Networked AI Systems and Security Lab</title>
-    <link rel="stylesheet" href="assets/site.css?v=786269ed3f9d">
+    <link rel="stylesheet" href="assets/site.css?v=528f335c5cbc">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -164,7 +164,7 @@
 
     <script src="data/research.js?v=d6dd5af3a1e9"></script>
     <script src="data/people.js?v=f20935bd08d1"></script>
-    <script src="data/publication.js?v=875cb7ddb51f"></script>
+    <script src="data/publication.js?v=b5be9f253f3e"></script>
     <script src="data/news.js?v=a9906eeffbc7"></script>
 
     <script>
@@ -350,7 +350,7 @@
                     return;
                 }
 
-                container.innerHTML = filteredPubs.map(pub => {
+                const renderPublication = pub => {
                     const extraLinks = [
                         pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : '',
                         pub.links.code ? `<a href="${pub.links.code}" class="publication-link" target="_blank" rel="noopener noreferrer">Code</a>` : '',
@@ -387,7 +387,23 @@
                         </div>
                     </article>
                     `;
-                }).join('');
+                };
+
+                const preprints = filteredPubs.filter(pub => pub.type === 'Preprint');
+                const published = filteredPubs.filter(pub => pub.type !== 'Preprint');
+                const remainingPreprints = preprints.slice(3);
+                container.innerHTML = preprints.slice(0, 3).map(renderPublication).join('') +
+                    (remainingPreprints.length ? `
+                        <details class="preprints-more">
+                            <summary>
+                                <span class="preprints-show">Show ${remainingPreprints.length} more preprints</span>
+                                <span class="preprints-hide">Show fewer preprints</span>
+                            </summary>
+                            <div class="grid gap-2.5 mt-2.5">
+                                ${remainingPreprints.map(renderPublication).join('')}
+                            </div>
+                        </details>
+                    ` : '') + published.map(renderPublication).join('');
             }
 
             function populatePubFilters() {
@@ -504,6 +520,9 @@
                     document.getElementById('pub-year-filter').value = 'all';
                     document.getElementById('pub-area-filter').value = 'all';
                     renderPublications();
+                    const target = document.getElementById(`publication-${selectedWorkLink.dataset.publicationId}`);
+                    const disclosure = target?.closest('details');
+                    if (disclosure) disclosure.open = true;
                     return;
                 }
                 const publicationLink = e.target.closest('[data-research-area]');

@@ -168,6 +168,28 @@ vm.runInContext(inlineScript[1], context, { filename: 'index.html inline script'
 const publicationsHtml = elements.get('publications-container').innerHTML;
 const newsHtml = elements.get('news-container').innerHTML;
 
+function assertPreprintPreview(html, papers) {
+    const preprints = papers.filter(pub => pub.type === 'Preprint');
+    const disclosure = html.match(/<details class="preprints-more">([\s\S]*?)<\/details>/);
+    if (preprints.length <= 3) {
+        assert(!disclosure, 'Three or fewer preprints should not have an expand control');
+        return;
+    }
+    assert(disclosure, 'Additional preprints should start in a closed disclosure');
+    assert(disclosure[1].includes(`Show ${preprints.length - 3} more preprints`));
+    const preview = html.slice(0, disclosure.index);
+    assert.strictEqual((preview.match(/<article /g) || []).length, 3);
+    preprints.slice(0, 3).forEach(pub => assert(preview.includes(pub.title)));
+    preprints.slice(3).forEach(pub => assert(disclosure[1].includes(pub.title)));
+    assert.strictEqual((disclosure[1].match(/<article /g) || []).length, preprints.length - 3);
+    papers.filter(pub => pub.type !== 'Preprint').forEach(pub => {
+        assert(html.slice(disclosure.index + disclosure[0].length).includes(pub.title),
+            'Published papers should remain outside the disclosure');
+    });
+}
+
+assertPreprintPreview(publicationsHtml, publicationsData);
+
 assert(
     newsHtml.startsWith(`
                         <article class="news-item">
@@ -291,8 +313,20 @@ for (const area of vm.runInContext('researchData', context)) {
     assert.strictEqual(elements.get('pub-area-filter').value, area.id);
     const filteredHtml = elements.get('publications-container').innerHTML;
     const expected = publicationsData.filter(pub => pub.area.includes(area.id));
+    assertPreprintPreview(filteredHtml, expected);
     assert.strictEqual((filteredHtml.match(/<article /g) || []).length, expected.length);
     expected.forEach(pub => assert(filteredHtml.includes(pub.title), `Missing related paper: ${pub.title}`));
+}
+
+// Preprint-only and older-year filters retain the preview and handle small result sets.
+elements.get('pub-area-filter').value = 'all';
+for (const year of ['preprint', '2025', '2017']) {
+    elements.get('pub-year-filter').value = year;
+    elements.get('pub-year-filter').listeners.change();
+    const expected = publicationsData.filter(pub => year === 'preprint' ? pub.type === 'Preprint' : pub.year == year);
+    const html = elements.get('publications-container').innerHTML;
+    assertPreprintPreview(html, expected);
+    assert.strictEqual((html.match(/<article /g) || []).length, expected.length);
 }
 
 // A selected paper without a public URL must remain reachable from any filter state.
