@@ -168,6 +168,12 @@ vm.runInContext(inlineScript[1], context, { filename: 'index.html inline script'
 const publicationsHtml = elements.get('publications-container').innerHTML;
 const newsHtml = elements.get('news-container').innerHTML;
 
+const flowwiseHtml = publicationsHtml.match(/<article id="publication-flowwise"[\s\S]*?<\/article>/)[0];
+assert.match(flowwiseHtml, /href="https:\/\/github.com\/noise-lab\/FlowWise"[^>]*>Code<\/a>/);
+assert.match(flowwiseHtml, /href="https:\/\/github.com\/naisslab\/FlowWise-Rust"[^>]*>Rust Code<\/a>/);
+assert.match(publicationsHtml, /href="https:\/\/github.com\/VanTranHong\/IMC-26-privacy-traffic-generator"[^>]*>Code<\/a>/,
+    'Existing single-repository Code links should still render');
+
 function assertPreprintPreview(html, papers) {
     const preprints = papers.filter(pub => pub.type === 'Preprint');
     const disclosure = html.match(/<details class="preprints-more">([\s\S]*?)<\/details>/);

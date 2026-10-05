@@ -164,7 +164,7 @@
 
     <script src="data/research.js?v=d6dd5af3a1e9"></script>
     <script src="data/people.js?v=f20935bd08d1"></script>
-    <script src="data/publication.js?v=b5be9f253f3e"></script>
+    <script src="data/publication.js?v=25d0e84abb2d"></script>
     <script src="data/news.js?v=a9906eeffbc7"></script>
 
     <script>
@@ -351,9 +351,12 @@
                 }
 
                 const renderPublication = pub => {
+                    const codeLinks = Array.isArray(pub.links.code)
+                        ? pub.links.code
+                        : (pub.links.code ? [{ label: 'Code', url: pub.links.code }] : []);
                     const extraLinks = [
                         pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : '',
-                        pub.links.code ? `<a href="${pub.links.code}" class="publication-link" target="_blank" rel="noopener noreferrer">Code</a>` : '',
+                        ...codeLinks.map(link => `<a href="${escapeHtml(link.url)}" class="publication-link" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`),
                         pub.links.media ? `<a href="${pub.links.media}" class="publication-link" target="_blank" rel="noopener noreferrer">Media</a>` : '',
                         pub.links.slides ? `<a href="${pub.links.slides}" class="publication-link" target="_blank" rel="noopener noreferrer">Slides</a>` : '',
                         pub.links.video ? `<a href="${pub.links.video}" class="publication-link" target="_blank" rel="noopener noreferrer">Video</a>` : '',

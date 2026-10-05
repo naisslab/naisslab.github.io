@@ -129,7 +129,13 @@ const publicationsData = [
         title: 'FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence',
         authors: 'Shinan Liu, Ted Shaowang, Gerry Wan, Jeewon Chae, Jonatas Marques, Sanjay Krishnan, Nick Feamster',
         venue: 'ACM SoCC 2026',
-        links: { pdf: 'https://arxiv.org/pdf/2402.03694' }
+        links: {
+            pdf: 'https://arxiv.org/pdf/2402.03694',
+            code: [
+                { label: 'Code', url: 'https://github.com/noise-lab/FlowWise' },
+                { label: 'Rust Code', url: 'https://github.com/naisslab/FlowWise-Rust' }
+            ]
+        }
     },
     {
         year: 2026,
@@ -149,7 +155,10 @@ const publicationsData = [
         title: 'NetSSM: Multi-Flow State-Aware Network Trace Generation using State-Space Models',
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
         venue: 'ACM CoNEXT 2026',
-        links: { pdf: 'https://arxiv.org/pdf/2503.22663' }
+        links: {
+            pdf: 'https://arxiv.org/pdf/2503.22663',
+            code: 'https://github.com/noise-lab/netssm'
+        }
     },
     {
         year: 2026,
