@@ -25,6 +25,16 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
+        area: ['ml-for-systems'],
+        id: 'pg-sft',
+        title: 'PG-SFT: Balancing Capability Acquisition and Retention in Offline Agent Fine-Tuning',
+        authors: 'Ronghua Li, Zi Liang, Zhishan Li, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2610.00949' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
         area: ['ml-for-systems','security','cps'],
         id: 'pacc',
         title: 'PACC: Protocol-Aware Cross-Layer Compression for Compact Network Traffic Representation',
