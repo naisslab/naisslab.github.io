@@ -49,6 +49,34 @@ section,
     backdrop-filter: blur(12px);
 }
 
+.lab-brand,
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.lab-brand:focus-visible,
+.footer-brand:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.lab-logo {
+    width: auto;
+    height: 56px;
+}
+
+.footer-brand {
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    width: 220px;
+    height: auto;
+}
+
 .section-shell {
     position: relative;
 }
