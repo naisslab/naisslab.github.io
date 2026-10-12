@@ -35,6 +35,16 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
+        area: ['ml-for-systems'],
+        id: 'datacupid',
+        title: 'DataCupid: Stable Matching Repair for Training Data Acquisition with Delayed Feedback',
+        authors: 'He Sun, Junyuan Mao, Wenhao Jiang, Mingjun Xiao, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2610.12960' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
         area: ['ml-for-systems','security','cps'],
         id: 'pacc',
         title: 'PACC: Protocol-Aware Cross-Layer Compression for Compact Network Traffic Representation',
