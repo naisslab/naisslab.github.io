@@ -117,7 +117,7 @@ const publicationsData = [
         authors: 'Van Tran, Shinan Liu, Tian Li, Nick Feamster',
         venue: 'ACM IMC 2026',
         links: {
-            pdf: 'https://arxiv.org/pdf/2511.20497',
+            pdf: 'https://dl.acm.org/doi/pdf/10.1145/3777912.3839833',
             code: 'https://github.com/VanTranHong/IMC-26-privacy-traffic-generator'
         }
     },
@@ -139,7 +139,7 @@ const publicationsData = [
         title: 'Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection',
         authors: 'Weisi Yang, Shinan Liu, Feng Xiao, Nick Feamster, Stephen Xia',
         venue: 'ACM IMWUT/UbiComp 2026',
-        links: { pdf: 'https://arxiv.org/pdf/2502.03682' }
+        links: { pdf: 'https://dl.acm.org/doi/pdf/10.1145/3831660' }
     },
     {
         year: 2026,
@@ -165,7 +165,7 @@ const publicationsData = [
         title: 'Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection',
         authors: 'Ragini Gupta, Shinan Liu, Xinchen Zhang, Ruixiao Zhang, Hadjer Benkraouda, Xinyue Hu, Phuong Cao, Nick Feamster, Klara Nahrstedt',
         venue: 'ACM CoNEXT 2026',
-        links: { pdf: 'https://arxiv.org/pdf/2503.03022' }
+        links: { pdf: 'https://dl.acm.org/doi/pdf/10.1145/3830389' }
     },
     {
         year: 2026,
@@ -176,7 +176,7 @@ const publicationsData = [
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
         venue: 'ACM CoNEXT 2026',
         links: {
-            pdf: 'https://arxiv.org/pdf/2503.22663',
+            pdf: 'https://dl.acm.org/doi/pdf/10.1145/3786289',
             code: 'https://github.com/noise-lab/netssm'
         }
     },
@@ -189,7 +189,7 @@ const publicationsData = [
         authors: 'Ronghua Li, Shinan Liu, Haibo Hu, Qingqing Ye, Nick Feamster',
         venue: 'NDSS 2026',
         links: {
-            pdf: 'https://arxiv.org/pdf/2508.03151'
+            pdf: 'https://www.ndss-symposium.org/wp-content/uploads/2026-f1083-paper.pdf'
         }
     },
     {
@@ -201,7 +201,7 @@ const publicationsData = [
         authors: 'Jiao Xu, Junwei Liu, Jiangwei Lao, Qi Zhu, Yunpeng Zhao, Xin Chen, Congyun Jin, Shinan Liu, Zhihong Lu, Jian Wang, Lihe Zhang, Ping Wang',
         venue: 'AAAI 2026 (Oral)',
         links: {
-            pdf: 'https://arxiv.org/pdf/2601.07344',
+            pdf: 'https://ojs.aaai.org/index.php/AAAI/article/download/38106/42068',
             code: 'https://github.com/AQ-MedAI/PulseMind',
             model: 'https://huggingface.co/AQ-MedAI/PulseMind-72B'
         }
@@ -214,7 +214,7 @@ const publicationsData = [
         title: 'Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams',
         authors: 'Ted Shaowang, Shinan Liu, Jonatas Marques, Nick Feamster, Sanjay Krishnan',
         venue: 'ACM VLDB 2026',
-        links: { pdf: 'https://arxiv.org/pdf/2503.05675?' }
+        links: { pdf: 'https://www.vldb.org/pvldb/vol18/p5652-shaowang.pdf' }
     },
     {
         year: 2026,
@@ -223,7 +223,7 @@ const publicationsData = [
         title: 'Digital Phenotyping via Passive Network Traffic Monitoring: Prospective Observational Study in University Students',
         authors: 'Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang',
         venue: 'JMIR Formative Research 2026',
-        links: { pdf: 'https://preprints.jmir.org/preprint/84618/accepted' }
+        links: { pdf: 'https://formative.jmir.org/2026/1/e84618/PDF' }
     },
     {
         year: 2026,
@@ -232,7 +232,7 @@ const publicationsData = [
         title: 'LoFi: Low-Cost Early Application Filter Based on Cached ML Decisions',
         authors: 'Johann Hugon, Shinan Liu, Paul Schmitt, Nick Feamster, Francesco Bronzino',
         venue: 'NetSoft 2026',
-        links: {}
+        links: { pdf: 'https://doi.org/10.1109/NetSoft70012.2026.11603512' }
     },
     {
         year: 2025,
@@ -252,7 +252,7 @@ const publicationsData = [
         title: 'JITI: Dynamic Model Serving for Just-in-Time Traffic Inference',
         authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, Nick Feamster',
         venue: 'ACM CoNEXT 2025',
-        links: { pdf: 'https://arxiv.org/pdf/2302.11718' }
+        links: { pdf: 'https://dl.acm.org/doi/pdf/10.1145/3768992' }
     },
     {
         year: 2025,
@@ -303,7 +303,7 @@ const publicationsData = [
         authors: 'Shinan Liu, Francesco Bronzino, Paul Schmitt, Arjun Nitin Bhagoji, Nick Feamster, Hector Garcia Crespo, Timothy Coyle, Brian Ward',
         venue: 'ACM CoNEXT 2023',
         links: {
-            pdf: 'https://www.shinan.info/wp-content/uploads/2023/09/liu-conext23.pdf',
+            pdf: 'https://dl.acm.org/doi/pdf/10.1145/3609422',
             data: 'https://forms.gle/g5pbB5qRHeBsEmZJ6'
         }
     },
@@ -316,7 +316,7 @@ const publicationsData = [
         authors: 'Shinan Liu, Tarun Mangla, Ted Shaowang, Jinjin Zhao, John Paparrizos, Sanjay Krishnan, Nick Feamster',
         venue: 'ACM IMWUT/UbiComp 2023',
         links: {
-            pdf: 'https://www.shinan.info/wp-content/uploads/2023/03/liu-imwut23.pdf',
+            pdf: 'https://dl.acm.org/doi/pdf/10.1145/3580818',
             website: 'http://amir-vidnet.github.io/',
             data: 'https://drive.google.com/drive/folders/1RGZQHSV3SbmfYFF6rQzN_9sI_rRtETpM'
         }
@@ -328,7 +328,7 @@ const publicationsData = [
         title: 'Toward Identifying Home Privacy Leaks using Augmented Reality',
         authors: 'Stefany Cruz, Logan Danek, Shinan Liu, Christopher Kraemer, Zixin Wang, Nick Feamster, Danny Yuxing Huang, Yaxing Yao, Josiah Hester',
         venue: 'NDSS USEC 2023',
-        links: { pdf: '#https://www.ndss-symposium.org/wp-content/uploads/2023/02/usec2023-238930-paper.pdf' }
+        links: { pdf: 'https://www.ndss-symposium.org/wp-content/uploads/2023/02/usec2023-238930-paper.pdf' }
     },
     {
         year: 2021,
@@ -355,7 +355,7 @@ const publicationsData = [
         authors: 'Shinan Liu, Paul Schmitt, Francesco Bronzino, Nick Feamster',
         venue: 'PAM 2021',
         links: {
-            pdf: 'https://arxiv.org/pdf/2011.00419.pdf',
+            pdf: 'https://link.springer.com/content/pdf/10.1007/978-3-030-72582-2_2.pdf',
             video: 'https://www.youtube.com/watch?v=7CVRgFoHINA'
         }
     },
@@ -411,7 +411,7 @@ const publicationsData = [
         title: 'Feasibility of State Space Models for Network Traffic Generation',
         authors: 'Andrew Chu, Xi Jiang, Shinan Liu, Arjun Bhagoji, Francesco Bronzino, Paul Schmitt, Nick Feamster',
         venue: 'ACM SIGCOMM NAIC 2024',
-        links: { pdf: 'https://arxiv.org/pdf/2406.02784' }
+        links: { pdf: 'https://dl.acm.org/doi/pdf/10.1145/3672198.3673792' }
     },
     {
         year: 2023,
@@ -438,7 +438,7 @@ const publicationsData = [
         title: 'Towards Designing Robust Efficient Classifiers for Encrypted Traffic in the Modern Internet',
         authors: 'Xi Jiang, Shinan Liu, Saloua Naama, Francesco Bronzino, Paul Schmitt, Nick Feamster',
         venue: 'M-TEN 2022',
-        links: { pdf: 'https://fbronzino.com/assets/pdf/iab22.pdf' }
+        links: { pdf: 'https://www.ietf.org/slides/slides-mtenws-paper-towards-designing-robust-and-efficient-classifiers-for-encrypted-traffic-in-the-modern-internet-xi-jiang-et-al-00.pdf' }
     },
     {
         year: 2021,
@@ -447,7 +447,7 @@ const publicationsData = [
         title: 'Interconnection Changes in the United States',
         authors: 'Francesco Bronzino, Elizabeth Cully, Nick Feamster, Shinan Liu, Jason Livingood, Paul Schmitt',
         venue: 'IAB COVID-19 Workshop 2021',
-        links: { pdf: 'https://par.nsf.gov/servlets/purl/10226157' }
+        links: { pdf: 'https://www.ietf.org/slides/slides-covid19ws-interconnection-changes-in-the-united-states-00.pdf' }
     },
     {
         year: 2017,
@@ -457,7 +457,7 @@ const publicationsData = [
         authors: 'Kexiong Curtis Zeng, Yuanchao Shu, Shinan Liu, Yanzhi Dou, Yaling Yang',
         venue: 'ACM HotMobile 2017',
         links: {
-            pdf: 'https://www.shinan.info/wp-content/uploads/2018/05/HotMobile-17.pdf',
+            pdf: 'https://dl.acm.org/doi/pdf/10.1145/3032970.3032983',
             video: 'https://www.youtube.com/watch?v=6UhT3gjTXp8'
         }
     },

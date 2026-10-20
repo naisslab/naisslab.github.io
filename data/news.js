@@ -4,7 +4,7 @@ const newsData = [
         date: 'Oct 2026',
         title: 'Our UbiComp 2026 paper wins the Best Video Teaser Award!',
         content: 'Congratulations to the authors of "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection"!',
-        url: 'https://arxiv.org/pdf/2502.03682'
+        url: 'https://doi.org/10.1145/3831660'
     },
     {
         date: 'Oct 2026',
@@ -16,7 +16,7 @@ const newsData = [
         date: 'Sep 2026',
         title: 'Our paper "Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic" is accepted at ACM IMC 2026!',
         content: 'Congratulations to Van Tran and all coauthors! The paper examines privacy risks in high-fidelity synthetic network traffic.',
-        url: 'https://arxiv.org/pdf/2511.20497'
+        url: 'https://doi.org/10.1145/3777912.3839833'
     },
     {
         date: 'Sep 2026',
@@ -34,13 +34,13 @@ const newsData = [
         date: 'Jun 2026',
         title: 'Our paper "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection" is accepted to UbiComp/IMWUT 2026!',
         content: 'The paper explores whether low-privilege smartphone motion sensors can safely distinguish owners from intimate partners and detect risky actions in intimate partner infiltration scenarios.',
-        url: 'https://arxiv.org/pdf/2502.03682'
+        url: 'https://doi.org/10.1145/3831660'
     },
     {
         date: 'Jun 2026',
         title: 'Our paper "Generative Active Adaptation for Drifting Imbalanced Network Intrusion Detection" is accepted at CoNEXT 2026!',
         content: 'The paper develops generative active adaptation methods for network intrusion detection under drift and class imbalance.',
-        url: 'https://arxiv.org/pdf/2503.03022'
+        url: 'https://doi.org/10.1145/3830389'
     },
     {
         date: 'Jun 2026',
@@ -94,7 +94,7 @@ const newsData = [
         date: 'Dec 2025', 
         title: 'Our paper "WiFinger: Fingerprinting Noisy IoT Event Traffic Using Packet-level Sequence Matching" is accepted at NDSS 2026!', 
         content: 'A Non-ML technique for wireless fingerprinting of IoT event traffic under high noise, designed from first principles.',
-        url: 'https://arxiv.org/pdf/2508.03151' 
+        url: 'https://www.ndss-symposium.org/ndss-paper/wifinger-fingerprinting-noisy-iot-event-traffic-using-packet-level-sequence-matching/'
     },
     { 
         date: 'Dec 2025', 
@@ -106,13 +106,13 @@ const newsData = [
         date: 'Sept 2025', 
         title: 'Our paper "JITI: Dynamic Model Serving for Just-in-Time Traffic Inference" is accepted at CoNEXT 2025!', 
         content: 'A multi-year effort to adaptively serve ML models for network traffic classifications.',
-        url: 'https://arxiv.org/pdf/2302.11718' 
+        url: 'https://doi.org/10.1145/3768992'
     },
     { 
         date: 'Aug 2025', 
         title: 'Our paper "Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams" is accepted at VLDB 2026!', 
         content: 'This paper discussed the effective data minimization for more privacy in the context of IoT.',
-        url: 'https://arxiv.org/pdf/2503.05675' 
+        url: 'https://www.vldb.org/pvldb/vol18/p5652-shaowang.pdf'
     },
     { 
         date: 'Aug 2025', 
