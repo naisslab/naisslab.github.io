@@ -2,6 +2,12 @@
 const newsData = [
     {
         date: 'Oct 2026',
+        title: 'Our UbiComp 2026 paper wins the Best Video Teaser Award!',
+        content: 'Congratulations to the authors of "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection"!',
+        url: 'https://arxiv.org/pdf/2502.03682'
+    },
+    {
+        date: 'Oct 2026',
         title: 'Dr. Liu joins the ACM IMC 2027 technical program committee.',
         content: 'Please consider submitting your papers to IMC 2027!',
         url: ''
