@@ -199,8 +199,8 @@ assertPreprintPreview(publicationsHtml, publicationsData);
 assert(
     newsHtml.startsWith(`
                         <article class="news-item">
-                            <p class="news-date">Sep 2026</p>`),
-    'Expected the September announcements to appear first'
+                            <p class="news-date">Oct 2026</p>`),
+    'Expected the October announcement to appear first'
 );
 assert(
     newsHtml.includes('Our paper "GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory" is accepted at IEEE/ACM MICRO 2026!'),

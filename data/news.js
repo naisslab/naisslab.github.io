@@ -1,6 +1,12 @@
 // data/news.js
 const newsData = [
     {
+        date: 'Oct 2026',
+        title: 'Dr. Liu joins the ACM IMC 2027 technical program committee.',
+        content: 'Please consider submitting your papers to IMC 2027!',
+        url: ''
+    },
+    {
         date: 'Sep 2026',
         title: 'Our paper "Quantifying the Privacy Implications of High-Fidelity Synthetic Network Traffic" is accepted at ACM IMC 2026!',
         content: 'Congratulations to Van Tran and all coauthors! The paper examines privacy risks in high-fidelity synthetic network traffic.',
