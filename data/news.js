@@ -2,8 +2,8 @@
 const newsData = [
     {
         date: 'Oct 2026',
-        title: 'Dr. Liu joins the ACM CCS 2027 and ACM IMC 2027 program committees.',
-        content: 'Dr. Liu will review for the Network Security track at CCS 2027. Please consider submitting your papers to both conferences!',
+        title: 'Dr. Liu joins the ACM SIGMETRICS 2027, ACM CCS 2027, and ACM IMC 2027 program committees.',
+        content: 'Please consider submitting your papers to these conferences!',
         url: ''
     },
     {
