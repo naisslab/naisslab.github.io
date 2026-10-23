@@ -2,15 +2,15 @@
 const newsData = [
     {
         date: 'Oct 2026',
-        title: 'Our UbiComp 2026 paper wins the Best Video Teaser Award!',
-        content: 'Congratulations to the authors of "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection"!',
-        url: 'https://doi.org/10.1145/3831660'
+        title: 'Dr. Liu joins the ACM CCS 2027 and ACM IMC 2027 program committees.',
+        content: 'Dr. Liu will review for the Network Security track at CCS 2027. Please consider submitting your papers to both conferences!',
+        url: ''
     },
     {
         date: 'Oct 2026',
-        title: 'Dr. Liu joins the ACM IMC 2027 technical program committee.',
-        content: 'Please consider submitting your papers to IMC 2027!',
-        url: ''
+        title: 'Our UbiComp 2026 paper wins the Best Video Teaser Award!',
+        content: 'Congratulations to the authors of "Towards On-Device Evidence Gathering for Intimate Partner Infiltration: A Feasibility Study for Joint Identity–Action Detection"!',
+        url: 'https://doi.org/10.1145/3831660'
     },
     {
         date: 'Sep 2026',
