@@ -129,7 +129,7 @@ const publicationsData = [
         title: 'GhostAccess: Attacking the GPU on the Multi-tenant Cloud via CPU LLC under Unified Memory',
         authors: 'Zihao Dan, Shinan Liu, Shuwen Deng, Yinqian Zhang, Dongsheng Wang, Yun Chen',
         venue: 'IEEE/ACM MICRO 2026',
-        links: {}
+        links: { pdf: 'https://www.shinan.info/wp-content/uploads/2026/10/micro2026-dan.pdf' }
     },
     {
         year: 2026,
