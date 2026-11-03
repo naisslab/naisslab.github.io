@@ -15,7 +15,7 @@ const peopleData = [
     { lastName: 'Luo', firstName: 'Zhifan', role: 'Ph.D. Student', education: 'M.S. from ZJU', status: '2026 Summer - ', photo: 'images/people/optimized/zhifan-luo.webp', website: 'https://sio-2.github.io/' },
     { lastName: 'Schoen', firstName: 'Adrien', role: 'Postdoc Scholar', education: 'Postdoc from CNRS; Ph.D. from Paris-Saclay', status: '2026 Fall - ', photo: 'images/people/placeholders/adrien-schoen.svg' },
     { lastName: 'Sun', firstName: 'He', role: 'Postdoc Scholar', education: 'Ph.D. from USTC', status: '2026 Fall - ', photo: 'images/people/optimized/he-sun.webp', website: 'https://ustc-sunny.github.io/' },
-    { lastName: 'Zhang', firstName: 'Jialin', role: 'Intern', education: 'Undergrad from Tongji U', status: '2025 Summer - ', photo: 'images/people/optimized/jialin-zhang.webp' },
+    { lastName: 'Zhang', firstName: 'Jialin', role: 'Intern', education: 'Undergrad from Tongji U', status: '2025 Summer - ', photo: 'images/people/optimized/jialin-zhang.webp', website: 'https://fredzjl.github.io/JialinZhang.github.io/' },
     { lastName: 'Zhang', firstName: 'Jinyu', role: 'Intern', education: 'Undergrad from HKU', status: '2025 Summer - ', photo: 'images/people/optimized/jinyu-zhang.webp' },
     { lastName: 'Zhou', firstName: 'Tianyufei', role: 'MPhil Student', education: 'B.S. from SYSU', status: '2026 Spring - ', photo: 'images/people/optimized/tianyufei-zhou.webp', website: 'https://ztyf.github.io/' }
 ].sort((a, b) => a.lastName.localeCompare(b.lastName));
