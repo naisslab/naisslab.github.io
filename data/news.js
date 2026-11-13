@@ -1,6 +1,12 @@
 // data/news.js
 const newsData = [
     {
+        date: 'Nov 2026',
+        title: '"Towards an Internet of Agents with Self-evolving and Trustworthy Collaboration" receives NSFC/RGC Joint Research Scheme funding!',
+        content: 'The project received HK$1,163,136 in RGC funding for four years under the 2026/27 exercise. Led by Prof. Edith Cheuk-han Ngai (HKU) and Prof. Xingwei Wang (Northeastern University), the project includes Dr. Shinan Liu as Co-I.',
+        url: 'https://www.ugc.edu.hk/eng/rgc/funding_opport/nsfc/funded_research/list_award_e2026.html'
+    },
+    {
         date: 'Oct 2026',
         title: 'Dr. Liu joins the ACM SIGMETRICS 2027, ACM CCS 2027, and ACM IMC 2027 program committees.',
         content: 'Please consider submitting your papers to these conferences!',

@@ -56,6 +56,16 @@ const publicationsData = [
         year: 2026,
         type: 'Preprint',
         area: ['ml-for-systems', 'security'],
+        id: 'obfsgen',
+        title: 'obfsgen: Generative Tunnel Obfuscation',
+        authors: 'Kaidong Wu, Wentao Du, Shinan Liu, Diwen Xue',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2611.15019' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
+        area: ['ml-for-systems', 'security'],
         id: 'spliceleak',
         title: 'Agent-Assisted Side-Channel Attacks on Non-Prefix KV Cache in RAG',
         authors: 'He Sun, Shinan Liu, Siyuan Ma, Junhao Li, Mingjun Xiao, Wenhao Jiang',
