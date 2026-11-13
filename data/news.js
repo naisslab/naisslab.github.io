@@ -2,6 +2,12 @@
 const newsData = [
     {
         date: 'Nov 2026',
+        title: 'InferSSD, our open-source collaboration with WiCi and HKUST, surpasses 1,000 GitHub stars!',
+        content: 'InferSSD uses SSD storage to run large mixture-of-experts models that exceed available RAM or GPU memory. Our postdoctoral researcher He Sun and Ph.D. student Zerui Chen have contributed to the project. Thanks to our collaborators and the open-source community!',
+        url: 'https://github.com/wici-ai/inferssd'
+    },
+    {
+        date: 'Nov 2026',
         title: '"Towards an Internet of Agents with Self-evolving and Trustworthy Collaboration" receives NSFC/RGC Joint Research Scheme funding!',
         content: 'The project received HK$1,163,136 in RGC funding for four years under the 2026/27 exercise. Led by Prof. Edith Cheuk-han Ngai (HKU) and Prof. Xingwei Wang (Northeastern University), the project includes Dr. Shinan Liu as Co-I.',
         url: 'https://www.ugc.edu.hk/eng/rgc/funding_opport/nsfc/funded_research/list_award_e2026.html'
