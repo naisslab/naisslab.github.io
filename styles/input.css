@@ -85,6 +85,24 @@ section,
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 251, 250, 0.76));
 }
 
+.sponsor-list a {
+    display: flex;
+    min-height: 4rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #172438;
+    font-weight: 600;
+}
+
+.sponsor-list img {
+    max-width: min(100%, 11rem);
+    max-height: 3.25rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 .hero-bg {
     position: relative;
     overflow: hidden;

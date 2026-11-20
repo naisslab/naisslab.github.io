@@ -13,6 +13,7 @@ const publicationsData = [
         links: {
             pdf: 'https://arxiv.org/pdf/2607.03926',
             adoption: 'https://www.rockfish.ai/resources/blogs/rockfish-achieves-a-third-of-the-gpu-cost-at-greater-fidelity',
+            adoptionLabel: 'Adoption at Rockfish Data',
             code: 'https://github.com/TabQueryBench/TabQueryBench',
             dockerData: 'https://huggingface.co/datasets/TabQueryBench2026/TabQueryBench/tree/main'
         }

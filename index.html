@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAISS Lab | Networked AI Systems and Security Lab</title>
-    <link rel="stylesheet" href="assets/site.css?v=98869e5aadd2">
+    <link rel="stylesheet" href="assets/site.css?v=2a1952d5dc8d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,6 +31,7 @@
                         <a href="#people" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">People</a>
                         <a href="#publications" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Publications</a>
                         <a href="#news" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">News</a>
+                        <a href="#sponsors" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Sponsors</a>
                     </nav>
                 </div>
                 <div class="-mr-1 flex md:hidden">
@@ -59,6 +60,7 @@
                 <a href="#people" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">People</a>
                 <a href="#publications" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Publications</a>
                 <a href="#news" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">News</a>
+                <a href="#sponsors" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Sponsors</a>
             </div>
         </div>
     </header>
@@ -156,6 +158,22 @@
             </div>
         </section>
 
+        <section id="sponsors" aria-labelledby="sponsors-heading" class="section-shell bg-white py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 id="sponsors-heading" class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Sponsors</h2>
+                </div>
+                <ul class="sponsor-list mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 xl:grid-cols-6">
+                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku.webp" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
+                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.jpg" alt="Research Grants Council of Hong Kong (RGC)" width="285" height="97" loading="lazy"></a></li>
+                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
+                    <li><a href="https://www.alibabagroup.com/"><img src="images/sponsors/alibaba.svg" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
+                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici.webp" alt="WiCi" width="564" height="216" loading="lazy"></a></li>
+                    <li><a href="https://www.rockfish.ai/"><img src="images/sponsors/rockfish-data.png" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-slate-900 text-slate-100">
@@ -171,7 +189,7 @@
 
     <script src="data/research.js?v=d6dd5af3a1e9"></script>
     <script src="data/people.js?v=d78bca77deb6"></script>
-    <script src="data/publication.js?v=e98cac9612cf"></script>
+    <script src="data/publication.js?v=3c5202ab5ad4"></script>
     <script src="data/news.js?v=646f9c239a30"></script>
 
     <script>
@@ -363,7 +381,7 @@
                         : (pub.links.code ? [{ label: 'Code', url: pub.links.code }] : []);
                     const extraLinks = [
                         pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : '',
-                        pub.links.adoption ? `<a href="${escapeHtml(pub.links.adoption)}" class="publication-link" target="_blank" rel="noopener noreferrer">Adoption</a>` : '',
+                        pub.links.adoption ? `<a href="${escapeHtml(pub.links.adoption)}" class="publication-link" target="_blank" rel="noopener noreferrer">${escapeHtml(pub.links.adoptionLabel || 'Adoption')}</a>` : '',
                         ...codeLinks.map(link => `<a href="${escapeHtml(link.url)}" class="publication-link" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`),
                         pub.links.dockerData ? `<a href="${escapeHtml(pub.links.dockerData)}" class="publication-link" target="_blank" rel="noopener noreferrer">Docker images and data</a>` : '',
                         pub.links.media ? `<a href="${pub.links.media}" class="publication-link" target="_blank" rel="noopener noreferrer">Media</a>` : '',
