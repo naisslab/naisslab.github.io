@@ -175,19 +175,20 @@ assert.match(publicationsHtml, /href="https:\/\/github.com\/VanTranHong\/IMC-26-
     'Existing single-repository Code links should still render');
 
 function assertPreprintPreview(html, papers) {
+    const previewCount = 4;
     const preprints = papers.filter(pub => pub.type === 'Preprint');
     const disclosure = html.match(/<details class="preprints-more">([\s\S]*?)<\/details>/);
-    if (preprints.length <= 3) {
-        assert(!disclosure, 'Three or fewer preprints should not have an expand control');
+    if (preprints.length <= previewCount) {
+        assert(!disclosure, 'Four or fewer preprints should not have an expand control');
         return;
     }
     assert(disclosure, 'Additional preprints should start in a closed disclosure');
-    assert(disclosure[1].includes(`Show ${preprints.length - 3} more preprints`));
+    assert(disclosure[1].includes(`Show ${preprints.length - previewCount} more preprints`));
     const preview = html.slice(0, disclosure.index);
-    assert.strictEqual((preview.match(/<article /g) || []).length, 3);
-    preprints.slice(0, 3).forEach(pub => assert(preview.includes(pub.title)));
-    preprints.slice(3).forEach(pub => assert(disclosure[1].includes(pub.title)));
-    assert.strictEqual((disclosure[1].match(/<article /g) || []).length, preprints.length - 3);
+    assert.strictEqual((preview.match(/<article /g) || []).length, previewCount);
+    preprints.slice(0, previewCount).forEach(pub => assert(preview.includes(pub.title)));
+    preprints.slice(previewCount).forEach(pub => assert(disclosure[1].includes(pub.title)));
+    assert.strictEqual((disclosure[1].match(/<article /g) || []).length, preprints.length - previewCount);
     papers.filter(pub => pub.type !== 'Preprint').forEach(pub => {
         assert(html.slice(disclosure.index + disclosure[0].length).includes(pub.title),
             'Published papers should remain outside the disclosure');
@@ -223,11 +224,13 @@ assert(
     publicationsHtml.includes('TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data'),
     'Expected rendered publications to include TabQueryBench'
 );
-assert(
-    publicationsHtml.indexOf('TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data') <
-        publicationsHtml.indexOf('TraceCodec: A Compiler-Backed Neural Codec for Stateful Multi-Flow Network Traffic Traces'),
-    'Expected TabQueryBench to render before the other preprints'
+assert.deepStrictEqual(
+    [...publicationsHtml.matchAll(/<article id="publication-([^"]+)"[^>]*class="publication-item preprint">/g)]
+        .slice(0, 4).map(match => match[1]),
+    ['toolpulse', 'tracecodec', 'tabquerybench', 'routerweave'],
+    'Expected the four featured preprints in priority order'
 );
+assert.match(publicationsHtml, /href="https:\/\/github\.com\/naisslab\/routerweave"[^>]*>Code<\/a>/);
 assert(
     publicationsHtml.includes('href="https://arxiv.org/pdf/2607.03926"'),
     'Expected rendered publications to include the TabQueryBench arXiv PDF link'

@@ -195,7 +195,7 @@
 
     <script src="data/research.js?v=d6dd5af3a1e9"></script>
     <script src="data/people.js?v=d78bca77deb6"></script>
-    <script src="data/publication.js?v=3c5202ab5ad4"></script>
+    <script src="data/publication.js?v=24e1ecdadeb2"></script>
     <script src="data/news.js?v=646f9c239a30"></script>
 
     <script>
@@ -427,8 +427,9 @@
 
                 const preprints = filteredPubs.filter(pub => pub.type === 'Preprint');
                 const published = filteredPubs.filter(pub => pub.type !== 'Preprint');
-                const remainingPreprints = preprints.slice(3);
-                container.innerHTML = preprints.slice(0, 3).map(renderPublication).join('') +
+                const previewCount = 4;
+                const remainingPreprints = preprints.slice(previewCount);
+                container.innerHTML = preprints.slice(0, previewCount).map(renderPublication).join('') +
                     (remainingPreprints.length ? `
                         <details class="preprints-more">
                             <summary>

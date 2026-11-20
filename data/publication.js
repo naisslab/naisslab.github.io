@@ -5,6 +5,26 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
+        area: ['security'],
+        id: 'toolpulse',
+        title: 'ToolPulse: Side-Channel Eavesdropping on Tool-Using LLM Agents',
+        authors: 'Zihao Dan, Jinyu Zhang, Jinzhao Lian, Yun Chen, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2611.25470' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
+        area: ['ml-for-systems'],
+        id: 'tracecodec',
+        title: 'TraceCodec: A Compiler-Backed Neural Codec for Stateful Multi-Flow Network Traffic Traces',
+        authors: 'Junhui Ding, Xinchen Zhang, Xiaohui Xie, Shinan Liu',
+        venue: 'In Submission',
+        links: { pdf: 'https://arxiv.org/pdf/2605.29941' }
+    },
+    {
+        year: 2026,
+        type: 'Preprint',
         area: ['ml-for-systems'],
         id: 'tabquerybench',
         title: 'TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data',
@@ -21,12 +41,15 @@ const publicationsData = [
     {
         year: 2026,
         type: 'Preprint',
-        area: ['ml-for-systems'],
-        id: 'tracecodec',
-        title: 'TraceCodec: A Compiler-Backed Neural Codec for Stateful Multi-Flow Network Traffic Traces',
-        authors: 'Junhui Ding, Xinchen Zhang, Xiaohui Xie, Shinan Liu',
+        area: ['ml-for-systems', 'cps'],
+        id: 'routerweave',
+        title: 'RouterWeave: A Unified Observation Layer for Cross-Platform Activity Analysis via Home Routers',
+        authors: 'Chengeng Liu, Ronghua Li, Yan Long, Shinan Liu',
         venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2605.29941' }
+        links: {
+            pdf: 'https://arxiv.org/pdf/2611.26134',
+            code: 'https://github.com/naisslab/routerweave'
+        }
     },
     {
         year: 2026,
