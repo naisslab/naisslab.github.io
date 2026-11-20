@@ -168,6 +168,14 @@ vm.runInContext(inlineScript[1], context, { filename: 'index.html inline script'
 const publicationsHtml = elements.get('publications-container').innerHTML;
 const newsHtml = elements.get('news-container').innerHTML;
 
+const tabQueryHtml = publicationsHtml.match(/<article id="publication-tabquerybench"[\s\S]*?<\/article>/)[0];
+const tabQueryLinks = Array.from(tabQueryHtml.matchAll(/<a href="([^"]+)" class="publication-link"[^>]*>([^<]+)<\/a>/g), match => [match[2], match[1]]);
+assert.deepStrictEqual(tabQueryLinks, [
+    ['Code', 'https://github.com/TabQueryBench/TabQueryBench'],
+    ['Docker', 'https://huggingface.co/datasets/TabQueryBench2026/TabQueryBench/tree/main'],
+    ['Adoption', 'https://www.rockfish.ai/resources/blogs/rockfish-achieves-a-third-of-the-gpu-cost-at-greater-fidelity']
+]);
+
 const flowwiseHtml = publicationsHtml.match(/<article id="publication-flowwise"[\s\S]*?<\/article>/)[0];
 assert.match(flowwiseHtml, /href="https:\/\/github.com\/noise-lab\/FlowWise"[^>]*>Code<\/a>/);
 assert.match(flowwiseHtml, /href="https:\/\/github.com\/naisslab\/FlowWise-Rust"[^>]*>Rust Code<\/a>/);
