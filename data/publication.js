@@ -10,7 +10,12 @@ const publicationsData = [
         title: 'TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data',
         authors: 'Jialin Zhang, Fenghao Dong, Yajie Zhou, Vyas Sekar, Shinan Liu',
         venue: 'In Submission',
-        links: { pdf: 'https://arxiv.org/pdf/2607.03926' }
+        links: {
+            pdf: 'https://arxiv.org/pdf/2607.03926',
+            adoption: 'https://www.rockfish.ai/resources/blogs/rockfish-achieves-a-third-of-the-gpu-cost-at-greater-fidelity',
+            code: 'https://github.com/TabQueryBench/TabQueryBench',
+            dockerData: 'https://huggingface.co/datasets/TabQueryBench2026/TabQueryBench/tree/main'
+        }
     },
     {
         year: 2026,
