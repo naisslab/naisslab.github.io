@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAISS Lab | Networked AI Systems and Security Lab</title>
-    <link rel="stylesheet" href="assets/site.css?v=f882cc6adf8f">
+    <link rel="stylesheet" href="assets/site.css?v=3fc338b0e064">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,9 +28,9 @@
                     <nav class="ml-8 flex items-baseline gap-1 lg:gap-3">
                         <a href="#about" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">About</a>
                         <a href="#research" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Research</a>
+                        <a href="#news" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">News</a>
                         <a href="#people" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">People</a>
                         <a href="#publications" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Publications</a>
-                        <a href="#news" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">News</a>
                         <a href="#sponsors" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Sponsors</a>
                     </nav>
                 </div>
@@ -57,9 +57,9 @@
             <div class="px-3 py-3 space-y-1">
                 <a href="#about" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">About</a>
                 <a href="#research" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Research</a>
+                <a href="#news" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">News</a>
                 <a href="#people" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">People</a>
                 <a href="#publications" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Publications</a>
-                <a href="#news" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">News</a>
                 <a href="#sponsors" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Sponsors</a>
             </div>
         </div>
@@ -112,6 +112,16 @@
             </div>
         </section>
 
+        <section id="news" class="section-shell soft py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Latest News</h2>
+                </div>
+                <div id="news-container" class="mt-6 max-w-6xl mx-auto grid gap-2.5">
+                </div>
+            </div>
+        </section>
+
         <section id="people" class="section-shell soft py-16 sm:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
@@ -144,16 +154,6 @@
                     </select>
                 </div>
                 <div id="publications-container" class="mt-6 grid gap-2.5 max-w-6xl mx-auto">
-                </div>
-            </div>
-        </section>
-
-        <section id="news" class="section-shell soft py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Latest News</h2>
-                </div>
-                <div id="news-container" class="mt-6 max-w-6xl mx-auto grid gap-2.5">
                 </div>
             </div>
         </section>
@@ -194,7 +194,7 @@
     </footer>
 
     <script src="data/research.js?v=d6dd5af3a1e9"></script>
-    <script src="data/people.js?v=d78bca77deb6"></script>
+    <script src="data/people.js?v=42bfd5b6b45f"></script>
     <script src="data/publication.js?v=2fd3cb405a9b"></script>
     <script src="data/news.js?v=646f9c239a30"></script>
 
@@ -474,7 +474,7 @@
                 const container = document.getElementById('news-container');
                 if (!container) return;
 
-                container.innerHTML = newsData.map(item => {
+                const renderNewsItem = item => {
                     const titleHtml = item.url
                         ? `<a href="${item.url}" class="news-link" target="_blank" rel="noopener noreferrer">${item.title}</a>`
                         : item.title;
@@ -488,7 +488,22 @@
                             </div>
                         </article>
                     `;
-                }).join('');
+                };
+
+                const previewCount = 5;
+                const olderNews = newsData.slice(previewCount);
+                container.innerHTML = newsData.slice(0, previewCount).map(renderNewsItem).join('') +
+                    (olderNews.length ? `
+                        <details class="news-more">
+                            <summary>
+                                <span class="news-show">Show older news</span>
+                                <span class="news-hide">Show fewer news items</span>
+                            </summary>
+                            <div class="grid gap-2.5 mt-2.5">
+                                ${olderNews.map(renderNewsItem).join('')}
+                            </div>
+                        </details>
+                    ` : '');
             }
 
 

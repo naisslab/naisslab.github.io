@@ -302,6 +302,20 @@ assert.strictEqual((publicationsHtml.match(/<article /g) || []).length, publicat
     'The homepage should retain the complete publication list');
 assert.strictEqual((newsHtml.match(/<article /g) || []).length, vm.runInContext('newsData.length', context),
     'The homepage should retain the complete news list');
+assert(indexHtml.indexOf('<section id="news"') < indexHtml.indexOf('<section id="people"'));
+assert.deepStrictEqual(
+    [...indexHtml.matchAll(/<a href="#(news|people)"/g)].map(match => match[1]),
+    ['news', 'people', 'news', 'people'],
+    'Both navigation menus should put News before People'
+);
+const newsDisclosure = newsHtml.match(/<details class="news-more">([\s\S]*?)<\/details>/);
+assert(newsDisclosure, 'Older news should start in a closed disclosure');
+const newsPreview = newsHtml.slice(0, newsDisclosure.index);
+const newsItems = vm.runInContext('newsData', context);
+assert.strictEqual((newsPreview.match(/<article /g) || []).length, 5);
+newsItems.slice(0, 5).forEach(item => assert(newsPreview.includes(item.title)));
+newsItems.slice(5).forEach(item => assert(newsDisclosure[1].includes(item.title)));
+
 assert.strictEqual((elements.get('people-container').innerHTML.match(/<img /g) || []).length,
     vm.runInContext('peopleData.length + alumniData.length', context), 'The homepage should retain the complete team');
 
