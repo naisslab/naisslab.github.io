@@ -11,7 +11,7 @@ const peopleData = [
     { lastName: 'Lam', firstName: 'Tik Sang', role: 'Intern', education: 'Undergrad from HKU', status: '2026 Fall - ', photo: 'images/people/optimized/tik-sang-lam.webp' },
     { lastName: 'Li', firstName: 'Ronghua', role: 'Postdoc Scholar', education: 'Ph.D. from PolyU', status: '2026 Fall - ', photo: 'images/people/optimized/ronghua-li.webp' },
     { lastName: 'Lian', firstName: 'Jinzhao', role: 'Intern', education: 'B.S. from RUC', status: '2026 Spring - ', photo: 'images/people/optimized/jinzhao-lian.webp' },
-    { lastName: 'Liu', firstName: 'Chanyuan', role: 'Intern', status: 'Starting Winter 2026', photo: 'images/people/optimized/chanyuan-liu.webp' },
+    { lastName: 'Liu', firstName: 'Chanyuan', role: 'Intern', education: 'M.S. from NEU', status: '2026 Winter - ', photo: 'images/people/optimized/chanyuan-liu.webp' },
     { lastName: 'Liu', firstName: 'Chengeng', role: 'Intern', education: 'M.S. from BU', status: '2026 Spring - ', photo: 'images/people/optimized/chengeng-liu.webp' },
     { lastName: 'Luo', firstName: 'Zhifan', role: 'Ph.D. Student', education: 'M.S. from ZJU', status: '2026 Summer - ', photo: 'images/people/optimized/zhifan-luo.webp', website: 'https://sio-2.github.io/' },
     { lastName: 'Schoen', firstName: 'Adrien', role: 'Postdoc Scholar', education: 'Postdoc from CNRS; Ph.D. from Paris-Saclay', status: '2026 Fall - ', photo: 'images/people/placeholders/adrien-schoen.svg' },
