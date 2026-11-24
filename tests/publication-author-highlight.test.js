@@ -173,6 +173,7 @@ const tabQueryLinks = Array.from(tabQueryHtml.matchAll(/<a href="([^"]+)" class=
 assert.deepStrictEqual(tabQueryLinks, [
     ['Code', 'https://github.com/TabQueryBench/TabQueryBench'],
     ['Docker', 'https://huggingface.co/datasets/TabQueryBench2026/TabQueryBench/tree/main'],
+    ['Blog', 'https://www.rockfish.ai/resources/blogs/beyond-statistical-similarity'],
     ['Adoption', 'https://www.rockfish.ai/resources/blogs/rockfish-achieves-a-third-of-the-gpu-cost-at-greater-fidelity']
 ]);
 
