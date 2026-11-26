@@ -14,8 +14,11 @@ async function buildImages() {
     for (const filename of photos) {
         const source = path.join(sourceDirectory, filename);
         const output = path.join(outputDirectory, `${path.parse(filename).name}.webp`);
-        const result = await sharp(source)
-            .rotate()
+        const portrait = sharp(source).rotate();
+        if (filename === 'di-hu.jpg') {
+            portrait.extract({ left: 175, top: 68, width: 550, height: 550 });
+        }
+        const result = await portrait
             .resize(256, 256, { fit: 'cover', position: 'centre' })
             .webp({ quality: 82, effort: 6 })
             .toFile(output);
