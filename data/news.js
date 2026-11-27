@@ -14,7 +14,7 @@ const newsData = [
     },
     {
         date: 'Oct 2026',
-        title: 'Dr. Liu joins the ACM SIGMETRICS 2027, ACM CCS 2027, and ACM IMC 2027 program committees.',
+        title: 'Dr. Liu joins the ACM CCS 2027, ACM IMC 2027, and ACM CoNEXT 2027 program committees.',
         content: 'Please consider submitting your papers to these conferences!',
         url: ''
     },
