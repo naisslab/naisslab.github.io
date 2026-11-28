@@ -160,7 +160,7 @@ assert(
 );
 
 const indexHtml = fs.readFileSync(path.join(repoRoot, 'index.html'), 'utf8');
-const inlineScript = indexHtml.match(/<script>\s*([\s\S]*?)\s*<\/script>\s*<\/body>/);
+const inlineScript = indexHtml.match(/<script>\s*((?:(?!<script)[\s\S])*?)\s*<\/script>\s*<\/body>/);
 assert(inlineScript, 'Expected to find the main inline script in index.html');
 
 vm.runInContext(inlineScript[1], context, { filename: 'index.html inline script' });
@@ -383,5 +383,16 @@ for (const photo of vm.runInContext('[...peopleData, ...alumniData].map(person =
     assert(fs.existsSync(path.join(repoRoot, photo)), `Missing optimized portrait: ${photo}`);
 }
 assert(!indexHtml.includes('cdn.tailwindcss.com'));
+const joinHtml = fs.readFileSync(path.join(repoRoot, 'join.html'), 'utf8');
+assert.strictEqual((indexHtml.match(/href="join\.html"/g) || []).length, 5,
+    'The header, mobile menu, hero, footer, and recruiting band should all link to the Join Us page');
+for (const asset of ['assets/site.css', 'assets/site.js', 'assets/hero.js']) {
+    const version = html => (html.match(new RegExp(`${asset.replace('.', '\\.')}\\?v=([a-f0-9]+)`)) || [])[1];
+    assert(version(joinHtml) && version(joinHtml) === version(indexHtml), `join.html should load the current ${asset}`);
+}
+assert.strictEqual((joinHtml.match(/class="[^"]*only-en/g) || []).length > 0, true);
+assert.strictEqual((joinHtml.match(/<section id="/g) || []).length * 2,
+    (joinHtml.match(/<h2 class="section-title only-(en|zh)"/g) || []).length,
+    'Every Join Us section should have an English and a Chinese title');
 assert(fs.existsSync(path.join(repoRoot, 'assets/site.css')));
 console.log('Complete homepage lists, research links, publication content, and local assets passed.');

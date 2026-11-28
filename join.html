@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Join Us | NAISS Lab</title>
+    <meta name="description"
+        content="NAISS Lab at The University of Hong Kong is recruiting two fully funded Ph.D. students for 2027, plus MPhil students, research assistants, postdoctoral researchers, and visitors.">
+    <meta name="theme-color" content="#0a2620">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NAISS Lab">
+    <meta property="og:title" content="Join Us | NAISS Lab">
+    <meta property="og:description"
+        content="Two fully funded Ph.D. positions for 2027 in machine learning systems, networking, and security at HKU.">
+    <meta property="og:url" content="https://naisslab.github.io/join.html">
+    <meta property="og:image" content="https://naisslab.github.io/images/brand/naiss-lab-logo.png">
+    <link rel="icon" href="images/brand/naiss-lab-mark.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/ibm-plex-serif-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/site.css?v=e99e9f6bbcd5">
+    <script>
+        // Pick the language before first paint: ?lang=zh shows Chinese. Without scripts both languages show.
+        (function (root) {
+            var zh = /[?&]lang=zh(&|$)/.test(location.search);
+            root.dataset.lang = zh ? 'zh' : 'en';
+            if (zh) root.lang = 'zh-Hans';
+        })(document.documentElement);
+    </script>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header id="header" class="site-header on-hero">
+        <div class="container-page header-inner">
+            <a href="index.html" class="lab-brand" aria-label="NAISS Lab home">
+                <img src="images/brand/naiss-lab-wordmark.svg" alt="NAISS Lab" class="lab-logo lab-logo-dark" width="412" height="173">
+                <img src="images/brand/naiss-lab-wordmark-light.svg" alt="" class="lab-logo lab-logo-light" width="412" height="173">
+            </a>
+            <nav class="desktop-nav" aria-label="Primary">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="index.html#news" class="nav-link">News</a>
+                <a href="index.html#people" class="nav-link">People</a>
+                <a href="index.html#publications" class="nav-link">Publications</a>
+                <a href="index.html#sponsors" class="nav-link">Sponsors</a>
+                <a href="join.html" class="nav-link nav-cta active" aria-current="page">Join us</a>
+            </nav>
+            <button id="mobile-menu-button" type="button" class="menu-button" aria-controls="mobile-menu"
+                aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="mobile-menu hidden" aria-label="Primary">
+            <div class="container-page">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="index.html#news" class="nav-link">News</a>
+                <a href="index.html#people" class="nav-link">People</a>
+                <a href="index.html#publications" class="nav-link">Publications</a>
+                <a href="index.html#sponsors" class="nav-link">Sponsors</a>
+                <a href="join.html" class="nav-link active" aria-current="page">Join us</a>
+            </div>
+        </nav>
+        <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
+    </header>
+
+    <main id="main">
+        <section class="hero page-hero">
+            <canvas id="hero-net" class="hero-net" aria-hidden="true"></canvas>
+            <div class="container-page page-hero-inner">
+                <p class="hero-eyebrow"><span><span class="hero-dept">Data and Systems Engineering &middot; </span>The University of Hong Kong</span></p>
+                <h1 class="page-title">
+                    <span class="only-en">Join NAISS Lab</span>
+                    <span class="only-zh" lang="zh-Hans">加入 NAISS Lab</span>
+                </h1>
+                <p class="hero-lead only-en">We are recruiting two fully funded Ph.D. students for 2027 to work where
+                    machine learning systems, networking, and security meet.</p>
+                <p class="hero-lead only-zh" lang="zh-Hans">实验室正在招收两名2027年入学的全奖博士生，研究方向为机器学习系统、计算机网络与安全的交叉。</p>
+                <div class="hero-actions">
+                    <a href="mailto:shinan6@hku.hk?subject=%5BPh.D.%5D%20" class="btn btn-primary only-en">Apply by email</a>
+                    <a href="#apply" class="btn btn-secondary only-en">How to apply</a>
+                    <a href="mailto:shinan6@hku.hk?subject=%E3%80%90%E5%8D%9A%E5%A3%AB%E7%94%9F%E3%80%91" class="btn btn-primary only-zh" lang="zh-Hans">邮件申请</a>
+                    <a href="#apply" class="btn btn-secondary only-zh" lang="zh-Hans">申请方式</a>
+                </div>
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button type="button" data-set-lang="en">English</button>
+                    <button type="button" data-set-lang="zh" lang="zh-Hans">中文</button>
+                </div>
+                <p class="join-deadline only-en" data-until="2026-12-01T12:00:00+08:00">HKPFS 2027/28: initial
+                    applications close 1 December 2026, 12:00 noon Hong Kong time.</p>
+                <p class="join-deadline only-zh" lang="zh-Hans" data-until="2026-12-01T12:00:00+08:00">香港博士研究生奖学金（HKPFS）2027/28：初步申请截止于2026年12月1日中午12时（香港时间）。</p>
+            </div>
+        </section>
+
+        <section id="positions" class="section">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">Open positions</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">招生岗位</h2>
+                    <p class="section-intro only-en">For Spring and Fall 2027. Start dates are flexible.</p>
+                    <p class="section-intro only-zh" lang="zh-Hans">2027年春季及秋季入学/入职，时间灵活。</p>
+                </div>
+                <div>
+                    <div class="list-panel position-list only-en">
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">Ph.D. students</h3>
+                                <span class="position-tag is-hiring">2 positions</span>
+                            </div>
+                            <p>Fully funded. Strong applicants are encouraged to apply for the Hong Kong PhD
+                                Fellowship Scheme; HKU upgrades its awardees to the Presidential PhD Scholar package.</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">MPhil students</h3>
+                                <span class="position-tag">Rolling</span>
+                            </div>
+                            <p>A research master's degree, funded through the HKU Postgraduate Scholarship.</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">Postdoctoral researchers</h3>
+                                <span class="position-tag">Rolling</span>
+                            </div>
+                            <p>Up to three years of support. The position counts as overseas work experience and can
+                                serve as a stepping stone to programs such as the NSFC Excellent Young Scientists Fund
+                                (Overseas).</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">Research assistants</h3>
+                                <span class="position-tag">Rolling</span>
+                            </div>
+                            <p>For students on a gap year, or still in school and planning to apply for a Ph.D. in the
+                                next year or two. Remote positions are possible.</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">Visiting students and scholars</h3>
+                                <span class="position-tag">Rolling</span>
+                            </div>
+                            <p>For current Ph.D. students and postdocs at other universities.</p>
+                        </div>
+                    </div>
+                    <div class="list-panel position-list only-zh" lang="zh-Hans">
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">博士生</h3>
+                                <span class="position-tag is-hiring">2 名</span>
+                            </div>
+                            <p>全额奖学金。特别鼓励优秀申请人申请香港博士研究生奖学金（HKPFS），获奖者在港大将自动升级为校长博士奖学金（HKU-PS）待遇。</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">研究型硕士（MPhil）</h3>
+                                <span class="position-tag">长期招收</span>
+                            </div>
+                            <p>享港大研究生奖学金（PGS）资助。</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">博士后</h3>
+                                <span class="position-tag">长期招收</span>
+                            </div>
+                            <p>可支持三年，视为海外工作经历，可作为优秀学者申请海优及类似计划的跳板。</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">科研助理</h3>
+                                <span class="position-tag">长期招收</span>
+                            </div>
+                            <p>适合在 gap 或尚未毕业、计划明后年申请博士的同学，可远程。</p>
+                        </div>
+                        <div class="position">
+                            <div class="position-head">
+                                <h3 class="position-title">访问学生/学者</h3>
+                                <span class="position-tag">长期招收</span>
+                            </div>
+                            <p>需为其他学校的在读博士生或博士后。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="topics" class="section alt">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">What we work on</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">研究方向</h2>
+                </div>
+                <div class="join-prose">
+                    <div class="only-en">
+                        <p>Our work sits at the intersection of machine learning systems, computer networking, and
+                            security. We especially welcome people who want to explore, among other topics:</p>
+                        <ol class="topic-list">
+                            <li><a href="index.html#research" class="publication-link">ML for Systems, Systems for ML</a>: foundational ML systems and techniques for the networked world.</li>
+                            <li><a href="index.html#research" class="publication-link">Network Security and Privacy</a>: our tools applied to critical security and privacy challenges.</li>
+                            <li><a href="index.html#research" class="publication-link">Cyber-physical Intelligence</a>: better interactions with the cyber-physical world.</li>
+                            <li>Your own research interests.</li>
+                        </ol>
+                        <p>We aim for top venues in networking and measurement (SIGCOMM, NSDI, CoNEXT, SIGMETRICS, IMC),
+                            security (IEEE S&amp;P, USENIX Security, CCS, NDSS), and ubiquitous and mobile computing
+                            (UbiComp, MobiCom, MobiSys, SenSys). Recent lab papers have also appeared at MICRO, VLDB,
+                            and SoCC.</p>
+                    </div>
+                    <div class="only-zh" lang="zh-Hans">
+                        <p>实验室的研究位于机器学习系统、计算机网络与安全的交叉，希望有能力和兴趣探索（包括但不限于）以下方向的同学/同事：</p>
+                        <ol class="topic-list">
+                            <li><a href="index.html#research" class="publication-link">ML for Systems, Systems for ML</a>：为网络世界构建基础的机器学习系统与技术。</li>
+                            <li><a href="index.html#research" class="publication-link">Network Security and Privacy</a>：用我们的工具解决关键的安全与隐私问题。</li>
+                            <li><a href="index.html#research" class="publication-link">Cyber-physical Intelligence</a>：改进人与信息物理世界的交互。</li>
+                            <li>你自己感兴趣的方向。</li>
+                        </ol>
+                        <p>实验室的目标会议包括但不限于：网络及测量（SIGCOMM / NSDI / CoNEXT / SIGMETRICS / IMC），安全（S&amp;P / USENIX Security /
+                            CCS / NDSS），普适计算或移动计算（UbiComp / MobiCom / MobiSys / SenSys）。近期论文也发表于 MICRO、VLDB、SoCC 等会议。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fit" class="section">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">Who we are looking for</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">我们希望你具备</h2>
+                </div>
+                <div class="join-prose">
+                    <ul class="join-list only-en">
+                        <li>A background in computer science, electrical engineering, cybersecurity, communication
+                            engineering, software engineering, artificial intelligence, or a related field. Not sure
+                            you fit? Send an email anyway.</li>
+                        <li>Strong self-motivation.</li>
+                        <li>Solid programming or mathematical skills.</li>
+                        <li>Good communication, writing, and presentation skills in Chinese and English that meet
+                            HKU's language requirements.</li>
+                        <li>A plus: research experience in ML systems, networking, or security, competition awards,
+                            or open-source projects.</li>
+                    </ul>
+                    <ul class="join-list only-zh" lang="zh-Hans">
+                        <li>来自计算机科学、电子工程、网络安全、通信工程、软件工程、人工智能或相关院系（如果不确定可以发封邮件试试）。</li>
+                        <li>较强的自驱力。</li>
+                        <li>过硬的编程或数学能力。</li>
+                        <li>良好的中英文沟通、写作和展示能力，满足学校语言要求。</li>
+                        <li>加分项：MLSys、网络或安全相关的科研经历、竞赛成果、开源项目经历。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="offer" class="section alt">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">What we offer</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">我能提供什么支持</h2>
+                </div>
+                <div class="join-prose">
+                    <div class="only-en">
+                        <blockquote class="join-quote">
+                            <p>A Ph.D. is not an easy journey, but for people who seek intellectual freedom it often
+                                pays off in the end. In our lab we call each other by first name: I am your advisor, and
+                                also your colleague, a fellow scholar working alongside you toward your academic
+                                goals.</p>
+                            <footer>Shinan Liu, Lab Director</footer>
+                        </blockquote>
+                        <ul class="join-list">
+                            <li><strong>Guidance that grows with you.</strong> Early on, I teach the research skills
+                                you need hands-on and provide ideas, guidance, and resources. Later in your Ph.D., you
+                                get room to explore on your own.</li>
+                            <li><strong>A respectful lab.</strong> My own Ph.D. advisor, Nick Feamster, led with
+                                integrity, a light touch, and deep respect for students. I am building the same kind of
+                                lab, so you can focus on research rather than anything else.</li>
+                            <li><strong>Real problems, real internships.</strong> Our research starts from real-world
+                                problems, and I support research-oriented internships.</li>
+                            <li><strong>A wide network.</strong> I have long-term collaborations with faculty at
+                                UChicago, CMU, Stanford, Northwestern, UIUC, NYU, Georgia Tech, Virginia Tech, and UCSB,
+                                and will help you work with them. If you later want to continue your training
+                                elsewhere, I will help you find a suitable advisor and recommend you.</li>
+                            <li><strong>Where members go next.</strong> Lab interns have gone on to Ph.D. programs at
+                                NYU, Virginia Tech, and Penn State, and a former postdoc is now a tenured associate
+                                professor at Northeastern University (China).</li>
+                            <li><strong>Equipment and travel.</strong> The lab funds a personal computer, productivity
+                                tools, and travel to international conferences.</li>
+                        </ul>
+                        <h3 id="funding" class="join-subhead">Funding</h3>
+                        <dl class="fund-list">
+                            <div>
+                                <dt>HKU Postgraduate Scholarship</dt>
+                                <dd>HK$19,135 a month for Ph.D. and MPhil students, rising to HK$19,655 once a Ph.D.
+                                    candidature is confirmed (rates from 1 September 2026).</dd>
+                            </div>
+                            <div>
+                                <dt>Hong Kong PhD Fellowship</dt>
+                                <dd>HK$344,400 a year (about HK$28,700 a month) plus HK$14,400 a year for conference
+                                    and research travel, for up to three years (2026/27 rates).</dd>
+                            </div>
+                            <div>
+                                <dt>HKU Presidential PhD Scholarship</dt>
+                                <dd>HKPF awardees at HKU automatically receive this package: HK$28,700 a month, a cash
+                                    award of HK$40,000 in year 1 and HK$20,000 a year after that, HK$14,400 a year for
+                                    travel, tuition waived for the normative study period, and a guaranteed hall place
+                                    in year 1. HKU also offers it to selected full-time Ph.D. entrants, worth up to about
+                                    HK$1.7 million in total.</dd>
+                            </div>
+                            <div>
+                                <dt>Postdocs and on-site RAs</dt>
+                                <dd>Paid according to HKU standards.</dd>
+                            </div>
+                        </dl>
+                        <p class="fund-note">Rates are adjusted every year. See the <a href="https://gradsch.hku.hk/"
+                                class="publication-link">HKU Graduate School</a> and the <a
+                                href="https://cerg1.ugc.edu.hk/hkpfs/index.html" class="publication-link">Research
+                                Grants Council</a> for current details.</p>
+                    </div>
+                    <div class="only-zh" lang="zh-Hans">
+                        <blockquote class="join-quote">
+                            <p>读博并不是一趟轻松的旅程，但对于想追求智识自由的人来说，道路的尽头常常会结出硕果。在我的实验室里，我希望我们可以互相以名相称：我会是你的导师，但我更是你的同事，是一起并肩作战的学者，帮助你实现自己的学术理想。</p>
+                            <footer>Shinan Liu，实验室主任</footer>
+                        </blockquote>
+                        <ul class="join-list">
+                            <li><strong>循序渐进的指导。</strong>开始阶段，我会手把手传授科研需要的技能，提供做好科研需要的点子、指导和资源；到了博士中后期，能够独立探索的时候，我会给予你足够的自由探索空间。</li>
+                            <li><strong>相互尊重的环境。</strong>我的博士导师 Nick Feamster 人格高尚、管理宽松、格外尊重学生，教会了我严于律己、宽以待人、追求卓越的科学精神。我会打造一个相互尊重、共同成就的环境，让你不用担心学术挑战以外的问题。</li>
+                            <li><strong>源于实际的问题。</strong>我的科研来源于实际中的问题，所以也会支持你参与科研导向的实习。</li>
+                            <li><strong>广泛的合作网络。</strong>我和 UChicago、CMU、Stanford、Northwestern、UIUC、NYU、GaTech、VT、UCSB 等学校的教授学者建立了长期合作，会促成你与他们合作；如果你将来有进一步深造的需求，我会帮助你联系合适的导师，推荐你到对应实验室。</li>
+                            <li><strong>成员去向。</strong>实验室实习生已前往 NYU、Virginia Tech、Penn State 攻读博士；前博士后已出任东北大学长聘副教授。</li>
+                            <li><strong>设备与差旅。</strong>提供资金供学生购买个人电脑、效率工具，并支持参加国际会议。</li>
+                        </ul>
+                        <h3 class="join-subhead">奖学金与待遇</h3>
+                        <dl class="fund-list">
+                            <div>
+                                <dt>港大研究生奖学金（PGS）</dt>
+                                <dd>博士生及研究型硕士每月港币19,135元，博士资格确认后为每月港币19,655元（2026年9月1日起）。</dd>
+                            </div>
+                            <div>
+                                <dt>香港博士研究生奖学金（HKPFS）</dt>
+                                <dd>每年港币344,400元（约每月港币28,700元），另有每年港币14,400元会议及研究差旅津贴，最长三年（2026/27年度标准）。</dd>
+                            </div>
+                            <div>
+                                <dt>港大校长博士奖学金（HKU-PS）</dt>
+                                <dd>HKPFS 获奖者在港大自动获得该待遇：每月港币28,700元；现金奖励首年港币40,000元，其后每年港币20,000元；每年港币14,400元差旅津贴；标准修业期内免学费；首年保证宿舍。港大也会向部分优秀全日制博士新生直接颁发，总额最高约港币170万元。</dd>
+                            </div>
+                            <div>
+                                <dt>博后及在岗科研助理</dt>
+                                <dd>按港大标准提供津贴。</dd>
+                            </div>
+                        </dl>
+                        <p class="fund-note">以上标准每年调整，最新信息请以<a href="https://gradsch.hku.hk/" class="publication-link">港大研究生院</a>及<a
+                                href="https://cerg1.ugc.edu.hk/hkpfs/index.html" class="publication-link">研究资助局</a>公布为准。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="advisor" class="section">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">About the advisor</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">导师介绍</h2>
+                </div>
+                <div class="join-prose">
+                    <div class="only-en">
+                        <p>Shinan Liu is an Assistant Professor in the Department of Data and Systems Engineering at
+                            The University of Hong Kong and directs NAISS Lab. Dr. Liu received a Ph.D. and M.S. in
+                            Computer Science from The University of Chicago, advised by Prof. Nick Feamster (ACM
+                            Fellow), worked closely with Prof. Vyas Sekar at Carnegie Mellon University, and holds a
+                            B.Eng. (Honors) from the Yingcai Honors College of UESTC.</p>
+                        <p>Recognitions include the 2025 ML and Systems Rising Stars, the Carnegie Bosch Fellowship,
+                            the ACTION AI Fellowship, and the Daniels Fellowship. Dr. Liu previously headed the student
+                            advisory council of the NSF ACTION AI Institute.</p>
+                        <p>The research has appeared at USENIX Security, NDSS, NSDI, SIGMETRICS, CoNEXT, MICRO, and
+                            UbiComp. LEAF was deployed in Verizon's cellular network, and the GPS spoofing work was
+                            featured in Forbes, The Wall Street Journal, and ACM TechNews.</p>
+                        <p>Dr. Liu serves on the program committees of SIGCOMM, CCS, USENIX Security, IMC, SIGMETRICS,
+                            PETS, and NSDI, and reviews for NeurIPS, KDD, UbiComp/IMWUT, USENIX ATC, IEEE INFOCOM, IEEE
+                            TDSC, IEEE TIFS, and IEEE IoTJ.</p>
+                        <p class="advisor-links"><a href="https://www.shinan.info/" class="publication-link">Personal
+                                website</a><a href="https://scholar.google.com/citations?user=BIyGbZYAAAAJ"
+                                class="publication-link">Google Scholar</a></p>
+                    </div>
+                    <div class="only-zh" lang="zh-Hans">
+                        <p>Shinan Liu 现任香港大学数据与系统工程系助理教授，主持 NAISS Lab。博士及硕士毕业于芝加哥大学计算机科学系，导师为 ACM Fellow Nick Feamster 教授，并与卡内基梅隆大学 Vyas Sekar 教授保持紧密合作；本科毕业于电子科技大学英才实验学院。</p>
+                        <p>曾入选 2025 年 ML and Systems Rising Stars，获 Carnegie Bosch Fellowship、ACTION AI Fellowship、Daniels Fellowship 等奖学金，并曾担任美国国家科学基金会（NSF）ACTION AI Institute 学生顾问委员会负责人。</p>
+                        <p>研究集中在计算机网络与安全，尤其关注构建可靠且高性能的机器学习系统以支持网络数据分析，同时利用网络数据分析应对安全与隐私领域的关键问题。成果发表于 USENIX Security、NDSS、NSDI、SIGMETRICS、CoNEXT、MICRO、UbiComp 等顶级会议与期刊；LEAF 已部署于 Verizon 的蜂窝网络系统，GPS 欺骗相关研究曾被 Forbes、The Wall Street Journal、ACM TechNews 等媒体报道。</p>
+                        <p>担任 SIGCOMM、CCS、USENIX Security、IMC、SIGMETRICS、PETS、NSDI 等会议的程序委员会委员，并为 NeurIPS、KDD、UbiComp/IMWUT、USENIX ATC、IEEE INFOCOM、IEEE TDSC、IEEE TIFS、IEEE IoTJ 等会议和期刊审稿。</p>
+                        <p class="advisor-links"><a href="https://www.shinan.info/" class="publication-link">个人主页</a><a
+                                href="https://scholar.google.com/citations?user=BIyGbZYAAAAJ" class="publication-link">谷歌学术</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hku" class="section alt">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">HKU and DASE</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">学校及院系介绍</h2>
+                </div>
+                <div class="join-prose">
+                    <div class="only-en">
+                        <p>The University of Hong Kong is the oldest institution of higher learning in Hong Kong and an
+                            international research university, ranked 11th in the 2026 QS World University Rankings. The
+                            main campus sits on a hillside in the west of Hong Kong Island overlooking Victoria Harbour,
+                            a short MTR, bus, or tram ride from Central and Admiralty, with dining, shops, and sports
+                            facilities close by.</p>
+                        <p>The Department of Data and Systems Engineering (DASE) was founded in 1973 as the Department
+                            of Industrial Engineering and took its current name in 2024. About 3,000 students have
+                            completed its undergraduate, master's, and doctoral programmes. The department follows a
+                            computing-in-practice philosophy that joins systems modelling, data-driven optimization,
+                            and real-world deployment. HKU ranks 18th in the world and first in Hong Kong for data
+                            science in the 2026 QS World University Rankings by Subject.</p>
+                    </div>
+                    <div class="only-zh" lang="zh-Hans">
+                        <p>香港大学是香港历史最悠久的高等学府，也是一所国际化程度较高的研究型大学，在2026年QS世界大学排名中位列第11位。主校区位于港岛西区，依山而建，俯瞰维多利亚港，可通过港铁、巴士、电车快速到达中环、金钟等主要商业区，周边餐饮、超市、书店、运动设施一应俱全。</p>
+                        <p>数据与系统工程系（DASE）创立于1973年，前身为工业工程系，2024年更名为数据与系统工程系，至今已有约3,000名学生完成本科、硕士及博士学位课程。DASE秉持“计算应用于实践”（computing-in-practice）的理念，重视跨学科系统建模、数据驱动优化和实际部署能力。在2026年QS世界大学学科排名中，港大数据科学位列全球第18、香港第一。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply" class="section">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title only-en">How to apply</h2>
+                    <h2 class="section-title only-zh" lang="zh-Hans">申请方式</h2>
+                </div>
+                <div class="join-prose">
+                    <div class="only-en">
+                        <ol class="join-steps">
+                            <li>Email <a href="mailto:shinan6@hku.hk" class="publication-link">shinan6@hku.hk</a> with a
+                                subject line that starts with one of [Ph.D.], [MPhil], [Postdoc], [RA], [Visiting
+                                Student], or [Visiting Scholar].</li>
+                            <li>Include your research interests, CV, and transcripts, plus links to open-source projects
+                                (optional) and representative papers, preprints, or writing samples (required for
+                                postdocs, optional for others).</li>
+                            <li>Ph.D. and MPhil applicants also apply formally to HKU through the <a
+                                    href="https://gradsch.hku.hk/" class="publication-link">Graduate School</a>. For the
+                                Hong Kong PhD Fellowship, first submit an <a
+                                    href="https://cerg1.ugc.edu.hk/hkpfs/apply.html" class="publication-link">initial
+                                    application to the RGC</a> to get an HKPFS reference number. For 2027/28 entry, the
+                                RGC deadline is 1 December 2026, 12:00 noon, and the HKU deadline is 1 December 2026,
+                                11:59 pm (Hong Kong time).</li>
+                        </ol>
+                        <p class="fund-note">We receive many applications, so replies may take a while. Thank you for
+                            your patience.</p>
+                        <p class="apply-cta"><a href="mailto:shinan6@hku.hk?subject=%5BPh.D.%5D%20" class="btn btn-primary">Email your application</a></p>
+                    </div>
+                    <div class="only-zh" lang="zh-Hans">
+                        <ol class="join-steps">
+                            <li>发送邮件至 <a href="mailto:shinan6@hku.hk" class="publication-link">shinan6@hku.hk</a>，邮件题目以【博士生】【硕士生】【博后】【科研助理】【访问学生】【访问学者】中的一个开头。</li>
+                            <li>附上研究兴趣、CV、成绩单、开源项目链接（可选）和代表性论文/Preprints/Writing Samples（申请博士后必发，申请其他岗位可选）。</li>
+                            <li>博士生及研究型硕士申请人还需通过<a href="https://gradsch.hku.hk/" class="publication-link">港大研究生院</a>提交正式申请。申请 HKPFS 需先向研究资助局<a
+                                    href="https://cerg1.ugc.edu.hk/hkpfs/apply.html" class="publication-link">提交初步申请</a>以获取 HKPFS 编号：2027/28 学年的截止时间为2026年12月1日中午12时，港大申请截止时间为2026年12月1日晚11时59分（均为香港时间）。</li>
+                        </ol>
+                        <p class="fund-note">由于申请较多，回复可能需要一些时间，感谢你的耐心。</p>
+                        <p class="apply-cta"><a href="mailto:shinan6@hku.hk?subject=%E3%80%90%E5%8D%9A%E5%A3%AB%E7%94%9F%E3%80%91" class="btn btn-primary">邮件申请</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container-page footer-grid">
+            <div>
+                <a href="index.html" class="footer-brand" aria-label="NAISS Lab home">
+                    <img src="images/brand/naiss-lab-wordmark-light.svg" alt="NAISS Lab" class="footer-logo" width="412"
+                        height="173" loading="lazy">
+                </a>
+                <p class="mt-4 max-w-xs">Networked AI Systems and Security Lab, Department of Data and Systems
+                    Engineering, The University of Hong Kong.</p>
+            </div>
+            <div>
+                <h2 class="footer-heading">Contact</h2>
+                <p class="mt-3"><a href="mailto:shinan6@hku.hk">shinan6@hku.hk</a></p>
+            </div>
+            <nav aria-label="Footer">
+                <h2 class="footer-heading">Explore</h2>
+                <div class="footer-links">
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#research">Research</a>
+                    <a href="index.html#news">News</a>
+                    <a href="index.html#people">People</a>
+                    <a href="index.html#publications">Publications</a>
+                    <a href="index.html#sponsors">Sponsors</a>
+                    <a href="join.html">Join us</a>
+                </div>
+            </nav>
+        </div>
+        <div class="container-page">
+            <p class="footer-bottom">&copy; 2026 Networked AI Systems and Security (NAISS) Lab &middot; The University
+                of Hong Kong</p>
+        </div>
+    </footer>
+
+    <script src="assets/site.js?v=977bf25c1c2a" defer></script>
+    <script src="assets/hero.js?v=5450d3f74634" defer></script>
+    <script>
+        // Language switch: updates the page without a reload and keeps ?lang=zh in the URL for sharing.
+        (function () {
+            const root = document.documentElement;
+            const titles = { en: 'Join Us | NAISS Lab', zh: '加入我们 | NAISS Lab' };
+            const buttons = document.querySelectorAll('[data-set-lang]');
+
+            function setLang(lang, updateUrl) {
+                root.dataset.lang = lang;
+                root.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+                document.title = titles[lang];
+                buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.setLang === lang)));
+                if (updateUrl) {
+                    const url = new URL(location.href);
+                    if (lang === 'zh') url.searchParams.set('lang', 'zh');
+                    else url.searchParams.delete('lang');
+                    history.replaceState(null, '', url);
+                }
+            }
+
+            buttons.forEach(button => button.addEventListener('click', () => setLang(button.dataset.setLang, true)));
+            setLang(root.dataset.lang === 'zh' ? 'zh' : 'en', false);
+        })();
+    </script>
+</body>
+
+</html>

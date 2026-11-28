@@ -7,7 +7,7 @@
     <title>NAISS Lab | Networked AI Systems and Security Lab</title>
     <meta name="description"
         content="The Networked AI Systems and Security (NAISS) Lab at The University of Hong Kong works at the intersection of machine learning systems, computer networking, and security.">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#0a2620">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="NAISS Lab">
     <meta property="og:title" content="NAISS Lab | Networked AI Systems and Security Lab">
@@ -20,7 +20,29 @@
     <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/ibm-plex-serif-semibold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/ibm-plex-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/site.css?v=5c10e377f479">
+    <link rel="preload" href="assets/fonts/ibm-plex-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/site.css?v=e99e9f6bbcd5">
+    <script>
+        // Hold the hero entrance until its fonts are in and the page content is built, so the
+        // title never swaps fonts or stutters mid-rise. Slow connections get it after 1.5s anyway.
+        (function (root) {
+            root.classList.add('hero-pending');
+            var release = function () { root.classList.remove('hero-pending'); };
+            var fonts = document.fonts && document.fonts.load ? Promise.all([
+                document.fonts.load('600 1em "IBM Plex Serif"'),
+                document.fonts.load('1em "IBM Plex Serif"'),
+                document.fonts.load('1em Inter'),
+                document.fonts.load('1em "IBM Plex Mono"')
+            ]) : Promise.resolve();
+            var built = new Promise(function (done) {
+                document.addEventListener('DOMContentLoaded', function () {
+                    requestAnimationFrame(function () { requestAnimationFrame(done); });
+                });
+            });
+            Promise.all([fonts, built]).then(release, release);
+            setTimeout(release, 1500);
+        })(document.documentElement);
+    </script>
 </head>
 
 <body>
@@ -39,6 +61,7 @@
                 <a href="#people" class="nav-link">People</a>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#sponsors" class="nav-link">Sponsors</a>
+                <a href="join.html" class="nav-link nav-cta">Join us</a>
             </nav>
             <button id="mobile-menu-button" type="button" class="menu-button" aria-controls="mobile-menu"
                 aria-expanded="false">
@@ -61,6 +84,7 @@
                 <a href="#people" class="nav-link">People</a>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#sponsors" class="nav-link">Sponsors</a>
+                <a href="join.html" class="nav-link">Join us</a>
             </div>
         </nav>
         <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
@@ -80,6 +104,7 @@
                 <div class="hero-actions">
                     <a href="#research" class="btn btn-primary">Our research <span aria-hidden="true">&rarr;</span></a>
                     <a href="#publications" class="btn btn-secondary">Publications</a>
+                    <a href="join.html" class="btn btn-secondary btn-join">Join us</a>
                 </div>
             </div>
             <div class="hero-topics">
@@ -136,6 +161,24 @@
             </div>
         </section>
 
+        <section id="join" class="join-band" aria-labelledby="join-title">
+            <div class="container-page join-band-inner">
+                <div>
+                    <p class="join-eyebrow">Join us</p>
+                    <h2 id="join-title" class="join-band-title">We are recruiting two Ph.D. students for 2027.</h2>
+                    <p class="join-band-text">Fully funded positions where machine learning systems, networking, and
+                        security meet. We also welcome MPhil students, research assistants, postdoctoral researchers,
+                        and visitors.</p>
+                    <p class="join-deadline" data-until="2026-12-01T12:00:00+08:00">HKPFS 2027/28 initial applications
+                        close 1 December 2026, 12:00 noon Hong Kong time.</p>
+                </div>
+                <div class="join-band-actions">
+                    <a href="join.html" class="btn btn-primary">Openings and how to apply <span aria-hidden="true">&rarr;</span></a>
+                    <a href="join.html?lang=zh" class="btn btn-secondary" lang="zh-Hans">中文介绍</a>
+                </div>
+            </div>
+        </section>
+
         <section id="publications" class="section alt">
             <div class="container-page">
                 <div class="section-head">
@@ -161,18 +204,18 @@
                     <h2 id="sponsors-heading" class="section-title">Sponsors and industry partners</h2>
                 </div>
                 <ul class="sponsor-list" role="list">
-                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku-logo.webp" style="--logo-h: 2.125rem" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
-                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.webp" style="--logo-h: 2.375rem" alt="Research Grants Council of Hong Kong (RGC)" width="284" height="89" loading="lazy"></a></li>
+                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku-logo.webp" style="--logo-h: 2.125rem; --ratio: 5.13; --k: 1.25" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
+                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.webp" style="--logo-h: 2.375rem; --ratio: 3.19; --k: 1.15" alt="Research Grants Council of Hong Kong (RGC)" width="284" height="89" loading="lazy"></a></li>
                     <li>
                         <a href="https://stf.hkpc.org/" aria-label="Smart Traffic Fund (Hong Kong Transport Department)">
-                            <img src="images/sponsors/transport-department.webp" style="--logo-h: 2.125rem" alt="Hong Kong Transport Department" width="239" height="72" loading="lazy">
+                            <img src="images/sponsors/transport-department.webp" style="--logo-h: 2.125rem; --ratio: 3.32" alt="Hong Kong Transport Department" width="239" height="72" loading="lazy">
                         </a>
                     </li>
-                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" style="--logo-h: 1.875rem" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
-                    <li><a href="https://www.microsoft.com/"><img src="images/sponsors/microsoft.png" style="--logo-h: 1.25rem" alt="Microsoft" width="216" height="46" loading="lazy"></a></li>
-                    <li><a href="https://www.alibabagroup.com/"><img src="images/sponsors/alibaba.svg" style="--logo-h: 1.125rem" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
-                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici-logo.webp" style="--logo-h: 1.875rem" alt="WiCi" width="536" height="205" loading="lazy"></a></li>
-                    <li><a href="https://www.rockfish.ai/"><img src="images/sponsors/rockfish-data.png" style="--logo-h: 1.625rem" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
+                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" style="--logo-h: 1.875rem; --ratio: 4.09" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
+                    <li><a href="https://www.microsoft.com/"><img src="images/sponsors/microsoft.png" style="--logo-h: 1.25rem; --ratio: 4.7; --k: 0.9" alt="Microsoft" width="216" height="46" loading="lazy"></a></li>
+                    <li><a href="https://www.alibabagroup.com/"><img src="images/sponsors/alibaba.svg" style="--logo-h: 1.125rem; --ratio: 7.78; --k: 0.8" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
+                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici-logo.webp" style="--logo-h: 1.875rem; --ratio: 2.61" alt="WiCi" width="536" height="205" loading="lazy"></a></li>
+                    <li><a href="https://www.rockfish.ai/"><img src="images/sponsors/rockfish-data.png" style="--logo-h: 1.625rem; --ratio: 5.5" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
                 </ul>
             </div>
         </section>
@@ -201,6 +244,7 @@
                     <a href="#people">People</a>
                     <a href="#publications">Publications</a>
                     <a href="#sponsors">Sponsors</a>
+                    <a href="join.html">Join us</a>
                 </div>
             </nav>
         </div>
@@ -213,7 +257,8 @@
     <script src="data/research.js?v=fdac0f4bbd92"></script>
     <script src="data/people.js?v=8865d8970cd5"></script>
     <script src="data/publication.js?v=04d727815e64"></script>
-    <script src="assets/hero.js?v=ec37fee75255" defer></script>
+    <script src="assets/site.js?v=977bf25c1c2a" defer></script>
+    <script src="assets/hero.js?v=5450d3f74634" defer></script>
     <script src="data/news.js?v=4fd663a201f4"></script>
 
     <script>
@@ -524,32 +569,6 @@
                     ` : '');
             }
 
-
-            // Event Listeners
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            function setMenuOpen(open) {
-                mobileMenu.classList.toggle('hidden', !open);
-                menuButton.setAttribute('aria-expanded', String(open));
-                const [openIcon, closeIcon] = menuButton.querySelectorAll('svg');
-                openIcon.classList.toggle('hidden', open);
-                closeIcon.classList.toggle('hidden', !open);
-            }
-
-            menuButton.addEventListener('click', () => setMenuOpen(mobileMenu.classList.contains('hidden')));
-            document.addEventListener('keydown', e => {
-                if (e.key !== 'Escape' || mobileMenu.classList.contains('hidden')) return;
-                setMenuOpen(false);
-                menuButton.focus();
-            });
-            mobileMenu.addEventListener('focusout', e => {
-                if (e.relatedTarget && !mobileMenu.contains(e.relatedTarget) && e.relatedTarget !== menuButton) setMenuOpen(false);
-            });
-            document.getElementById('menu-scrim')?.addEventListener('click', () => setMenuOpen(false));
-            document.getElementById('header')?.addEventListener('click', e => {
-                if (e.target.closest('a')) setMenuOpen(false);
-            });
 
             const sections = Array.from(document.querySelectorAll('section'));
             const navLinks = Array.from(document.querySelectorAll('header a.nav-link'));

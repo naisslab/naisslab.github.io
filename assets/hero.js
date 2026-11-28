@@ -1,13 +1,13 @@
 // Hero background: two layers of drifting network nodes that link up when close,
-// with gold packets in flight on the near layer. Also keeps the header transparent
+// with gold packets in flight on the near layer. Also keeps the header in hero colours
 // while it sits over the hero.
 (() => {
     const canvas = document.getElementById('hero-net');
-    const hero = document.getElementById('home');
+    const hero = document.querySelector('.hero');
     const header = document.getElementById('header');
     if (!canvas || !hero || !canvas.getContext) return;
 
-    // Header: transparent only while the hero is underneath it.
+    // Header: hero colours only while the hero is underneath it.
     if (header) {
         let pending = false;
         const syncHeader = () => {
