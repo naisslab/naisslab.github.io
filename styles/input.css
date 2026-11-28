@@ -143,6 +143,11 @@ select {
     color: var(--ink);
 }
 
+/* The hidden attribute beats any component display rule, so expired notices and folded text stay hidden. */
+[hidden] {
+    display: none !important;
+}
+
 .skip-link {
     position: absolute;
     left: 1rem;
