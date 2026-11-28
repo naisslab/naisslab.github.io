@@ -3,7 +3,6 @@ const researchData = [
     {
         id: 'ml-for-systems',
         title: 'ML for Systems, Systems for ML',
-        icon: '🧠',
         description: 'Building foundational ML systems and techniques for the networked world.',
         subtopics: [
             {
@@ -36,9 +35,16 @@ const researchData = [
     {
         id: 'security',
         title: 'Network Security and Privacy',
-        icon: '🛡️',
         description: 'Applying our tools to solve critical security and privacy challenges.',
         subtopics: [
+            {
+                title: 'Security of ML Systems and LLM Agent Networks',
+                featuredPublications: [
+                    { id: 'ghostaccess', label: "[MICRO'26] GhostAccess" },
+                    { id: 'spliceleak', label: "[Preprint'26] SpliceLeak" },
+                    { id: 'toolpulse', label: "[Preprint'26] ToolPulse" }
+                ]
+            },
             {
                 title: 'Privacy of Synthetic Data',
                 featuredPublications: [
@@ -56,16 +62,9 @@ const researchData = [
             {
                 title: 'Wireless Attacks and Defenses in Driving Systems',
                 featuredPublications: [
-                    { id: 'gps-spoofing', label: "[WiSec'25] 🏆 Multi-Antenna GPS Spoofing" },
+                    { id: 'gps-spoofing', label: "[WiSec'25] Multi-Antenna GPS Spoofing" },
                     { id: 'stars-can-tell', label: "[USENIX Security'21] Stars Can Tell" },
                     { id: 'all-your-gps', label: "[USENIX Security'18] All Your GPS Are Belong to Us" }
-                ]
-            },
-            {
-                title: 'Security of ML Systems and LLM Agent Networks',
-                featuredPublications: [
-                    { id: 'ghostaccess', label: "[MICRO'26] GhostAccess" },
-                    { id: 'spliceleak', label: "[Preprint'26] SpliceLeak" }
                 ]
             }
         ]
@@ -73,7 +72,6 @@ const researchData = [
     {
         id: 'cps',
         title: 'Cyber-physical Intelligence',
-        icon: '🤖',
         description: 'Improving interactions with the cyber-physical world.',
         subtopics: [
             {
@@ -85,6 +83,7 @@ const researchData = [
             {
                 title: 'Activity Recognition and Sensing for Human Well-being',
                 featuredPublications: [
+                    { id: 'routerweave', label: "[Preprint'26] RouterWeave" },
                     { id: 'on-device-evidence', label: "[UbiComp'26] On-Device Evidence Gathering" },
                     { id: 'amir', label: "[UbiComp'23] AMIR" }
                 ]
@@ -93,7 +92,8 @@ const researchData = [
                 title: 'Agentic Inference for Smarter Environments',
                 featuredPublications: [
                     { id: 'hillinfer', label: "[Preprint'26] HillInfer" },
-                    { id: 'pacc', label: "[Preprint'26] PACC" }
+                    { id: 'pacc', label: "[Preprint'26] PACC" },
+                    { label: "[Open Source] InferSSD", url: 'https://github.com/wici-ai/inferssd' }
                 ]
             }
         ]

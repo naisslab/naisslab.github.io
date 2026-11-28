@@ -1,207 +1,268 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>NAISS Lab | Networked AI Systems and Security Lab</title>
-    <link rel="stylesheet" href="assets/site.css?v=3fc338b0e064">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet">
+    <meta name="description"
+        content="The Networked AI Systems and Security (NAISS) Lab at The University of Hong Kong works at the intersection of machine learning systems, computer networking, and security.">
+    <meta name="theme-color" content="#0a2620">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NAISS Lab">
+    <meta property="og:title" content="NAISS Lab | Networked AI Systems and Security Lab">
+    <meta property="og:description"
+        content="Machine learning systems, computer networking, and security research at The University of Hong Kong.">
+    <meta property="og:url" content="https://naisslab.github.io/">
+    <meta property="og:image" content="https://naisslab.github.io/images/brand/naiss-lab-logo.png">
+    <link rel="icon" href="images/brand/naiss-lab-mark.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/ibm-plex-serif-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/ibm-plex-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/ibm-plex-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/site.css?v=32b3dba83016">
+    <script>
+        // Hold the hero entrance until its fonts are in and the page content is built, so the
+        // title never swaps fonts or stutters mid-rise. Slow connections get it after 1.5s anyway.
+        (function (root) {
+            root.classList.add('hero-pending');
+            var release = function () { root.classList.remove('hero-pending'); };
+            var fonts = document.fonts && document.fonts.load ? Promise.all([
+                document.fonts.load('600 1em "IBM Plex Serif"'),
+                document.fonts.load('1em "IBM Plex Serif"'),
+                document.fonts.load('1em Inter'),
+                document.fonts.load('1em "IBM Plex Mono"')
+            ]) : Promise.resolve();
+            var built = new Promise(function (done) {
+                document.addEventListener('DOMContentLoaded', function () {
+                    requestAnimationFrame(function () { requestAnimationFrame(done); });
+                });
+            });
+            Promise.all([fonts, built]).then(release, release);
+            setTimeout(release, 1500);
+        })(document.documentElement);
+    </script>
 </head>
 
-<body class="antialiased">
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-    <header id="header" class="site-header fixed top-0 left-0 right-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 sm:h-[4.35rem]">
-                <div class="flex-shrink-0">
-                    <a href="#home" class="lab-brand" aria-label="NAISS Lab home">
-                        <img src="images/brand/naiss-lab-logo.svg" alt="NAISS Lab" class="lab-logo"
-                            width="530" height="238">
-                    </a>
-                </div>
-                <div class="hidden lg:block">
-                    <nav class="ml-8 flex items-baseline gap-1 lg:gap-3">
-                        <a href="#about" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">About</a>
-                        <a href="#research" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Research</a>
-                        <a href="#news" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">News</a>
-                        <a href="#people" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">People</a>
-                        <a href="#publications" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Publications</a>
-                        <a href="#sponsors" class="nav-link px-3 py-2 text-xs sm:text-sm uppercase">Sponsors</a>
-                    </nav>
-                </div>
-                <div class="-mr-1 flex lg:hidden">
-                    <button id="mobile-menu-button" type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-900/20"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <header id="header" class="site-header on-hero">
+        <div class="container-page header-inner">
+            <a href="#home" class="lab-brand" aria-label="NAISS Lab home">
+                <img src="images/brand/naiss-lab-wordmark.svg" alt="NAISS Lab" class="lab-logo lab-logo-dark" width="412" height="173">
+                <img src="images/brand/naiss-lab-wordmark-light.svg" alt="" class="lab-logo lab-logo-light" width="412" height="173">
+            </a>
+            <nav class="desktop-nav" aria-label="Primary">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#people" class="nav-link">People</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#sponsors" class="nav-link">Sponsors</a>
+                <a href="join.html" class="nav-link nav-cta">Join us</a>
+            </nav>
+            <button id="mobile-menu-button" type="button" class="menu-button" aria-controls="mobile-menu"
+                aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
-        <div class="lg:hidden hidden border-t border-slate-200 bg-white/95 shadow-lg" id="mobile-menu">
-            <div class="px-3 py-3 space-y-1">
-                <a href="#about" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">About</a>
-                <a href="#research" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Research</a>
-                <a href="#news" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">News</a>
-                <a href="#people" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">People</a>
-                <a href="#publications" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Publications</a>
-                <a href="#sponsors" class="block nav-link px-3 py-2 rounded-md text-sm uppercase">Sponsors</a>
+        <nav id="mobile-menu" class="mobile-menu hidden" aria-label="Primary">
+            <div class="container-page">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#people" class="nav-link">People</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#sponsors" class="nav-link">Sponsors</a>
+                <a href="join.html" class="nav-link">Join us</a>
             </div>
-        </div>
+        </nav>
+        <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
     </header>
 
-    <main>
-        <section id="home" class="hero-bg pt-16">
-            <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-36 text-white text-center">
-                <div class="hero-title-wrap mx-auto">
-                    <p class="hero-ghost">ML Systems, Networking, and Security</p>
-                    <h1 class="hero-main-title text-4xl sm:text-5xl lg:text-7xl">
-                        Networked AI Systems and Security Lab
-                        <!-- <span class="block">Security Lab</span> -->
-                    </h1>
-                </div>
-                <p class="hero-lab-name mt-2 sm:mt-3">NAISS Lab</p>
-                <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-100/90 leading-relaxed">
-                    Developing the next generation of intelligent systems to ensure our networked world is accessible,
-                    reliable, and secure.
+    <main id="main">
+        <section id="home" class="hero">
+            <canvas id="hero-net" class="hero-net" aria-hidden="true"></canvas>
+            <div class="container-page hero-inner">
+                <p class="hero-eyebrow"><span><span class="hero-dept">Data and Systems Engineering &middot; </span>The University of Hong Kong</span></p>
+                <h1 class="hero-title"><span class="hero-word" style="--w:0"><span>Networked</span></span> <span class="hero-word" style="--w:1"><span>AI</span></span> <span class="hero-word" style="--w:2"><span>Systems</span></span> <span class="hero-word" style="--w:3"><span>and</span></span> <span class="hero-word" style="--w:4"><span>Security</span></span> <span class="hero-word" style="--w:5"><span>Lab</span></span></h1>
+                <p class="hero-name">NAISS Lab</p>
+                <p class="hero-lead">
+                    Developing the next generation of intelligent systems to ensure our networked world is
+                    accessible, reliable, and secure.
                 </p>
+                <div class="hero-actions">
+                    <a href="#research" class="btn btn-primary">Our research <span aria-hidden="true">&rarr;</span></a>
+                    <a href="#publications" class="btn btn-secondary">Publications</a>
+                    <a href="join.html" class="btn btn-secondary btn-join">Join us</a>
+                </div>
+            </div>
+            <div class="hero-topics">
+                <div id="hero-topics" class="hero-topics-track"></div>
             </div>
         </section>
 
-        <section id="about" class="section-shell soft py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Our Mission</h2>
-                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg leading-relaxed text-slate-600">
-                        The NAISS (pronounced as "nice") Lab in the Department of Data and Systems Engineering at The University of Hong Kong
-                        operates at the critical intersection of machine learning systems, computer networking, and
-                        security. Our research follows a virtuous cycle: we build foundational ML systems and
-                        techniques, apply them to secure critical network infrastructure, and extend them to improve
-                        interactions and well-beings with the cyber-physical world. Contact us at
-                        <a href="mailto:shinan6@hku.hk" class="publication-link">shinan6@hku.hk</a>.
+        <section id="about" class="section alt">
+            <div class="container-page about-grid">
+                <div class="section-head">
+                    <h2 class="section-title">Our mission</h2>
+                </div>
+                <div>
+                    <p class="about-text">
+                        The NAISS (pronounced as "nice") Lab in the Department of Data and Systems Engineering at The
+                        University of Hong Kong operates at the critical intersection of machine learning systems,
+                        computer networking, and security. Our research follows a virtuous cycle: we build foundational
+                        ML systems and techniques, apply them to secure critical network infrastructure, and extend them
+                        to improve interactions and well-beings with the cyber-physical world.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="section-shell py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Research Directions</h2>
-                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg text-slate-600">
-                        Explore the topics and publications behind our three research directions.
-                    </p>
+        <section id="research" class="section">
+            <div class="container-page">
+                <div class="section-head">
+                    <h2 class="section-title">Research directions</h2>
+                    <p class="section-intro">Explore the topics and publications behind our three research
+                        directions.</p>
                 </div>
-                <div id="research-container" class="mt-12 grid gap-6 md:grid-cols-3">
+                <div id="research-container" class="research-grid"></div>
+            </div>
+        </section>
+
+        <section id="news" class="section alt">
+            <div class="container-page">
+                <div class="section-head">
+                    <h2 class="section-title">News</h2>
+                </div>
+                <div id="news-container" class="list-panel"></div>
+            </div>
+        </section>
+
+        <section id="people" class="section">
+            <div class="container-page">
+                <div class="section-head">
+                    <h2 class="section-title">Our team</h2>
+                    <p class="section-intro">Meet the researchers and students driving innovation at the NAISS Lab.</p>
+                </div>
+                <div id="people-filter-controls" class="filter-row" role="group" aria-label="Filter people by role">
+                </div>
+                <div id="people-container" class="people"></div>
+            </div>
+        </section>
+
+        <section id="join" class="join-band" aria-labelledby="join-title">
+            <div class="container-page join-band-inner">
+                <div>
+                    <p class="join-eyebrow">Join us</p>
+                    <h2 id="join-title" class="join-band-title">We are recruiting two Ph.D. students for 2027.</h2>
+                    <p class="join-band-text">Fully funded positions where machine learning systems, networking, and
+                        security meet. We also welcome MPhil students, research assistants, postdoctoral researchers,
+                        and visitors.</p>
+                    <p class="join-deadline" data-until="2026-12-01T12:00:00+08:00">HKPFS 2027/28 initial applications
+                        close 1 December 2026, 12:00 noon Hong Kong time.</p>
+                </div>
+                <div class="join-band-actions">
+                    <a href="join.html" class="btn btn-primary">Openings and how to apply <span aria-hidden="true">&rarr;</span></a>
+                    <a href="join.html?lang=zh" class="btn btn-secondary" lang="zh-Hans">中文介绍</a>
                 </div>
             </div>
         </section>
 
-        <section id="news" class="section-shell soft py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Latest News</h2>
+        <section id="publications" class="section alt">
+            <div class="container-page">
+                <div class="section-head">
+                    <h2 class="section-title">Publications</h2>
+                    <p class="section-intro">A selection of our scholarly output. Lab members are underlined.</p>
                 </div>
-                <div id="news-container" class="mt-6 max-w-6xl mx-auto grid gap-2.5">
-                </div>
-            </div>
-        </section>
-
-        <section id="people" class="section-shell soft py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Our Team</h2>
-                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg text-slate-600">
-                        Meet the researchers and students driving innovation at the NAISS Lab.
-                    </p>
-                </div>
-                <div class="mt-8 flex justify-center flex-wrap gap-2" id="people-filter-controls">
-                </div>
-                <div id="people-container" class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="section-shell py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Publications</h2>
-                    <p class="mt-6 max-w-4xl mx-auto text-base sm:text-lg text-slate-600">
-                        A selection of our scholarly output.
-                    </p>
-                </div>
-                <div class="mt-8 max-w-4xl mx-auto flex flex-col sm:flex-row gap-3">
-                    <select id="pub-year-filter" aria-label="Publication year or preprints" class="select-control w-full sm:w-1/2 p-2.5 rounded-md">
-                        <option value="all">All Years</option>
+                <div class="pub-filters">
+                    <select id="pub-year-filter" aria-label="Publication year or preprints" class="select-control">
+                        <option value="all">All years</option>
                     </select>
-                    <select id="pub-area-filter" aria-label="Research area" class="select-control w-full sm:w-1/2 p-2.5 rounded-md">
-                        <option value="all">All Research Areas</option>
+                    <select id="pub-area-filter" aria-label="Research area" class="select-control">
+                        <option value="all">All areas</option>
                     </select>
                 </div>
-                <div id="publications-container" class="mt-6 grid gap-2.5 max-w-6xl mx-auto">
-                </div>
+                <p id="pub-filter-status" class="sr-only" role="status"></p>
+                <div id="publications-container"></div>
             </div>
         </section>
 
-        <section id="sponsors" aria-labelledby="sponsors-heading" class="section-shell bg-white py-16 sm:py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 id="sponsors-heading" class="section-title text-4xl font-semibold tracking-tight sm:text-5xl">Sponsors and Industry Partners</h2>
+        <section id="sponsors" aria-labelledby="sponsors-heading" class="section">
+            <div class="container-page">
+                <div class="section-head">
+                    <h2 id="sponsors-heading" class="section-title">Sponsors and industry partners</h2>
                 </div>
-                <ul class="sponsor-list mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 xl:grid-cols-8">
-                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku.webp" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
-                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.jpg" alt="Research Grants Council of Hong Kong (RGC)" width="285" height="97" loading="lazy"></a></li>
+                <ul class="sponsor-list" role="list">
+                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku-logo.webp" style="--logo-h: 2.125rem; --ratio: 5.13; --k: 1.25" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
+                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.webp" style="--logo-h: 2.375rem; --ratio: 3.19; --k: 1.15" alt="Research Grants Council of Hong Kong (RGC)" width="284" height="89" loading="lazy"></a></li>
                     <li>
                         <a href="https://stf.hkpc.org/" aria-label="Smart Traffic Fund (Hong Kong Transport Department)">
-                            <img src="images/sponsors/transport-department.jpg" alt="Hong Kong Transport Department" width="244" height="78" loading="lazy">
+                            <img src="images/sponsors/transport-department.webp" style="--logo-h: 2.125rem; --ratio: 3.32" alt="Hong Kong Transport Department" width="239" height="72" loading="lazy">
                         </a>
                     </li>
-                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
-                    <li><a href="https://www.microsoft.com/"><img src="images/sponsors/microsoft.png" alt="Microsoft" width="216" height="46" loading="lazy"></a></li>
-                    <li><a href="https://www.alibabagroup.com/"><img src="images/sponsors/alibaba.svg" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
-                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici.webp" alt="WiCi" width="564" height="216" loading="lazy"></a></li>
-                    <li><a href="https://www.rockfish.ai/"><img src="images/sponsors/rockfish-data.png" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
+                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" style="--logo-h: 1.875rem; --ratio: 4.09" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
+                    <li><a href="https://www.microsoft.com/"><img src="images/sponsors/microsoft.png" style="--logo-h: 1.25rem; --ratio: 4.7; --k: 0.9" alt="Microsoft" width="216" height="46" loading="lazy"></a></li>
+                    <li><a href="https://www.alibabagroup.com/"><img src="images/sponsors/alibaba.svg" style="--logo-h: 1.125rem; --ratio: 7.78; --k: 0.8" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
+                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici-logo.webp" style="--logo-h: 1.875rem; --ratio: 2.61" alt="WiCi" width="536" height="205" loading="lazy"></a></li>
+                    <li><a href="https://www.rockfish.ai/"><img src="images/sponsors/rockfish-data.png" style="--logo-h: 1.625rem; --ratio: 5.5" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
                 </ul>
             </div>
         </section>
-
     </main>
 
-    <footer class="bg-slate-900 text-slate-100">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
-            <a href="#home" class="footer-brand" aria-label="NAISS Lab home">
-                <img src="images/brand/naiss-lab-logo-light.svg" alt="NAISS Lab" class="footer-logo"
-                    width="530" height="238" loading="lazy">
-            </a>
-            <p class="text-sm sm:text-base">&copy; 2026 Networked AI Systems and Security (NAISS) Lab</p>
-            <p class="text-sm text-slate-400 mt-2">The University of Hong Kong</p>
+    <footer class="site-footer">
+        <div class="container-page footer-grid">
+            <div>
+                <a href="#home" class="footer-brand" aria-label="NAISS Lab home">
+                    <img src="images/brand/naiss-lab-wordmark-light.svg" alt="NAISS Lab" class="footer-logo" width="412"
+                        height="173" loading="lazy">
+                </a>
+                <p class="mt-4 max-w-xs">Networked AI Systems and Security Lab, Department of Data and Systems
+                    Engineering, The University of Hong Kong.</p>
+            </div>
+            <div>
+                <h2 class="footer-heading">Contact</h2>
+                <p class="mt-3"><a href="mailto:shinan6@hku.hk">shinan6@hku.hk</a></p>
+            </div>
+            <nav aria-label="Footer">
+                <h2 class="footer-heading">Explore</h2>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#news">News</a>
+                    <a href="#people">People</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#sponsors">Sponsors</a>
+                    <a href="join.html">Join us</a>
+                </div>
+            </nav>
+        </div>
+        <div class="container-page">
+            <p class="footer-bottom">&copy; 2026 Networked AI Systems and Security (NAISS) Lab &middot; The University
+                of Hong Kong</p>
         </div>
     </footer>
 
-    <script src="data/research.js?v=d6dd5af3a1e9"></script>
+    <script src="data/research.js?v=fdac0f4bbd92"></script>
     <script src="data/people.js?v=8865d8970cd5"></script>
     <script src="data/publication.js?v=04d727815e64"></script>
-    <script src="data/news.js?v=646f9c239a30"></script>
+    <script src="assets/site.js?v=977bf25c1c2a" defer></script>
+    <script src="assets/hero.js?v=5450d3f74634" defer></script>
+    <script src="data/news.js?v=4fd663a201f4"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Data is now loaded from the external files above.
-            // The large data arrays have been removed from this file.
             const labMemberNames = new Set([...peopleData, ...alumniData].flatMap(person => [
                 `${person.firstName} ${person.lastName}`,
                 ...(person.aliases || [])
@@ -235,82 +296,92 @@
                 }).join(', ');
             }
 
+            function renderFeaturedPublication(featured) {
+                const [, venue = '', name = featured.label] = featured.label.match(/^(\[[^\]]*\])\s*(.*)$/) || [];
+                const cite = venue ? `<span class="cite">${escapeHtml(venue)}</span>` : '';
+                // Projects such as open-source tools link straight to their own URL.
+                if (!featured.id && featured.url) {
+                    return `<li>${cite}<a href="${escapeHtml(featured.url)}" target="_blank" rel="noopener noreferrer"
+                    class="publication-link">${escapeHtml(name)}</a></li>`;
+                }
+                const publication = publicationsData.find(pub => pub.id === featured.id);
+                if (!publication) return '';
+                const externalUrl = publication.links.website || publication.links.pdf;
+                const url = externalUrl || `#publication-${publication.id}`;
+                const linkAttributes = externalUrl
+                    ? 'target="_blank" rel="noopener noreferrer"'
+                    : `data-publication-id="${escapeHtml(publication.id)}"`;
+                const award = publication.award ? ` <span class="publication-award">${escapeHtml(publication.award)}</span>` : '';
+                return `<li>${cite}<a href="${escapeHtml(url)}" ${linkAttributes}
+                    class="publication-link" title="${escapeHtml(publication.title)}">${escapeHtml(name)}</a>${award}</li>`;
+            }
+
             function renderResearch() {
                 const container = document.getElementById('research-container');
                 if (!container) return;
-                container.innerHTML = researchData.map(item => `
-                    <article class="research-card flex flex-col bg-white/95 p-6 rounded-xl cursor-pointer" data-id="${item.id}">
-                        <div class="text-3xl">${item.icon}</div>
-                        <h3 class="mt-3 text-2xl font-semibold">${item.title}</h3>
-                        <p class="mt-2 text-slate-600 leading-relaxed">${item.description}</p>
-                        <button type="button" data-research-toggle="${item.id}"
-                            class="mt-4 self-start inline-flex items-center gap-2 text-sm font-semibold text-accent rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-800"
-                            aria-expanded="false" aria-controls="subtopics-${item.id}">
-                            Topics &amp; selected work
-                            <svg class="h-4 w-4 transition-transform" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                                <path d="m5 7.5 5 5 5-5" />
-                            </svg>
+                container.innerHTML = researchData.map((item, index) => {
+                    const paperCount = item.subtopics.reduce((sum, sub) => sum + (sub.featuredPublications || []).length, 0);
+                    return `
+                    <article class="research-col">
+                        <p class="research-index">${String(index + 1).padStart(2, '0')}</p>
+                        <h3 class="research-title">${item.title}</h3>
+                        <p class="research-desc">${item.description}</p>
+                        <ul id="subtopics-${item.id}" class="research-subtopics">
+                            ${item.subtopics.map(sub => `
+                                <li class="research-subtopic">
+                                    <p class="research-subtopic-title">${escapeHtml(sub.title)}</p>
+                                    <ul class="research-papers">${(sub.featuredPublications || []).map(renderFeaturedPublication).join('')}</ul>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <button type="button" class="research-toggle" data-research-toggle aria-expanded="false" aria-controls="subtopics-${item.id}">
+                            <span class="research-toggle-show">Show selected work (${paperCount})</span><span class="research-toggle-hide">Hide selected work</span><span class="sr-only"> in ${item.title}</span>
+                            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
                         </button>
-                        <div id="subtopics-${item.id}" class="hidden mt-4 pl-4 border-l-2 border-teal-700/30">
-                            <ul class="list-disc list-outside ml-4 text-slate-600 space-y-5 text-sm sm:text-base">
-                                ${item.subtopics.map(sub => `
-                                    <li class="research-subtopic">
-                                        <p class="font-medium leading-relaxed">${escapeHtml(sub.title)}</p>
-                                        <ul class="list-none mt-2 space-y-1.5 text-sm leading-relaxed">
-                                            ${(sub.featuredPublications || []).map(featured => {
-                                                const publication = publicationsData.find(pub => pub.id === featured.id);
-                                                if (!publication) return '';
-                                                const externalUrl = publication.links.website || publication.links.pdf;
-                                                const url = externalUrl || `#publication-${publication.id}`;
-                                                const linkAttributes = externalUrl
-                                                    ? 'target="_blank" rel="noopener noreferrer"'
-                                                    : `data-publication-id="${escapeHtml(publication.id)}"`;
-                                                return `<li><a href="${escapeHtml(url)}" ${linkAttributes}
-                                                    class="publication-link rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-800"
-                                                    title="${escapeHtml(publication.title)}">${escapeHtml(featured.label)}</a></li>`;
-                                            }).join('')}
-                                        </ul>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                        <a href="#publications" data-research-area="${item.id}"
-                            class="publication-link mt-auto pt-5 self-start inline-flex items-center gap-2 text-sm rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-800"
-                            aria-label="View publications in ${item.title}">
-                            View related publications (${publicationsData.filter(pub => pub.area.includes(item.id)).length})
-                            <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        <p class="research-more">
+                            <a href="#publications" data-research-area="${item.id}" class="publication-link">
+                                View all ${publicationsData.filter(pub => pub.area.includes(item.id)).length} related publications<span class="sr-only"> in ${item.title}</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </p>
                     </article>
-                `).join('');
+                `;
+                }).join('');
+            }
+
+            function renderHeroTopics() {
+                const track = document.getElementById('hero-topics');
+                if (!track) return;
+                const topics = researchData.flatMap(item => item.subtopics.map(sub => escapeHtml(sub.title)));
+                const list = hidden => `<ul class="hero-topics-list"${hidden ? ' aria-hidden="true"' : ' aria-label="Research topics"'}>${topics.map(topic => `<li>${topic}</li>`).join('')}</ul>`;
+                track.innerHTML = list(false) + list(true);
+            }
+
+            function renderPersonName(person) {
+                const name = `${person.firstName} ${person.lastName}`;
+                return person.website
+                    ? `<a href="${person.website}" target="_blank" rel="noopener noreferrer" class="news-link">${name}</a>`
+                    : name;
             }
 
             function renderPersonCards(people) {
                 return people.map(person => {
-                    const personNameHtml = person.website
-                        ? `<a href="${person.website}" target="_blank" rel="noopener noreferrer" class="news-link">${person.firstName} ${person.lastName}</a>`
-                        : `${person.firstName} ${person.lastName}`;
+                    const details = [person.status, person.education, person.advising, person.next]
+                        .filter(Boolean)
+                        .map(detail => `<p class="person-detail">${detail.replace(/^->\s*/, '&rarr; ')}</p>`)
+                        .join('');
 
                     return `
-                    <div class="person-card text-center bg-white/90 border border-slate-200 p-5 rounded-xl shadow-sm" data-role="${person.role}">
-                        <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" width="96" height="96" loading="lazy" decoding="async" class="w-24 h-24 rounded-full mx-auto object-cover">
-                        <h3 class="mt-3 font-semibold text-xl">${personNameHtml}</h3>
-                        <p class="text-accent font-semibold text-sm">${person.role}</p>
-                        <p class="text-slate-500 text-sm">${person.status}</p>
-                        ${person.education ? `<p class="text-slate-500 text-sm">${person.education}</p>` : ''}
-                        ${person.advising ? `<p class="text-slate-500 text-sm">${person.advising}</p>` : ''}
-                        ${person.next ? `<p class="text-slate-500 text-sm">${person.next}</p>` : ''}
-                    </div>
+                    <article class="person-card" data-role="${person.role}">
+                        <img src="${person.photo}" alt="${person.firstName} ${person.lastName}" width="88" height="88" loading="lazy" decoding="async">
+                        <div>
+                            <h4 class="person-name">${renderPersonName(person)}</h4>
+                            <p class="person-role">${person.role}</p>
+                            ${details}
+                        </div>
+                    </article>
                     `;
                 }).join('');
-            }
-
-            function renderAlumniGroup() {
-                return `
-                    <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 pt-6 mt-3 border-t border-slate-200">
-                        <h3 class="text-2xl font-semibold text-center">Alumni</h3>
-                    </div>
-                    ${renderPersonCards(alumniData)}
-                `;
             }
 
             function renderPeople(filter = 'all') {
@@ -327,28 +398,24 @@
                     filteredPeople = others.filter(p => p.role.toLowerCase().replace(/\./g, '') === normalizedFilter);
                 }
 
-                const directorNameHtml = director.website
-                    ? `<a href="${director.website}" target="_blank" rel="noopener noreferrer" class="news-link">${director.firstName} ${director.lastName}</a>`
-                    : `${director.firstName} ${director.lastName}`;
-
                 const directorHtml = `
-                    <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 mb-3">
-                        <div class="flex flex-col sm:flex-row items-center bg-white/95 border border-slate-200 rounded-xl shadow-sm p-5 sm:p-6">
-                            <img src="${director.photo}" alt="${director.firstName} ${director.lastName}" width="128" height="128" loading="lazy" decoding="async" class="w-32 h-32 rounded-full object-cover flex-shrink-0">
-                            <div class="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
-                                <h3 class="text-2xl font-semibold">${directorNameHtml}</h3>
-                                <p class="text-accent font-semibold">${director.status}</p>
-                                <p class="text-slate-600">${director.education}</p>
-                            </div>
+                    <article class="director-card">
+                        <img src="${director.photo}" alt="${director.firstName} ${director.lastName}" width="120" height="120" loading="lazy" decoding="async">
+                        <div>
+                            <p class="person-role">${director.status}</p>
+                            <h4 class="director-name">${renderPersonName(director)}</h4>
+                            <p class="person-detail">${director.education}</p>
                         </div>
-                    </div>
+                    </article>
                 `;
 
+                const grid = people => people.length ? `<div class="people-grid">${renderPersonCards(people)}</div>` : '';
                 const alumniHtml = (normalizedFilter === 'all' || normalizedFilter === 'alumni')
-                    ? renderAlumniGroup()
+                    ? `<h3 class="people-subhead">Alumni</h3><div class="people-panel">${grid(alumniData)}</div>`
                     : '';
 
-                container.innerHTML = directorHtml + renderPersonCards(filteredPeople) + alumniHtml;
+                container.innerHTML = '<h3 class="sr-only">Current members</h3>' +
+                    `<div class="people-panel">${directorHtml}${grid(filteredPeople)}</div>` + alumniHtml;
             }
 
             function renderPeopleFilters() {
@@ -356,7 +423,7 @@
                 if (!controlsContainer) return;
                 const roles = ['All', 'Postdoc Scholar', 'Ph.D. Student', 'MPhil Student', 'Intern', 'Alumni'];
                 controlsContainer.innerHTML = roles.map((role, index) => `
-                    <button class="filter-btn px-4 py-1.5 rounded-full text-sm ${index === 0 ? 'active' : ''}" data-filter="${role.toLowerCase().replace(/\./g, '')}">${role}</button>
+                    <button type="button" class="filter-btn ${index === 0 ? 'active' : ''}" aria-pressed="${index === 0}" data-filter="${role.toLowerCase().replace(/\./g, '')}">${role}</button>
                 `).join('');
             }
 
@@ -378,15 +445,15 @@
                 }
 
                 if (filteredPubs.length === 0) {
-                    container.innerHTML = `<p class="text-center text-slate-500">No publications match the selected filters.</p>`;
-                    return;
+                    container.innerHTML = `<div class="list-panel mt-6"><p class="empty-state">No publications match the selected filters.</p></div>`;
+                    return 0;
                 }
 
                 const renderPublication = pub => {
                     const codeLinks = Array.isArray(pub.links.code)
                         ? pub.links.code
                         : (pub.links.code ? [{ label: 'Code', url: pub.links.code }] : []);
-                    const extraLinks = [
+                    const links = [
                         pub.links.website ? `<a href="${pub.links.website}" class="publication-link" target="_blank" rel="noopener noreferrer">Website</a>` : '',
                         ...codeLinks.map(link => `<a href="${escapeHtml(link.url)}" class="publication-link" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`),
                         pub.links.dockerData ? `<a href="${escapeHtml(pub.links.dockerData)}" class="publication-link" target="_blank" rel="noopener noreferrer">Docker</a>` : '',
@@ -399,14 +466,6 @@
                         pub.links.model ? `<a href="${pub.links.model}" class="publication-link" target="_blank" rel="noopener noreferrer">Model</a>` : ''
                     ].filter(Boolean);
 
-                    const extraLinksHtml = extraLinks.length > 0
-                        ? `<div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">${extraLinks.join('')}</div>`
-                        : '';
-
-                    const pdfActionHtml = pub.links.pdf
-                        ? `<a href="${pub.links.pdf}" class="publication-link pdf-action-link" target="_blank" rel="noopener noreferrer">PDF</a>`
-                        : '';
-
                     return `
                     <article ${pub.id ? `id="publication-${escapeHtml(pub.id)}" tabindex="-1"` : ''} class="publication-item ${pub.type === 'Preprint' ? 'preprint' : ''}">
                         <div class="publication-meta">
@@ -415,14 +474,11 @@
                         </div>
                         <div class="publication-body">
                             ${pub.award ? `<p class="publication-award">${pub.award}</p>` : ''}
-                            <h3 class="font-semibold text-xl leading-tight">${pub.title}</h3>
-                            <p class="text-slate-600 mt-1 text-sm">${renderPublicationAuthors(pub.authors)}</p>
-                            <p class="text-slate-500 italic mt-1 text-sm">${pub.venue}</p>
-                            ${extraLinksHtml}
+                            <h4 class="publication-title">${pub.title}</h4>
+                            <p class="publication-authors">${renderPublicationAuthors(pub.authors)}</p>
+                            <p class="publication-venue">${pub.venue}${links.join('')}</p>
                         </div>
-                        <div class="publication-actions">
-                            ${pdfActionHtml}
-                        </div>
+                        ${pub.links.pdf ? `<a href="${pub.links.pdf}" class="publication-link pdf-action-link" target="_blank" rel="noopener noreferrer">PDF</a>` : ''}
                     </article>
                     `;
                 };
@@ -431,18 +487,21 @@
                 const published = filteredPubs.filter(pub => pub.type !== 'Preprint');
                 const previewCount = 4;
                 const remainingPreprints = preprints.slice(previewCount);
-                container.innerHTML = preprints.slice(0, previewCount).map(renderPublication).join('') +
+                container.innerHTML = `<div class="list-panel pub-list">` +
+                    preprints.slice(0, previewCount).map(renderPublication).join('') +
                     (remainingPreprints.length ? `
                         <details class="preprints-more">
                             <summary>
                                 <span class="preprints-show">Show ${remainingPreprints.length} more preprints</span>
                                 <span class="preprints-hide">Show fewer preprints</span>
                             </summary>
-                            <div class="grid gap-2.5 mt-2.5">
+                            <div>
                                 ${remainingPreprints.map(renderPublication).join('')}
                             </div>
                         </details>
-                    ` : '') + published.map(renderPublication).join('');
+                    ` : '') +
+                    published.map(renderPublication).join('') + `</div>`;
+                return filteredPubs.length;
             }
 
             function populatePubFilters() {
@@ -450,7 +509,6 @@
                 const areaSelect = document.getElementById('pub-area-filter');
                 if (!yearSelect || !areaSelect) return;
 
-                // Add Preprints option
                 const preprintOption = document.createElement('option');
                 preprintOption.value = 'preprint';
                 preprintOption.textContent = 'Preprints';
@@ -472,21 +530,24 @@
                 });
             }
 
+            function renderNewsTitle(item) {
+                return item.url
+                    ? `<a href="${item.url}" class="news-link" target="_blank" rel="noopener noreferrer">${item.title}</a>`
+                    : item.title;
+            }
+
             function renderNews() {
                 const container = document.getElementById('news-container');
                 if (!container) return;
 
                 const renderNewsItem = item => {
-                    const titleHtml = item.url
-                        ? `<a href="${item.url}" class="news-link" target="_blank" rel="noopener noreferrer">${item.title}</a>`
-                        : item.title;
-
+                    const textId = `news-text-${newsData.indexOf(item)}`;
                     return `
                         <article class="news-item">
                             <p class="news-date">${item.date}</p>
                             <div>
-                                <h3 class="text-xl font-semibold leading-tight">${titleHtml}</h3>
-                                <p class="mt-1 text-slate-600 text-sm">${item.content}</p>
+                                <h3 class="news-title">${renderNewsTitle(item)}<button type="button" class="news-toggle" aria-expanded="false" aria-controls="${textId}"><span class="sr-only">Show details</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg></button></h3>
+                                <p id="${textId}" class="news-text" hidden>${item.content}</p>
                             </div>
                         </article>
                     `;
@@ -498,26 +559,16 @@
                     (olderNews.length ? `
                         <details class="news-more">
                             <summary>
-                                <span class="news-show">Show older news</span>
+                                <span class="news-show">Show ${olderNews.length} older news items</span>
                                 <span class="news-hide">Show fewer news items</span>
                             </summary>
-                            <div class="grid gap-2.5 mt-2.5">
+                            <div>
                                 ${olderNews.map(renderNewsItem).join('')}
                             </div>
                         </details>
                     ` : '');
             }
 
-
-            // Event Listeners
-            document.getElementById('mobile-menu-button').addEventListener('click', function () {
-                const menu = document.getElementById('mobile-menu');
-                const button = this;
-                const icons = button.querySelectorAll('svg');
-                menu.classList.toggle('hidden');
-                icons[0].classList.toggle('hidden');
-                icons[1].classList.toggle('hidden');
-            });
 
             const sections = Array.from(document.querySelectorAll('section'));
             const navLinks = Array.from(document.querySelectorAll('header a.nav-link'));
@@ -551,24 +602,16 @@
                 setActiveNavLink(getCurrentSectionId());
             }
 
-            document.querySelectorAll('#mobile-menu a, header nav a').forEach(link => {
+            navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    const sectionId = link.getAttribute('href').replace('#', '');
-                    setActiveNavLink(sectionId);
-
-                    if (link.closest('#mobile-menu')) {
-                        document.getElementById('mobile-menu').classList.add('hidden');
-                        const icons = document.getElementById('mobile-menu-button').querySelectorAll('svg');
-                        icons[0].classList.remove('hidden');
-                        icons[1].classList.add('hidden');
-                    }
+                    setActiveNavLink(link.getAttribute('href').replace('#', ''));
 
                     // Smooth scroll updates hash/position asynchronously; reconcile shortly after.
                     window.setTimeout(syncActiveNavToViewport, 220);
                 });
             });
 
-            document.getElementById('research-container').addEventListener('click', function (e) {
+            document.getElementById('research-container').addEventListener('click', e => {
                 const selectedWorkLink = e.target.closest('[data-publication-id]');
                 if (selectedWorkLink) {
                     document.getElementById('pub-year-filter').value = 'all';
@@ -587,36 +630,48 @@
                     renderPublications('all', area);
                     return;
                 }
-                if (e.target.closest('a')) return;
-
-                const card = e.target.closest('.research-card');
-                if (card) {
-                    const subtopicsId = `subtopics-${card.dataset.id}`;
-                    const subtopicsEl = document.getElementById(subtopicsId);
-                    const isExpanded = !subtopicsEl.classList.toggle('hidden');
-                    const toggle = card.querySelector('[data-research-toggle]');
-                    toggle.setAttribute('aria-expanded', String(isExpanded));
-                    toggle.querySelector('svg').classList.toggle('rotate-180', isExpanded);
-                    const container = document.getElementById('research-container');
-                    container.classList.toggle('items-start', Boolean(container.querySelector('[data-research-toggle][aria-expanded="true"]')));
+                // Phones only: show or hide a direction's selected papers.
+                const toggle = e.target.closest('[data-research-toggle]');
+                if (toggle) {
+                    const open = toggle.getAttribute('aria-expanded') !== 'true';
+                    toggle.setAttribute('aria-expanded', String(open));
+                    toggle.closest('.research-col').classList.toggle('is-open', open);
                 }
             });
 
-            document.getElementById('people-filter-controls').addEventListener('click', function (e) {
-                if (e.target.tagName === 'BUTTON') {
-                    document.querySelectorAll('#people-filter-controls .filter-btn').forEach(btn => btn.classList.remove('active'));
-                    e.target.classList.add('active');
-                    renderPeople(e.target.dataset.filter);
+            // Tapping a news row shows or hides its description; headline links still open normally.
+            document.getElementById('news-container').addEventListener('click', e => {
+                if (e.target.closest('a, summary')) return;
+                const item = e.target.closest('.news-item');
+                if (!item) return;
+                const text = item.querySelector('.news-text');
+                const expand = text.hidden;
+                text.hidden = !expand;
+                item.querySelector('.news-toggle').setAttribute('aria-expanded', String(expand));
+            });
+
+            document.getElementById('people-filter-controls').addEventListener('click', e => {
+                const button = e.target.closest('.filter-btn');
+                if (!button) return;
+                e.currentTarget.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn === button);
+                    btn.setAttribute('aria-pressed', String(btn === button));
+                });
+                renderPeople(button.dataset.filter);
+            });
+
+            function onPubFilterChange() {
+                const count = renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
+                const status = document.getElementById('pub-filter-status');
+                if (status) {
+                    status.textContent = count
+                        ? `${count} ${count === 1 ? 'publication' : 'publications'} shown`
+                        : 'No publications match the selected filters.';
                 }
-            });
+            }
 
-            document.getElementById('pub-year-filter').addEventListener('change', () => {
-                renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
-            });
-
-            document.getElementById('pub-area-filter').addEventListener('change', () => {
-                renderPublications(document.getElementById('pub-year-filter').value, document.getElementById('pub-area-filter').value);
-            });
+            document.getElementById('pub-year-filter').addEventListener('change', onPubFilterChange);
+            document.getElementById('pub-area-filter').addEventListener('change', onPubFilterChange);
 
             window.addEventListener('scroll', syncActiveNavToViewport, { passive: true });
             window.addEventListener('resize', syncActiveNavToViewport);
@@ -630,6 +685,7 @@
 
             // Initial Render
             renderResearch();
+            renderHeroTopics();
             renderPeopleFilters();
             renderPeople();
             populatePubFilters();
