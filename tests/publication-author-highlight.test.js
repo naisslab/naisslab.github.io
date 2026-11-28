@@ -305,9 +305,10 @@ assert.strictEqual((newsHtml.match(/<article /g) || []).length, vm.runInContext(
     'The homepage should retain the complete news list');
 assert(indexHtml.indexOf('<section id="news"') < indexHtml.indexOf('<section id="people"'));
 assert.deepStrictEqual(
-    [...indexHtml.matchAll(/<a href="#(news|people)"/g)].map(match => match[1]),
-    ['news', 'people', 'news', 'people'],
-    'Both navigation menus should put News before People'
+    [...indexHtml.matchAll(/<nav\b[\s\S]*?<\/nav>/g)]
+        .map(nav => [...nav[0].matchAll(/<a href="#(news|people)"/g)].map(match => match[1])),
+    [['news', 'people'], ['news', 'people'], ['news', 'people']],
+    'The header, mobile, and footer menus should each put News before People'
 );
 const newsDisclosure = newsHtml.match(/<details class="news-more">([\s\S]*?)<\/details>/);
 assert(newsDisclosure, 'Older news should start in a closed disclosure');

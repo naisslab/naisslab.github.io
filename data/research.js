@@ -3,7 +3,6 @@ const researchData = [
     {
         id: 'ml-for-systems',
         title: 'ML for Systems, Systems for ML',
-        icon: '🧠',
         description: 'Building foundational ML systems and techniques for the networked world.',
         subtopics: [
             {
@@ -36,7 +35,6 @@ const researchData = [
     {
         id: 'security',
         title: 'Network Security and Privacy',
-        icon: '🛡️',
         description: 'Applying our tools to solve critical security and privacy challenges.',
         subtopics: [
             {
@@ -56,7 +54,7 @@ const researchData = [
             {
                 title: 'Wireless Attacks and Defenses in Driving Systems',
                 featuredPublications: [
-                    { id: 'gps-spoofing', label: "[WiSec'25] 🏆 Multi-Antenna GPS Spoofing" },
+                    { id: 'gps-spoofing', label: "[WiSec'25] Multi-Antenna GPS Spoofing" },
                     { id: 'stars-can-tell', label: "[USENIX Security'21] Stars Can Tell" },
                     { id: 'all-your-gps', label: "[USENIX Security'18] All Your GPS Are Belong to Us" }
                 ]
@@ -73,7 +71,6 @@ const researchData = [
     {
         id: 'cps',
         title: 'Cyber-physical Intelligence',
-        icon: '🤖',
         description: 'Improving interactions with the cyber-physical world.',
         subtopics: [
             {
