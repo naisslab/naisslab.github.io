@@ -20,16 +20,17 @@
     <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/ibm-plex-serif-semibold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/ibm-plex-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/site.css?v=540130d3ca38">
+    <link rel="stylesheet" href="assets/site.css?v=5c10e377f479">
 </head>
 
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <header id="header" class="site-header">
+    <header id="header" class="site-header on-hero">
         <div class="container-page header-inner">
             <a href="#home" class="lab-brand" aria-label="NAISS Lab home">
-                <img src="images/brand/naiss-lab-wordmark.svg" alt="NAISS Lab" class="lab-logo" width="412" height="173">
+                <img src="images/brand/naiss-lab-wordmark.svg" alt="NAISS Lab" class="lab-logo lab-logo-dark" width="412" height="173">
+                <img src="images/brand/naiss-lab-wordmark-light.svg" alt="" class="lab-logo lab-logo-light" width="412" height="173">
             </a>
             <nav class="desktop-nav" aria-label="Primary">
                 <a href="#about" class="nav-link">About</a>
@@ -69,8 +70,8 @@
         <section id="home" class="hero">
             <canvas id="hero-net" class="hero-net" aria-hidden="true"></canvas>
             <div class="container-page hero-inner">
-                <p class="hero-eyebrow"><span class="hero-dept">Data and Systems Engineering &middot; </span>The University of Hong Kong</p>
-                <h1 class="hero-title">Networked AI Systems and Security Lab</h1>
+                <p class="hero-eyebrow"><span><span class="hero-dept">Data and Systems Engineering &middot; </span>The University of Hong Kong</span></p>
+                <h1 class="hero-title"><span class="hero-word" style="--w:0"><span>Networked</span></span> <span class="hero-word" style="--w:1"><span>AI</span></span> <span class="hero-word" style="--w:2"><span>Systems</span></span> <span class="hero-word" style="--w:3"><span>and</span></span> <span class="hero-word" style="--w:4"><span>Security</span></span> <span class="hero-word" style="--w:5"><span>Lab</span></span></h1>
                 <p class="hero-name">NAISS Lab</p>
                 <p class="hero-lead">
                     Developing the next generation of intelligent systems to ensure our networked world is
@@ -131,7 +132,7 @@
                 </div>
                 <div id="people-filter-controls" class="filter-row" role="group" aria-label="Filter people by role">
                 </div>
-                <div id="people-container" class="people-grid"></div>
+                <div id="people-container" class="people"></div>
             </div>
         </section>
 
@@ -160,18 +161,18 @@
                     <h2 id="sponsors-heading" class="section-title">Sponsors and industry partners</h2>
                 </div>
                 <ul class="sponsor-list" role="list">
-                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku-logo.webp" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
-                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.webp" alt="Research Grants Council of Hong Kong (RGC)" width="284" height="89" loading="lazy"></a></li>
+                    <li><a href="https://www.hku.hk/"><img src="images/sponsors/hku-logo.webp" style="--logo-h: 2.125rem" alt="The University of Hong Kong (HKU)" width="600" height="117" loading="lazy"></a></li>
+                    <li><a href="https://www.ugc.edu.hk/eng/rgc/"><img src="images/sponsors/rgc.webp" style="--logo-h: 2.375rem" alt="Research Grants Council of Hong Kong (RGC)" width="284" height="89" loading="lazy"></a></li>
                     <li>
                         <a href="https://stf.hkpc.org/" aria-label="Smart Traffic Fund (Hong Kong Transport Department)">
-                            <img src="images/sponsors/transport-department.webp" alt="Hong Kong Transport Department" width="239" height="72" loading="lazy">
+                            <img src="images/sponsors/transport-department.webp" style="--logo-h: 2.125rem" alt="Hong Kong Transport Department" width="239" height="72" loading="lazy">
                         </a>
                     </li>
-                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
-                    <li><a href="https://www.microsoft.com/"><img class="sponsor-wordmark" src="images/sponsors/microsoft.png" alt="Microsoft" width="216" height="46" loading="lazy"></a></li>
-                    <li><a href="https://www.alibabagroup.com/"><img class="sponsor-wordmark" src="images/sponsors/alibaba.svg" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
-                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici-logo.webp" alt="WiCi" width="536" height="205" loading="lazy"></a></li>
-                    <li><a href="https://www.rockfish.ai/"><img class="sponsor-icon" src="images/sponsors/rockfish-data.png" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
+                    <li><a href="https://www.miracleplus.com/en/"><img src="images/sponsors/miracleplus.webp" style="--logo-h: 1.875rem" alt="MiraclePlus" width="540" height="132" loading="lazy"></a></li>
+                    <li><a href="https://www.microsoft.com/"><img src="images/sponsors/microsoft.png" style="--logo-h: 1.25rem" alt="Microsoft" width="216" height="46" loading="lazy"></a></li>
+                    <li><a href="https://www.alibabagroup.com/"><img src="images/sponsors/alibaba.svg" style="--logo-h: 1.125rem" alt="Alibaba" width="311" height="40" loading="lazy"></a></li>
+                    <li><a href="https://wici.ai/"><img src="images/sponsors/wici-logo.webp" style="--logo-h: 1.875rem" alt="WiCi" width="536" height="205" loading="lazy"></a></li>
+                    <li><a href="https://www.rockfish.ai/"><img src="images/sponsors/rockfish-data.png" style="--logo-h: 1.625rem" alt="" width="32" height="32" loading="lazy">Rockfish Data</a></li>
                 </ul>
             </div>
         </section>
@@ -209,10 +210,10 @@
         </div>
     </footer>
 
-    <script src="data/research.js?v=b384abfe5a91"></script>
+    <script src="data/research.js?v=fdac0f4bbd92"></script>
     <script src="data/people.js?v=8865d8970cd5"></script>
     <script src="data/publication.js?v=04d727815e64"></script>
-    <script src="assets/hero.js?v=844c05bf480c" defer></script>
+    <script src="assets/hero.js?v=ec37fee75255" defer></script>
     <script src="data/news.js?v=4fd663a201f4"></script>
 
     <script>
@@ -251,6 +252,13 @@
             }
 
             function renderFeaturedPublication(featured) {
+                const [, venue = '', name = featured.label] = featured.label.match(/^(\[[^\]]*\])\s*(.*)$/) || [];
+                const cite = venue ? `<span class="cite">${escapeHtml(venue)}</span>` : '';
+                // Projects such as open-source tools link straight to their own URL.
+                if (!featured.id && featured.url) {
+                    return `<li>${cite}<a href="${escapeHtml(featured.url)}" target="_blank" rel="noopener noreferrer"
+                    class="publication-link">${escapeHtml(name)}</a></li>`;
+                }
                 const publication = publicationsData.find(pub => pub.id === featured.id);
                 if (!publication) return '';
                 const externalUrl = publication.links.website || publication.links.pdf;
@@ -258,43 +266,42 @@
                 const linkAttributes = externalUrl
                     ? 'target="_blank" rel="noopener noreferrer"'
                     : `data-publication-id="${escapeHtml(publication.id)}"`;
-                const [, venue = '', name = featured.label] = featured.label.match(/^(\[[^\]]*\])\s*(.*)$/) || [];
                 const award = publication.award ? ` <span class="publication-award">${escapeHtml(publication.award)}</span>` : '';
-                return `<li>${venue ? `<span class="cite">${escapeHtml(venue)}</span>` : ''}<a href="${escapeHtml(url)}" ${linkAttributes}
+                return `<li>${cite}<a href="${escapeHtml(url)}" ${linkAttributes}
                     class="publication-link" title="${escapeHtml(publication.title)}">${escapeHtml(name)}</a>${award}</li>`;
             }
 
             function renderResearch() {
                 const container = document.getElementById('research-container');
                 if (!container) return;
-                container.innerHTML = researchData.map((item, index) => `
-                    <article class="research-card" data-id="${item.id}">
+                container.innerHTML = researchData.map((item, index) => {
+                    const paperCount = item.subtopics.reduce((sum, sub) => sum + (sub.featuredPublications || []).length, 0);
+                    return `
+                    <article class="research-col">
                         <p class="research-index">${String(index + 1).padStart(2, '0')}</p>
                         <h3 class="research-title">${item.title}</h3>
                         <p class="research-desc">${item.description}</p>
-                        <button type="button" class="research-toggle" data-research-toggle="${item.id}"
-                            aria-expanded="false" aria-controls="subtopics-${item.id}">
-                            Topics &amp; selected work<span class="sr-only"> in ${item.title}</span>
-                            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                                <path d="m5 7.5 5 5 5-5" />
-                            </svg>
-                        </button>
-                        <ul id="subtopics-${item.id}" class="research-subtopics reveal hidden">
+                        <ul id="subtopics-${item.id}" class="research-subtopics">
                             ${item.subtopics.map(sub => `
                                 <li class="research-subtopic">
                                     <p class="research-subtopic-title">${escapeHtml(sub.title)}</p>
-                                    <ul>${(sub.featuredPublications || []).map(renderFeaturedPublication).join('')}</ul>
+                                    <ul class="research-papers">${(sub.featuredPublications || []).map(renderFeaturedPublication).join('')}</ul>
                                 </li>
                             `).join('')}
                         </ul>
+                        <button type="button" class="research-toggle" data-research-toggle aria-expanded="false" aria-controls="subtopics-${item.id}">
+                            <span class="research-toggle-show">Show selected work (${paperCount})</span><span class="research-toggle-hide">Hide selected work</span><span class="sr-only"> in ${item.title}</span>
+                            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
+                        </button>
                         <p class="research-more">
                             <a href="#publications" data-research-area="${item.id}" class="publication-link">
-                                View related publications (${publicationsData.filter(pub => pub.area.includes(item.id)).length})<span class="sr-only"> in ${item.title}</span>
+                                View all ${publicationsData.filter(pub => pub.area.includes(item.id)).length} related publications<span class="sr-only"> in ${item.title}</span>
                                 <span aria-hidden="true">&rarr;</span>
                             </a>
                         </p>
                     </article>
-                `).join('');
+                `;
+                }).join('');
             }
 
             function renderHeroTopics() {
@@ -357,12 +364,13 @@
                     </article>
                 `;
 
+                const grid = people => people.length ? `<div class="people-grid">${renderPersonCards(people)}</div>` : '';
                 const alumniHtml = (normalizedFilter === 'all' || normalizedFilter === 'alumni')
-                    ? `<h3 class="people-subhead">Alumni</h3>${renderPersonCards(alumniData)}`
+                    ? `<h3 class="people-subhead">Alumni</h3><div class="people-panel">${grid(alumniData)}</div>`
                     : '';
 
-                container.innerHTML = '<h3 class="sr-only">Current members</h3>' + directorHtml +
-                    renderPersonCards(filteredPeople) + alumniHtml;
+                container.innerHTML = '<h3 class="sr-only">Current members</h3>' +
+                    `<div class="people-panel">${directorHtml}${grid(filteredPeople)}</div>` + alumniHtml;
             }
 
             function renderPeopleFilters() {
@@ -603,14 +611,12 @@
                     renderPublications('all', area);
                     return;
                 }
-                if (e.target.closest('a, .research-subtopics')) return;
-
-                const card = e.target.closest('.research-card');
-                if (card) {
-                    const subtopicsEl = document.getElementById(`subtopics-${card.dataset.id}`);
-                    const isExpanded = !subtopicsEl.classList.toggle('hidden');
-                    card.querySelector('[data-research-toggle]').setAttribute('aria-expanded', String(isExpanded));
-                    e.currentTarget.classList.toggle('items-start', Boolean(e.currentTarget.querySelector('[aria-expanded="true"]')));
+                // Phones only: show or hide a direction's selected papers.
+                const toggle = e.target.closest('[data-research-toggle]');
+                if (toggle) {
+                    const open = toggle.getAttribute('aria-expanded') !== 'true';
+                    toggle.setAttribute('aria-expanded', String(open));
+                    toggle.closest('.research-col').classList.toggle('is-open', open);
                 }
             });
 

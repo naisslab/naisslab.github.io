@@ -38,6 +38,14 @@ const researchData = [
         description: 'Applying our tools to solve critical security and privacy challenges.',
         subtopics: [
             {
+                title: 'Security of ML Systems and LLM Agent Networks',
+                featuredPublications: [
+                    { id: 'ghostaccess', label: "[MICRO'26] GhostAccess" },
+                    { id: 'spliceleak', label: "[Preprint'26] SpliceLeak" },
+                    { id: 'toolpulse', label: "[Preprint'26] ToolPulse" }
+                ]
+            },
+            {
                 title: 'Privacy of Synthetic Data',
                 featuredPublications: [
                     { id: 'synthetic-traffic-privacy', label: "[IMC'26] Synthetic Traffic Privacy" }
@@ -58,13 +66,6 @@ const researchData = [
                     { id: 'stars-can-tell', label: "[USENIX Security'21] Stars Can Tell" },
                     { id: 'all-your-gps', label: "[USENIX Security'18] All Your GPS Are Belong to Us" }
                 ]
-            },
-            {
-                title: 'Security of ML Systems and LLM Agent Networks',
-                featuredPublications: [
-                    { id: 'ghostaccess', label: "[MICRO'26] GhostAccess" },
-                    { id: 'spliceleak', label: "[Preprint'26] SpliceLeak" }
-                ]
             }
         ]
     },
@@ -82,6 +83,7 @@ const researchData = [
             {
                 title: 'Activity Recognition and Sensing for Human Well-being',
                 featuredPublications: [
+                    { id: 'routerweave', label: "[Preprint'26] RouterWeave" },
                     { id: 'on-device-evidence', label: "[UbiComp'26] On-Device Evidence Gathering" },
                     { id: 'amir', label: "[UbiComp'23] AMIR" }
                 ]
@@ -90,7 +92,8 @@ const researchData = [
                 title: 'Agentic Inference for Smarter Environments',
                 featuredPublications: [
                     { id: 'hillinfer', label: "[Preprint'26] HillInfer" },
-                    { id: 'pacc', label: "[Preprint'26] PACC" }
+                    { id: 'pacc', label: "[Preprint'26] PACC" },
+                    { label: "[Open Source] InferSSD", url: 'https://github.com/wici-ai/inferssd' }
                 ]
             }
         ]

@@ -326,6 +326,11 @@ for (const area of vm.runInContext('researchData', context)) {
     for (const subtopic of area.subtopics) {
         assert(subtopic.title && subtopic.featuredPublications.length, 'Each subtopic needs a title and representative work');
         for (const featured of subtopic.featuredPublications) {
+            if (!featured.id) {
+                assert(featured.url, 'Project entries without a publication id need their own URL');
+                assert(elements.get('research-container').innerHTML.includes(`href="${featured.url}"`));
+                continue;
+            }
             const matches = publicationsData.filter(pub => pub.id === featured.id);
             assert.strictEqual(matches.length, 1, `Featured publication must resolve uniquely: ${featured.id}`);
             assert(matches[0].area.includes(area.id), `Featured publication must belong to ${area.id}`);
